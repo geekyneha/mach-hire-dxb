@@ -1,0 +1,78 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.brand h2 {
+  font-size: 1.8rem;
+  color: #ff6b00;
+  margin-bottom: 0.5rem;
+}
+
+.brand p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.links h4,
+.contact h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #ff6b00;
+}
+
+.contact p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .links ul {
+    padding: 0;
+  }
+}
