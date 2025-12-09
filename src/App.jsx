@@ -5,6 +5,7 @@ import About from "./pages/About.jsx";
 import Booking from "./pages/Booking.jsx";
 import Services from "./pages/Services.jsx";
 import Layout from "./pages/Layout.jsx";
+import FAQ from "./pages/FAQ.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router";
 
@@ -19,6 +20,7 @@ function App() {
         { path: "/about", element: <About /> },
         { path: "/services", element: <Services /> },
         { path: "/booking", element: <Booking /> },
+        { path: "/faq", element: <FAQ /> },
       ],
     },
   ]);

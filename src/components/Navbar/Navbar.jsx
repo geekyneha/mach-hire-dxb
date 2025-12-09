@@ -38,6 +38,11 @@ const Navbar = () => {
             More Info
           </Link>
         </li>
+        <li>
+          <Link to="/faq" className={styles.links}>
+            FAQ
+          </Link>
+        </li>
       </ul>
     </nav>
   );

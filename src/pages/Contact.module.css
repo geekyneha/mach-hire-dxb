@@ -1,0 +1,145 @@
+:root {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Page wrapper */
+.contactPage {
+  max-width: 460px; /* compact width for the form */
+  margin: 44px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+/* Heading */
+.heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #121212;
+  margin-bottom: 6px;
+}
+
+.subheading {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Card (compact, ChatGPT-login style) */
+.card {
+  width: 100%;
+  margin: 0 auto 28px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 96%;
+  align-items: stretch;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.97rem;
+  border-radius: 10px;
+  border: 1px solid #d7d7d7;
+  background: #fbfbfb;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s;
+  outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #ff8a00;
+  box-shadow: 0 6px 18px rgba(255, 138, 0, 0.12);
+  background: #fff;
+}
+
+/* Button */
+.btn {
+  margin-top: 4px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff8a00;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: #e57700;
+}
+
+/* Map section */
+.mapSection {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.mapTitle {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+/* MAP */
+.mapWrapper {
+  flex: 1;
+  min-height: 350px;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contentWrapper {
+    flex-direction: column;
+  }
+
+  .mapWrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .form {
+    padding: 18px;
+  }
+}
