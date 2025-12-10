@@ -4,18 +4,19 @@
   align-items: center;
   padding: 1rem 2rem;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #ff6b00;
 }
 
+/* Desktop Nav */
 .navLinks {
   display: flex;
   gap: 1.5rem;
@@ -26,28 +27,51 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.links:hover {
+.navLinks a:hover {
   color: #ff6b00;
 }
 
-/* Responsive */
+/* Hide Mobile Menu Button on Desktop */
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* -----------------------
+   Mobile Navigation
+----------------------- */
 @media (max-width: 768px) {
-  .navLinks {
-    display: none; /* hide links for mobile initially */
+  .menuBtn {
+    display: block;
   }
-  .nav.active .navLinks {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+
+  .navLinks {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #fff;
-    width: 200px;
+    width: 220px;
+    background: #fff;
+    flex-direction: column;
+    gap: 1rem;
     padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+    /* hidden by default */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.35s ease;
+  }
+
+  /* When menu is open */
+  .open {
+    max-height: 500px;
+    opacity: 1;
   }
 }
