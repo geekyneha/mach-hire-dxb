@@ -28,7 +28,7 @@ const Footer = () => {
         <div className={styles.contact}>
           <h4>Contact Us</h4>
           <p>Email: info@excavatorrent.com</p>
-          <p>Phone: +971 50 123 4567</p>
+          <p>Phone: +971 509734271</p>
         </div>
       </div>
 

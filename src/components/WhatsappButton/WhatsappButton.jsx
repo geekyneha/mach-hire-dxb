@@ -3,7 +3,7 @@ import styles from "./WhatsappButton.module.css";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappButton = () => {
-  const phoneNumber = "971504784033"; // change to your real UAE number
+  const phoneNumber = "971509734271"; // change to your real UAE number
 
   return (
     <a

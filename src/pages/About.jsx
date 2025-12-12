@@ -25,14 +25,14 @@ const About = () => {
       {/* Experience Section */}
       <section className={styles.experienceSection}>
         <div className={styles.experienceCard}>
-          <h3>7+ Years Experience</h3>
+          <h3>20+ Years Experience</h3>
           <p>
             Our team has served hundreds of clients across the UAE, supporting
             large-scale projects with reliable equipment and expert guidance.
           </p>
         </div>
         <div className={styles.experienceCard}>
-          <h3>100+ Projects Completed</h3>
+          <h3>500+ Projects Completed</h3>
           <p>
             From land development to foundation digging, we’ve delivered
             high-quality machinery exactly when and where it’s needed.
