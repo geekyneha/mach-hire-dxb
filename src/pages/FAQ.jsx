@@ -1,60 +1,74 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./FAQ.module.css";
+import { FiPlus, FiMinus } from "react-icons/fi";
 
 const faqs = [
   {
-    question: "What services do you provide?",
+    question: "What types of equipment do you offer for rent?",
     answer:
-      "We offer professional excavator rentals across the UAE, including Dubai, Sharjah, Abu Dhabi, and more. Our machines are well-maintained and suitable for construction, digging, demolition, and land clearing.",
+      "We offer a wide range of heavy machinery including excavators, wheel loaders, dump trucks, bulldozers, cranes, forklifts, and more.",
   },
   {
-    question: "How can I book an excavator?",
+    question: "How do I request a quote?",
     answer:
-      "You can contact us through WhatsApp, phone, or our contact form. Our team will guide you through machine selection, pricing, and booking confirmation.",
+      "You can request a quote through our website, by calling our team, or via WhatsApp. Simply provide your project details and equipment requirements.",
   },
   {
-    question: "Do you offer operators with the machine?",
+    question: "Do you provide equipment with operators?",
     answer:
-      "Yes, all rentals come with trained and certified operators to ensure safe and efficient work.",
+      "Yes, we offer both equipment-only rentals and equipment with experienced operators, depending on your project needs.",
   },
   {
-    question: "What are your rental charges?",
+    question: "How is equipment maintenance handled?",
     answer:
-      "Pricing depends on machine size, location, and rental duration. Contact us for a quick and transparent quote.",
+      "All equipment is regularly inspected and maintained according to industry standards to ensure safety, reliability, and optimal performance.",
+  },
+  {
+    question: "What is the minimum rental period?",
+    answer:
+      "Rental periods are flexible and can range from daily to long-term contracts based on your requirements.",
+  },
+  {
+    question: "Do you offer delivery and pickup services?",
+    answer:
+      "Yes, we provide timely delivery and pickup services to ensure your project runs smoothly without delays.",
   },
 ];
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
+  const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className={styles.faqContainer}>
-      <h1 className={styles.title}>Frequently Asked Questions</h1>
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <span className={styles.label}>FAQ</span>
+        <h1>Frequently Asked Questions</h1>
+        <p className={styles.subtitle}>
+          Find answers to common questions about our equipment rental services.
+        </p>
 
-      <div className={styles.faqList}>
-        {faqs.map((item, index) => (
-          <div key={index} className={styles.faqItem}>
-            <button
-              className={styles.question}
-              onClick={() => toggleFAQ(index)}
-            >
-              {item.question}
-              <span className={styles.icon}>
-                {openIndex === index ? "−" : "+"}
-              </span>
-            </button>
+        <div className={styles.list}>
+          {faqs.map((item, index) => (
+            <div className={styles.item} key={index}>
+              <button className={styles.question} onClick={() => toggle(index)}>
+                <span>{item.question}</span>
+                {openIndex === index ? <FiMinus /> : <FiPlus />}
+              </button>
 
-            {openIndex === index && (
-              <p className={styles.answer}>{item.answer}</p>
-            )}
-          </div>
-        ))}
+              {openIndex === index && (
+                <div className={styles.answer}>
+                  <p>{item.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
