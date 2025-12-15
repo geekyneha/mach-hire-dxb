@@ -93,7 +93,7 @@
 .imageShape {
   width: 90%;
   height: 70%;
-  background-image: url("https://cdn-media.buildersmart.in/media/blog/bgce.jpg");
+  background-image: url("../../assets/hero.png");
   background-size: cover;
   background-position: center;
   border-radius: 40px 0 40px 0;

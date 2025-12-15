@@ -5,6 +5,8 @@ import WhatsappButton from "../components/WhatsappButton/WhatsappButton";
 import Categories from "../components/Category/Categories";
 import WhyChooseUs from "../components/Why_Us/WhyChooseUs";
 import About from "./About";
+import Industries from "../components/Industry/Industries";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
           <Categories />
           <WhyChooseUs />
           <About />
+          <Industries />
+          <Testimonial />
         </div>
         <WhatsappButton />
       </main>
