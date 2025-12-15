@@ -16,43 +16,43 @@ const brands = [
 const categories = [
   {
     name: "Excavators",
-    img: "https://images.unsplash.com/photo-1590650046871-92c887180603",
+    img: "https://s3.envato.com/files/275113768/02_preview2.jpg",
   },
   {
     name: "Wheel Loaders",
-    img: "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj3WD_XI9cUXOOak-t9uDHBJlvV0tZbvnWqA&s",
   },
   {
     name: "Dump Trucks",
-    img: "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
+    img: "https://medha.com/wp-content/uploads/2024/09/26c-40t-Dump-truck-scaled-e1726044880768.jpg",
   },
   {
-    name: "Bulldozers",
-    img: "https://images.unsplash.com/photo-1612102595094-92b4b2f7b8df",
+    name: "Six Wheelers",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx9ox3uXiXoapFYMeCQvJKnlxDFs36nxRfzg&s",
   },
   {
     name: "Backhoe Loaders",
-    img: "https://images.unsplash.com/photo-1600699261859-3c09a6b3b09f",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmOihISixlT_FM8LB66JJGUBD0SudAvpeyVw&s",
   },
   {
-    name: "Cranes",
-    img: "https://images.unsplash.com/photo-1596075780750-81249df16d19",
+    name: "Mobile Cranes",
+    img: "https://constrofacilitator.com/wp-content/uploads/2022/07/mobile-crane-img.jpg.webp",
   },
   {
     name: "Motor Graders",
-    img: "https://images.unsplash.com/photo-1613921568536-78f1d810dbb6",
+    img: "https://www.my-equipment.com/blog/wp-content/uploads/2020/03/1b55103d279b6d5c633f6458157a54f3.jpg",
   },
   {
     name: "Forklifts",
-    img: "https://images.unsplash.com/photo-1596079890687-9dbdbe8f9f8f",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlhDo_v85vm0wS4x3oXkPe_qAGSv2Zbr5_og&s",
   },
   {
     name: "Skid Steers",
-    img: "https://images.unsplash.com/photo-1581091870627-3b45b7f1e1b6",
+    img: "https://www.jcb.com/globalassets/digizuite/68216-sv-155-thumbnail/Img_800x800",
   },
   {
     name: "Compactors",
-    img: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Caterpillar_825G_Soil_Compactor.jpg/500px-Caterpillar_825G_Soil_Compactor.jpg",
   },
 ];
 
