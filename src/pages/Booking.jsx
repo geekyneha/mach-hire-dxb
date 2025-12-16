@@ -2,13 +2,15 @@ import { useState } from "react";
 import styles from "./Booking.module.css";
 
 const Booking = () => {
+  const today = new Date().toISOString().split("T")[0]; // yyyy-mm-dd format
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     equipment: "Excavator",
     size: "Medium",
     duration: "Daily",
-    startDate: "",
+    startDate: today, // default today
     location: "",
   });
 
@@ -45,8 +47,6 @@ const Booking = () => {
     e.preventDefault();
     if (!validate()) return;
 
-    const fullPhone = `+971${form.phone}`;
-
     const message = `
 Hello,
 
@@ -58,7 +58,7 @@ Thank you.
 `;
 
     window.open(
-      `https://wa.me/97100000000?text=${encodeURIComponent(message)}`,
+      `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
@@ -78,6 +78,7 @@ Thank you.
               className={styles.input}
               name="name"
               placeholder="Your Name"
+              value={form.name}
               onChange={handleChange}
             />
             {errors.name && <span className={styles.error}>{errors.name}</span>}
@@ -91,6 +92,7 @@ Thank you.
                 className={styles.phoneInput}
                 name="phone"
                 placeholder="5XXXXXXXX"
+                value={form.phone}
                 onChange={handleChange}
               />
             </div>
@@ -103,6 +105,7 @@ Thank you.
           <select
             className={styles.select}
             name="equipment"
+            value={form.equipment}
             onChange={handleChange}
           >
             <option>Excavator</option>
@@ -116,6 +119,7 @@ Thank you.
             <select
               className={styles.select}
               name="size"
+              value={form.size}
               onChange={handleChange}
             >
               <option>Small</option>
@@ -126,6 +130,7 @@ Thank you.
             <select
               className={styles.select}
               name="duration"
+              value={form.duration}
               onChange={handleChange}
             >
               <option>Daily</option>
@@ -134,15 +139,18 @@ Thank you.
             </select>
           </div>
 
-          {/* Date */}
+          {/* Date with calendar icon */}
           <div className={styles.field}>
-            <input
-              className={styles.input}
-              type="date"
-              name="startDate"
-              min={new Date().toISOString().split("T")[0]}
-              onChange={handleChange}
-            />
+            <div className={styles.dateWrapper}>
+              <input
+                className={styles.input}
+                type="date"
+                name="startDate"
+                value={form.startDate}
+                min={today}
+                onChange={handleChange}
+              />
+            </div>
             {errors.startDate && (
               <span className={styles.error}>{errors.startDate}</span>
             )}
@@ -154,6 +162,7 @@ Thank you.
               className={styles.input}
               name="location"
               placeholder="Site Location"
+              value={form.location}
               onChange={handleChange}
             />
             {errors.location && (
