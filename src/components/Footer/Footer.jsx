@@ -6,8 +6,31 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const handleQuoteClick = () => {
+    const message = `
+    
+ Heavy Equipment Rental (UAE)
+
+Hello,
+I’m interested in renting heavy machinery.
+I would like to request a quotation for heavy machinery rental in the UAE.
+
+Please provide the available equipment options along with rental rates and terms.
+
+
+Thank you.`;
+
+    const phoneNumber = "971509734271"; // your WhatsApp number
+
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
   const copyEmail = () => {
     navigator.clipboard.writeText("support@heavyrent.com");
   };
@@ -22,12 +45,14 @@ const Footer = () => {
             Let’s Discuss Your <br /> Equipment Needs
           </h2>
 
-          <button className={styles.cta}>Request a Quote →</button>
+          <button className={styles.cta} onClick={handleQuoteClick}>
+            Request a Quote →
+          </button>
 
           <div className={styles.emailBlock}>
             <span>OR EMAIL US AT</span>
             <div className={styles.email}>
-              support@heavyrent.com
+              support@heavyrental.com
               <FiCopy
                 className={styles.copy}
                 onClick={copyEmail}
@@ -42,11 +67,11 @@ const Footer = () => {
           <div>
             <h4>QUICK LINKS</h4>
             <ul>
-              <li>Home</li>
-              <li>Equipment</li>
-              <li>Industries</li>
-              <li>Services</li>
-              <li>Contact</li>
+              <li onClick={() => navigate("/")}>Home</li>
+              <li onClick={() => navigate("/equipments")}>Equipment</li>
+              <li onClick={() => navigate("/about")}>About</li>
+              <li onClick={() => navigate("/services")}>Services</li>
+              <li onClick={() => navigate("/contact")}>Contact</li>
             </ul>
           </div>
 
