@@ -5,37 +5,38 @@ import { FaWhatsapp } from "react-icons/fa";
 const Hero = () => {
   const handleQuoteClick = () => {
     const message = `
-    
- Heavy Equipment Rental (UAE)
+Heavy Equipment Rental (UAE)
 
 Hello,
 I’m interested in renting heavy machinery.
-I would like to request a quotation for heavy machinery rental in the UAE.
 
-Please provide the available equipment options along with rental rates and terms.
+Please share available equipment, rental rates, and terms.
 
-
-Thank you.`;
-
-    const phoneNumber = "971509734271"; // your WhatsApp number
+Thank you.
+`;
 
     window.open(
-      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
 
   return (
     <section className={styles.hero}>
-      {/* Vertical CTA */}
+      {/* CTA */}
       <div className={styles.verticalCta}>
-        <a href="mailto:support@heavyrent.com">
+        <a className={styles.ctaIcon} href="mailto:support@heavyrent.com">
           <FiMail />
         </a>
-        <a href="tel:+971509734271">
+        <a className={styles.ctaIcon} href="tel:+971509734271">
           <FiPhone />
         </a>
-        <a href="https://wa.me/971509734271" target="_blank" rel="noreferrer">
+        <a
+          className={styles.ctaIcon}
+          href="https://wa.me/971509734271"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaWhatsapp />
         </a>
       </div>
@@ -44,12 +45,11 @@ Thank you.`;
       <div className={styles.content}>
         <span className={styles.tag}>EQUIPMENT RENTAL</span>
 
-        <h1>
-          Reliable Heavy Machinery <br />
-          For Every Job Site
+        <h1 className={styles.heading}>
+          Reliable Heavy Machinery <br /> For Every Job Site
         </h1>
 
-        <p>
+        <p className={styles.description}>
           From excavators to loaders, we provide well-maintained equipment to
           keep your projects moving on time.
         </p>
@@ -58,11 +58,10 @@ Thank you.`;
           Request a Quote
         </button>
 
-        {/* Decorative line */}
-        <div className={styles.line}></div>
+        <div className={styles.line} />
       </div>
 
-      {/* Image Area */}
+      {/* Image */}
       <div className={styles.imageWrap}>
         <div className={styles.imageShape} />
       </div>
