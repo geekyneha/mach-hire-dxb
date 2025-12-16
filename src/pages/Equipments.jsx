@@ -84,6 +84,7 @@ const Equipments = () => {
               <a
                 href="https://wa.me/97100000000"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.cta}
               >
                 Request Rental Details on WhatsApp
