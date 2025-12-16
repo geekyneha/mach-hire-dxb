@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Booking.module.css";
 
 const Booking = () => {
-  const today = new Date().toISOString().split("T")[0]; // yyyy-mm-dd format
+  const today = new Date().toISOString().split("T")[0];
 
   const [form, setForm] = useState({
     name: "",
@@ -10,7 +10,8 @@ const Booking = () => {
     equipment: "Excavator",
     size: "Medium",
     duration: "Daily",
-    startDate: today, // default today
+    operator: "With Operator",
+    startDate: today,
     location: "",
   });
 
@@ -52,7 +53,21 @@ Hello,
 
 I would like to request a quotation for heavy machinery rental in the UAE.
 
-Please provide the available equipment options along with rental rates and terms.
+👤 Customer Details
+Name: ${form.name}
+Phone: +971 ${form.phone}
+
+🛠 Equipment Details
+Equipment: ${form.equipment}
+Size: ${form.size}
+Rental Duration: ${form.duration}
+Operator: ${form.operator}
+Start Date: ${form.startDate}
+
+📍 Site Location
+${form.location}
+
+Please share availability, rental rates, and terms.
 
 Thank you.
 `;
@@ -111,7 +126,14 @@ Thank you.
             <option>Excavator</option>
             <option>Wheel Loader</option>
             <option>Dump Truck</option>
+            <option>Bulldozer</option>
             <option>Backhoe Loader</option>
+            <option>Mobile Crane</option>
+            <option>Tower Crane</option>
+            <option>Forklift</option>
+            <option>Skid Steer Loader</option>
+            <option>Motor Grader</option>
+            <option>Compactor / Roller</option>
           </select>
 
           {/* Size & Duration */}
@@ -139,18 +161,27 @@ Thank you.
             </select>
           </div>
 
-          {/* Date with calendar icon */}
+          {/* Operator */}
+          <select
+            className={styles.select}
+            name="operator"
+            value={form.operator}
+            onChange={handleChange}
+          >
+            <option>With Operator</option>
+            <option>Without Operator</option>
+          </select>
+
+          {/* Start Date */}
           <div className={styles.field}>
-            <div className={styles.dateWrapper}>
-              <input
-                className={styles.input}
-                type="date"
-                name="startDate"
-                value={form.startDate}
-                min={today}
-                onChange={handleChange}
-              />
-            </div>
+            <input
+              className={styles.input}
+              type="date"
+              name="startDate"
+              value={form.startDate}
+              min={today}
+              onChange={handleChange}
+            />
             {errors.startDate && (
               <span className={styles.error}>{errors.startDate}</span>
             )}
