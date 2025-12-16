@@ -4,6 +4,7 @@ const brands = [
   "CAT",
   "Komatsu",
   "Volvo",
+  "Zoomlion",
   "Hitachi",
   "JCB",
   "Liebherr",
