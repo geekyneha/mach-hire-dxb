@@ -1,0 +1,134 @@
+/* ================= PAGE ================= */
+.page {
+  width: 100%;
+  background: #ffffff;
+  color: #0b0d1f;
+}
+
+/* ================= HEADER ================= */
+.header {
+  padding: 120px 40px 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header h1 {
+  font-size: 56px;
+  font-weight: 500;
+}
+
+.header p {
+  max-width: 520px;
+  margin-top: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ================= SECTION ================= */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.reverse {
+  direction: rtl;
+}
+
+.reverse > * {
+  direction: ltr;
+}
+
+/* ================= IMAGE ================= */
+.imageWrapper {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* ================= CONTENT ================= */
+.content h2 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.tons {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #a78bfa;
+}
+
+.content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ================= RENT BOX ================= */
+.rentBox {
+  background: #f6f7fb;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.rentBox span {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.rentBox ul {
+  padding-left: 20px;
+  color: #444;
+}
+
+.rentBox li {
+  margin-bottom: 6px;
+}
+
+/* ================= CTA ================= */
+.cta {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: #0b0d1f;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+    padding: 80px 20px;
+  }
+
+  .imageWrapper img {
+    height: 320px;
+  }
+
+  .header h1 {
+    font-size: 40px;
+  }
+
+  .content h2 {
+    font-size: 32px;
+  }
+}
