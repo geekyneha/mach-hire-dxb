@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Equipments.module.css";
 
 const EQUIPMENT_LIST = [
@@ -32,7 +33,7 @@ const EQUIPMENT_LIST = [
       "Daily, weekly, and monthly rental options",
       "Available with or without operator",
     ],
-    sizes: ["10–15 Tons", "20–30 Tons", "40+ Tons"],
+    sizes: ["6–8 Tons", "10–15 Tons", "20–30 Tons", "40+ Tons"],
   },
 ];
 
@@ -53,44 +54,11 @@ const Equipments = () => {
       {/* EQUIPMENT DETAILS */}
       <section className={styles.list}>
         {EQUIPMENT_LIST.map((item, index) => (
-          <div
+          <EquipmentCard
             key={item.name}
-            className={`${styles.row} ${index % 2 !== 0 ? styles.reverse : ""}`}
-          >
-            <div className={styles.imageWrap}>
-              <img src={item.image} alt={item.name} />
-            </div>
-
-            <div className={styles.content}>
-              <h2>{item.name}</h2>
-
-              <ul className={styles.features}>
-                {item.details.map((d, i) => (
-                  <li key={i}>{d}</li>
-                ))}
-              </ul>
-
-              <div className={styles.sizes}>
-                <span className={styles.sizeLabel}>Available Sizes:</span>
-                <div className={styles.sizeList}>
-                  {item.sizes.map((size) => (
-                    <span key={size} className={styles.sizeTag}>
-                      {size}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <a
-                href="https://wa.me/97100000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.cta}
-              >
-                Request Rental Details on WhatsApp
-              </a>
-            </div>
-          </div>
+            item={item}
+            reverse={index % 2 !== 0}
+          />
         ))}
       </section>
     </div>
@@ -98,3 +66,74 @@ const Equipments = () => {
 };
 
 export default Equipments;
+
+/* ---------------- COMPONENT ---------------- */
+
+const EquipmentCard = ({ item, reverse }) => {
+  const [selectedSize, setSelectedSize] = useState(item.sizes[0]);
+
+  const message = `
+Hello,
+
+I would like to request rental details for the following equipment:
+
+Equipment: ${item.name}
+Selected Size / Capacity: ${selectedSize}
+
+Please share availability, rental rates, and terms.
+
+Thank you.
+`;
+
+  const whatsappLink = `https://wa.me/97100000000?text=${encodeURIComponent(
+    message
+  )}`;
+
+  return (
+    <div className={`${styles.row} ${reverse ? styles.reverse : ""}`}>
+      <div className={styles.imageWrap}>
+        <img src={item.image} alt={item.name} />
+      </div>
+
+      <div className={styles.content}>
+        <h2>{item.name}</h2>
+
+        <ul className={styles.features}>
+          {item.details.map((d, i) => (
+            <li key={i}>{d}</li>
+          ))}
+        </ul>
+
+        {/* SIZES */}
+        <div className={styles.sizes}>
+          <span className={styles.sizeLabel}>Available Sizes:</span>
+
+          <div className={styles.sizeList}>
+            {item.sizes.map((size) => (
+              <button
+                key={size}
+                type="button"
+                onClick={() => setSelectedSize(size)}
+                className={`${styles.sizeTag} ${
+                  selectedSize === size ? styles.active : ""
+                }`}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.cta}
+        >
+          Request Rental Details on WhatsApp
+        </a>
+      </div>
+    </div>
+  );
+};

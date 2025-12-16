@@ -145,3 +145,23 @@
     padding: 80px 20px;
   }
 }
+.sizeTag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.sizeTag:hover {
+  border-color: #7c5cff;
+}
+
+.active {
+  background: #7c5cff;
+  border-color: #7c5cff;
+  color: #fff;
+}
