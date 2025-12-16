@@ -8,12 +8,15 @@
 .brands {
   overflow: hidden;
   margin-bottom: 80px;
+  width: 100%;
 }
 
 .track {
   display: flex;
   gap: 60px;
-  animation: scroll 25s linear infinite;
+  width: max-content; /* critical for seamless loop */
+  animation: scroll 20s linear infinite;
+  will-change: transform;
 }
 
 .brand {
@@ -21,6 +24,7 @@
   font-weight: 600;
   color: #c7c9e3;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ===== CONTENT ===== */
@@ -104,10 +108,18 @@
   .brand {
     font-size: 24px;
   }
+
+  .track {
+    animation-duration: 15s;
+  }
 }
 
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .track {
+    animation-duration: 22s;
   }
 }
