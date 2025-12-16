@@ -14,13 +14,13 @@
 }
 
 /* Left */
-.label {
+.leftLabel {
   font-size: 12px;
   letter-spacing: 1.5px;
   color: #9da0c7;
 }
 
-.left h2 {
+.heading {
   font-size: 42px;
   font-weight: 500;
   line-height: 1.2;
@@ -48,6 +48,10 @@
   color: #9da0c7;
 }
 
+.emailLabel {
+  display: block;
+}
+
 .email {
   margin-top: 10px;
   background: rgba(255, 255, 255, 0.08);
@@ -57,6 +61,10 @@
   align-items: center;
   gap: 12px;
   color: #fff;
+}
+
+.emailText {
+  user-select: all;
 }
 
 .copy {
@@ -76,18 +84,22 @@
   gap: 60px;
 }
 
-.links h4 {
+.linkGroup {
+  padding: 2px;
+}
+
+.linkTitle {
   font-size: 14px;
   color: #9da0c7;
   margin-bottom: 20px;
 }
 
-.links ul {
+.linkList {
   list-style: none;
   padding: 0;
 }
 
-.links li {
+.linkItem {
   margin-bottom: 14px;
   font-size: 14px;
   cursor: pointer;
@@ -95,7 +107,7 @@
   transition: opacity 0.3s;
 }
 
-.links li:hover {
+.linkItem:hover {
   opacity: 1;
 }
 
@@ -117,13 +129,13 @@
   gap: 18px;
 }
 
-.socials svg {
+.socialIcon {
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s;
 }
 
-.socials svg:hover {
+.socialIcon:hover {
   color: #ffffff;
 }
 
@@ -133,7 +145,7 @@
     grid-template-columns: 1fr;
   }
 
-  .left h2 {
+  .heading {
     font-size: 32px;
   }
 
