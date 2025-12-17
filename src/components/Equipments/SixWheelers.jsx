@@ -65,9 +65,6 @@ const SixWheelers = () => {
 
             <div className={styles.specs}>
               <span className={styles.tons}>{item.tons}</span>
-              <span className={styles.bucket}>
-                Payload Capacity: {item.payload}
-              </span>
             </div>
 
             <p>{item.description}</p>

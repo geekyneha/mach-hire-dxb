@@ -77,9 +77,8 @@ const WheelLoaders = () => {
             <h2>{item.title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
-              <span className={styles.bucket}>
-                Bucket Capacity: {item.bucket}
+              <span className={styles.tons}>
+                {"Tons: " + item.tons + ", Bucket Capacity: " + item.bucket}
               </span>
             </div>
 
