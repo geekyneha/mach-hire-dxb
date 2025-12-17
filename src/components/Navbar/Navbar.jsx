@@ -10,9 +10,10 @@ const Navbar = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Equipments", path: "/equipments" },
+
     { name: "Booking", path: "/booking" },
     { name: "Our Services", path: "/services" },
+    { name: "Careers", path: "/careers" },
     { name: "FAQs", path: "/faq" },
   ];
 
