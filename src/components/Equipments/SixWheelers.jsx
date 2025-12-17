@@ -6,21 +6,24 @@ import six3 from "../../assets/six3.png";
 const sixWheelers = [
   {
     title: "Light Six Wheeler Trucks",
-    tons: "10 – 12 Ton Trucks",
+    tons: "10 – 12 Ton Trucks, ",
+    payload: "Up to 7 Tons ",
     description:
       "Light six wheeler trucks suitable for small construction sites, short-distance material transport, and urban delivery work.",
     image: six1,
   },
   {
     title: "Standard Six Wheeler Trucks",
-    tons: "13 – 18 Ton Trucks",
+    tons: "13 – 18 Ton Trucks, ",
+    payload: "Up to 10 Tons ",
     description:
       "Standard six wheelers ideal for sand, soil, and aggregate transport across medium construction and infrastructure projects.",
     image: six2,
   },
   {
     title: "Heavy Six Wheeler Trucks",
-    tons: "19 – 25 Ton Trucks",
+    tons: "19 – 25 Ton Trucks, ",
+    payload: "Up to 14 Tons ",
     description:
       "Heavy-duty six wheelers designed for demanding construction environments and continuous material transportation tasks.",
     image: six3,
@@ -30,7 +33,7 @@ const sixWheelers = [
 const SixWheelers = () => {
   const handleQuoteClick = (truck) => {
     const message = `Hello, I would like to request a quotation for the ${truck.title} (${truck.tons}, Payload: ${truck.payload}). Please provide rental options and pricing.`;
-    const phoneNumber = "971509734271";
+    const phoneNumber = "971509734271"; //
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
@@ -64,7 +67,9 @@ const SixWheelers = () => {
             <h2>{item.title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
+              <span className={styles.tons}>
+                {item.tons + "Payload Capacity: " + item.payload}
+              </span>
             </div>
 
             <p>{item.description}</p>
