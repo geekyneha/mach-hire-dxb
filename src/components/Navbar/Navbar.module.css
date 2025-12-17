@@ -108,9 +108,10 @@
   align-self: flex-end;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   color: #111;
+  padding: 5px 20px;
 }
 
 /* Mobile nav item */
@@ -121,7 +122,7 @@
   border-radius: 0; /* no rounded box */
   font-size: 14px;
   cursor: pointer;
-  text-align: left; /* left aligned */
+  text-align: center; /* left aligned */
   transition: color 0.2s ease;
 }
 
