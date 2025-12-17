@@ -1,4 +1,7 @@
 import styles from "./Excavators.module.css";
+import excavator1 from "../../assets/excavator1.png";
+import excavator2 from "../../assets/excavator2.png";
+import excavator3 from "../../assets/hero.png";
 
 const excavators = [
   {
@@ -6,28 +9,34 @@ const excavators = [
     tons: "1 – 6 Tons",
     description:
       "Compact excavators ideal for tight spaces, residential projects, landscaping, and utility work.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Hk8g53_seSEOALEq46EMf2sWl22b2PMLUQ&s",
+    image: excavator1,
   },
   {
     title: "Medium Excavators",
     tons: "7 – 20 Tons",
     description:
       "Versatile excavators suitable for urban construction, road work, and medium-scale infrastructure projects.",
-    image:
-      "https://utilitycontractormagazine.com/wp-content/uploads/2024/03/cat-325-excavator-3-1.jpg",
+    image: excavator2,
   },
   {
     title: "Large Excavators",
     tons: "21+ Tons",
     description:
       "Heavy-duty machines built for mining, large construction sites, and high-load excavation work.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZFzscvYdvQSdWhXfwztG0MPDrFBJq7DCYw&s",
+    image: excavator3,
   },
 ];
 
 const Excavators = () => {
+  const handleQuoteClick = (excavator) => {
+    const message = `Hello, I would like to request a quotation for the ${excavator.title} (${excavator.tons}). Please provide rental options and pricing.`;
+    const phoneNumber = "971509734271"; // replace with your WhatsApp number with country code, e.g., 971XXXXXXXX
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappURL, "_blank");
+  };
+
   return (
     <section className={styles.page}>
       {/* Page Header */}
@@ -66,7 +75,12 @@ const Excavators = () => {
               </ul>
             </div>
 
-            <button className={styles.cta}>Request Quote</button>
+            <button
+              className={styles.cta}
+              onClick={() => handleQuoteClick(item)}
+            >
+              Request Quote
+            </button>
           </div>
         </div>
       ))}
