@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <!-- Main Pages -->
   <url>
     <loc>https://uaemachineryrentals.ae/</loc>
@@ -72,19 +71,4 @@
     <loc>https://uaemachineryrentals.ae/equipment/compactors</loc>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Example category pages (replace with actual categories if dynamic) -->
-  <url>
-    <loc>https://uaemachineryrentals.ae/equipments/excavators</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://uaemachineryrentals.ae/equipments/wheel-loaders</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://uaemachineryrentals.ae/equipments/dump-trucks</loc>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
