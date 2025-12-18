@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const Hero = () => {
   const handleQuoteClick = () => {
     const message = `
-Heavy Equipment Rental (UAE)
+UAE Machinery Rentals Inquiry
 
 Hello,
 I’m interested in renting heavy machinery.
@@ -43,7 +43,7 @@ Thank you.
 
       {/* Content */}
       <div className={styles.content}>
-        <span className={styles.tag}>EQUIPMENT RENTAL</span>
+        <span className={styles.tag}>UAE MACHINERY RENTALS</span>
 
         <h1 className={styles.heading}>
           Reliable Heavy Machinery <br /> For Every Job Site
