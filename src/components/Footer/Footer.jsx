@@ -13,7 +13,7 @@ const Footer = () => {
 
   const handleQuoteClick = () => {
     const message = `
-Heavy Equipment Rental (UAE)
+UAE Machinery Rentals Inquiry
 
 Hello,
 I would like to request a quotation for heavy machinery rental in the UAE.
@@ -71,17 +71,18 @@ Thank you.
               <li className={styles.linkItem} onClick={() => navigate("/")}>
                 Home
               </li>
-              <li
-                className={styles.linkItem}
-                onClick={() => navigate("/equipments")}
-              >
-                Equipment
-              </li>
+
               <li
                 className={styles.linkItem}
                 onClick={() => navigate("/about")}
               >
-                About
+                About Us
+              </li>
+              <li
+                className={styles.linkItem}
+                onClick={() => navigate("/booking")}
+              >
+                Booking
               </li>
               <li
                 className={styles.linkItem}
@@ -91,9 +92,9 @@ Thank you.
               </li>
               <li
                 className={styles.linkItem}
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/careers")}
               >
-                Contact
+                Careers
               </li>
             </ul>
           </div>
