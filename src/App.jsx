@@ -8,7 +8,6 @@ import Layout from "./pages/Layout.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Excavators from "./components/Equipments/Excavators.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Equipments from "./pages/Equipments.jsx";
 import CategoryPage from "./components/Category/CategoryPage.jsx";
 import Careers from "./pages/Careers.jsx";
 import WheelLoaders from "./components/Equipments/WheelLoaders.jsx";
@@ -64,10 +63,6 @@ function App() {
         {
           path: "/equipment/compactors",
           element: <Compactor />,
-        },
-        {
-          path: "/equipments",
-          element: <Equipments />,
         },
         {
           path: "/equipments/:category",

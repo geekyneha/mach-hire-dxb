@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://uaemachineryrentals.ae/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/contact</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/booking</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/faq</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/careers</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Equipment Pages -->
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/excavators</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/wheel-loaders</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/dump-trucks</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/six-wheelers</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/backhoe-loaders</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/mobile-cranes</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/motor-graders</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/forklifts</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/bobcats/skid-steers</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipment/compactors</loc>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Example category pages (replace with actual categories if dynamic) -->
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipments/excavators</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipments/wheel-loaders</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uaemachineryrentals.ae/equipments/dump-trucks</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
