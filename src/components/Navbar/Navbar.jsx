@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./Navbar.module.css";
-import logo from "../../assets/logo.png";
+import logo from "/images/logo.png";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
