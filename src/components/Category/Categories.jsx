@@ -88,8 +88,9 @@ const Categories = () => {
       <div className={styles.content}>
         <h2>Our Equipment Categories</h2>
         <p>
-          We provide a wide range of heavy machinery suitable for construction,
-          infrastructure, and industrial projects.
+          At UAE Machinery Rentals, we offer a comprehensive range of heavy
+          machinery designed to support construction, infrastructure, and
+          large-scale industrial projects throughout the UAE.
         </p>
 
         <div className={styles.grid}>
