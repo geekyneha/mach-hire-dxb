@@ -2,6 +2,8 @@ import styles from "./Excavators.module.css";
 import grader1 from "../../assets/grader1.png";
 import grader2 from "../../assets/grader2.png";
 import grader3 from "../../assets/grader3.png";
+import StructuredData from "../SEO/StructuredData";
+import SEO from "../SEO/SEO";
 
 const motorGraders = [
   {
@@ -26,10 +28,53 @@ const motorGraders = [
     image: grader3,
   },
 ];
+const motorGraderSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Motor Graders for Rent in UAE",
+  description:
+    "Motor grader rental in UAE for road construction, leveling, and surface finishing.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Compact Motor Graders",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/motor-graders",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+    {
+      "@type": "Product",
+      position: 2,
+      name: "Heavy Motor Graders",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/motor-graders",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
 
 const MotorGraders = () => {
   return (
     <section className={styles.page}>
+      <SEO
+        title="Motor Graders for Rent in UAE | UAE Machinery Rentals"
+        description="Motor graders available for rent in UAE for road construction, leveling, and grading projects."
+        canonical="https://uaemachineryrentals.ae/equipment/motor-graders"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={motorGraderSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Motor Graders for Rent</h1>

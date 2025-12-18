@@ -3,6 +3,8 @@ import forklift1 from "../../assets/forklift1.png";
 import forklift2 from "../../assets/forklift2.png";
 import forklift3 from "../../assets/forklift3.png";
 
+import StructuredData from "../SEO/StructuredData";
+
 const forklifts = [
   {
     title: "Light Duty Forklifts",
@@ -27,9 +29,53 @@ const forklifts = [
   },
 ];
 
+const forkliftSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Forklifts for Rent in UAE",
+  description:
+    "Forklift rental services in UAE including warehouse and industrial forklifts.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Warehouse Forklifts",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/forklifts",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+    {
+      "@type": "Product",
+      position: 2,
+      name: "Industrial Forklifts",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/forklifts",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
+
 const Forklifts = () => {
   return (
     <section className={styles.page}>
+      <SEO
+        title="Forklifts for Rent in UAE | UAE Machinery Rentals"
+        description="Forklift rental services in UAE for warehouses, construction sites, and industrial operations."
+        canonical="https://uaemachineryrentals.ae/equipment/forklifts"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={forkliftSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Forklifts for Rent</h1>

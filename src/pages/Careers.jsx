@@ -2,6 +2,8 @@ import styles from "./Careers.module.css";
 
 const WHATSAPP_NUMBER = "971509734271"; // replace with real number
 
+import SEO from "../components/SEO/SEO";
+
 const careers = [
   {
     title: "Six-Wheeler Truck Driver",
@@ -76,6 +78,12 @@ Thank you.
 
   return (
     <section className={styles.careers}>
+      <SEO
+        title="Careers at UAE Machinery Rentals | Join Our Team"
+        description="Explore career opportunities at UAE Machinery Rentals. Apply for equipment operators, technicians, and office roles."
+        canonical="https://uaemachineryrentals.ae/careers"
+      />
+
       {/* Hero */}
       <div className={styles.hero}>
         <h1>Careers</h1>

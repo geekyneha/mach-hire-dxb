@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./About.module.css";
+import SEO from "../components/SEO/SEO";
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -10,6 +11,12 @@ const About = () => {
 
   return (
     <section className={styles.section}>
+      <SEO
+        title="About UAE Machinery Rentals | Trusted Equipment Rental Company"
+        description="Learn about UAE Machinery Rentals, a trusted provider of construction and industrial equipment rentals across the UAE."
+        canonical="https://uaemachineryrentals.ae/about"
+      />
+
       <div className={styles.container}>
         {/* Image */}
         <div className={styles.imageWrap}>

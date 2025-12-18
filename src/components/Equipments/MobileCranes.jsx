@@ -2,7 +2,8 @@ import styles from "./Excavators.module.css";
 import crane1 from "../../assets/crane1.png";
 import crane2 from "../../assets/crane2.png";
 import crane3 from "../../assets/crane3.png";
-
+import StructuredData from "../SEO/StructuredData";
+import SEO from "../SEO/SEO";
 const mobileCranes = [
   {
     title: "Compact Mobile Cranes",
@@ -27,9 +28,53 @@ const mobileCranes = [
   },
 ];
 
+const mobileCraneSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Mobile Cranes for Rent in UAE",
+  description:
+    "Mobile crane rental services in UAE for lifting, construction, and industrial operations.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Standard Mobile Cranes",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/mobile-cranes",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+    {
+      "@type": "Product",
+      position: 2,
+      name: "Heavy Duty Mobile Cranes",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/mobile-cranes",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
+
 const MobileCranes = () => {
   return (
     <section className={styles.page}>
+      <SEO
+        title="Mobile Cranes for Rent in UAE | UAE Machinery Rentals"
+        description="Rent mobile cranes in UAE for lifting, construction, and industrial projects with certified operators."
+        canonical="https://uaemachineryrentals.ae/equipment/mobile-cranes"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={mobileCraneSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Mobile Cranes for Rent</h1>

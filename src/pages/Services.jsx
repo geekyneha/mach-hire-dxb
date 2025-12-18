@@ -8,10 +8,17 @@ import {
   FaPhoneAlt,
   FaCheckCircle,
 } from "react-icons/fa";
+import SEO from "../components/SEO/SEO";
 
 const Services = () => {
   return (
     <div className={styles.wrapper}>
+      <SEO
+        title="Construction Equipment Rental Services in UAE"
+        description="Explore our construction equipment rental services in UAE including excavators, dump trucks, cranes, forklifts, and more."
+        canonical="https://uaemachineryrentals.ae/services"
+      />
+
       {/* SECTION 1 */}
       <section className={styles.sectionIntro}>
         <div className={styles.introContent}>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./FAQ.module.css";
+import SEO from "../components/SEO/SEO";
 
 const faqs = [
   {
@@ -33,6 +34,12 @@ const FAQ = () => {
 
   return (
     <section className={styles.wrapper}>
+      <SEO
+        title="Equipment Rental FAQ | UAE Machinery Rentals"
+        description="Frequently asked questions about heavy equipment rental in UAE including pricing, rental duration, and availability."
+        canonical="https://uaemachineryrentals.ae/faq"
+      />
+
       <div className={styles.header}>
         <h2>Frequently Asked Questions</h2>
         <p>Everything you need to know before renting equipment</p>

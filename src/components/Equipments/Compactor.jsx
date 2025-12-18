@@ -2,6 +2,8 @@ import styles from "./Excavators.module.css";
 import compactor1 from "../../assets/compactor1.png";
 import compactor2 from "../../assets/compactor2.png";
 import compactor3 from "../../assets/compactor3.png";
+import StructuredData from "../SEO/StructuredData";
+import SEO from "../SEO/SEO";
 
 const compactors = [
   {
@@ -26,10 +28,53 @@ const compactors = [
     image: compactor3,
   },
 ];
+const compactorSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Compactors for Rent in UAE",
+  description:
+    "Compactor rental services in UAE for soil, asphalt, and road construction projects.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Soil Compactors",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/compactors",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+    {
+      "@type": "Product",
+      position: 2,
+      name: "Road Rollers & Asphalt Compactors",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/compactors",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
 
 const Compactor = () => {
   return (
     <section className={styles.page}>
+      <SEO
+        title="Compactors for Rent in UAE | UAE Machinery Rentals"
+        description="Soil and asphalt compactors available for rent in UAE for road and infrastructure projects."
+        canonical="https://uaemachineryrentals.ae/equipment/compactors"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={compactorSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Compactors for Rent</h1>

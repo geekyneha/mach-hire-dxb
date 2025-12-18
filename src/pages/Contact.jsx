@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "./Contact.module.css";
+import SEO from "../components/SEO/SEO";
 
 const Contact = () => {
   return (
     <div className={styles.contactPage}>
+      <SEO
+        title="Contact Us | UAE Machinery Rentals"
+        description="Get in touch with UAE Machinery Rentals for heavy equipment rental services in Dubai, Sharjah, and Ajman."
+        canonical="https://uaemachineryrentals.ae/contact"
+      />
       <h1 className={styles.heading}>Get in touch</h1>
       <p className={styles.subheading}>
         Have a question? Send us a message — we’ll reply shortly.

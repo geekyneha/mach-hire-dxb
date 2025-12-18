@@ -2,6 +2,7 @@ import styles from "./Excavators.module.css";
 import backhoe1 from "../../assets/backhoe1.png";
 import backhoe2 from "../../assets/backhoe2.png";
 import backhoe3 from "../../assets/backhoe3.png";
+import StructuredData from "../SEO/StructuredData";
 
 const backhoeLoaders = [
   {
@@ -29,10 +30,34 @@ const backhoeLoaders = [
     image: backhoe3,
   },
 ];
+const backhoeLoaderSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Backhoe Loaders for Rent in UAE",
+  description:
+    "Backhoe loader rental services in UAE suitable for excavation, loading, and utility work.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Standard Backhoe Loaders",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/backhoe-loaders",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
 
 const BackhoeLoaders = () => {
   return (
     <section className={styles.page}>
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={backhoeLoaderSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Backhoe Loaders for Rent</h1>

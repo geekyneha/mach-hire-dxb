@@ -2,6 +2,8 @@ import styles from "./Excavators.module.css";
 import bobcat1 from "../../assets/bobcat1.png";
 import bobcat2 from "../../assets/bobcat2.png";
 import bobcat3 from "../../assets/bobcat3.png";
+import StructuredData from "../SEO/StructuredData";
+import SEO from "../SEO/SEO";
 
 const bobcats = [
   {
@@ -26,10 +28,40 @@ const bobcats = [
     image: bobcat3,
   },
 ];
+const bobcatSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Bobcats & Skid Steers for Rent in UAE",
+  description:
+    "Bobcat and skid steer loader rental services in UAE for compact construction and landscaping work.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Bobcat Skid Steer Loaders",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/bobcats/skid-steers",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
 
 const Bobcats = () => {
   return (
     <section className={styles.page}>
+      <SEO
+        title="Bobcats & Skid Steer Loaders for Rent in UAE"
+        description="Rent bobcats and skid steer loaders in UAE for compact construction, landscaping, and site work."
+        canonical="https://uaemachineryrentals.ae/equipment/bobcats/skid-steers"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={bobcatSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Bobcats / Skid Steer Loaders for Rent</h1>

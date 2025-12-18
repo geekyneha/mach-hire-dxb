@@ -2,6 +2,8 @@ import styles from "./Excavators.module.css";
 import six1 from "../../assets/six1.png";
 import six2 from "../../assets/six2.png";
 import six3 from "../../assets/six3.png";
+import StructuredData from "../SEO/StructuredData";
+import SEO from "../SEO/SEO";
 
 const sixWheelers = [
   {
@@ -40,8 +42,52 @@ const SixWheelers = () => {
     window.open(whatsappURL, "_blank");
   };
 
+  const sixWheelerSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Six Wheeler Trucks for Rent in UAE",
+    description:
+      "Six wheeler truck rental in UAE for transportation, construction material hauling, and logistics.",
+    itemListElement: [
+      {
+        "@type": "Product",
+        position: 1,
+        name: "Small Six Wheeler Trucks",
+        brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+        offers: {
+          "@type": "Offer",
+          url: "https://uaemachineryrentals.ae/equipment/six-wheelers",
+          priceCurrency: "AED",
+          availability: "https://schema.org/InStock",
+        },
+        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+      },
+      {
+        "@type": "Product",
+        position: 2,
+        name: "Heavy Six Wheeler Trucks",
+        brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+        offers: {
+          "@type": "Offer",
+          url: "https://uaemachineryrentals.ae/equipment/six-wheelers",
+          priceCurrency: "AED",
+          availability: "https://schema.org/InStock",
+        },
+        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+      },
+    ],
+  };
+
   return (
     <section className={styles.page}>
+      <SEO
+        title="Six Wheeler Trucks for Rent in UAE | UAE Machinery Rentals"
+        description="Rent six wheeler trucks in UAE for material transportation, construction, and site operations."
+        canonical="https://uaemachineryrentals.ae/equipment/six-wheelers"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={sixWheelerSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Six Wheeler Trucks for Rent</h1>

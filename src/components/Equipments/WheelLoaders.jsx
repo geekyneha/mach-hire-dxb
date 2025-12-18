@@ -3,7 +3,8 @@ import loaders1 from "../../assets/loaders1.png";
 import loaders2 from "../../assets/loaders2.png";
 import loaders3 from "../../assets/loaders3.png";
 import loaders4 from "../../assets/loaders4.png";
-
+import StructuredData from "../SEO/StructuredData";
+import SEO from "../SEO/SEO";
 const wheelLoaders = [
   {
     title: "Compact Wheel Loaders",
@@ -39,6 +40,42 @@ const wheelLoaders = [
   },
 ];
 
+const wheelLoaderSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Wheel Loaders for Rent in UAE",
+  description:
+    "Wheel loader rental services in UAE for construction, material handling, and infrastructure projects.",
+  itemListElement: [
+    {
+      "@type": "Product",
+      position: 1,
+      name: "Compact Wheel Loaders",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/wheel-loaders",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+    {
+      "@type": "Product",
+      position: 2,
+      name: "Standard Wheel Loaders",
+      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+      offers: {
+        "@type": "Offer",
+        url: "https://uaemachineryrentals.ae/equipment/wheel-loaders",
+        priceCurrency: "AED",
+        availability: "https://schema.org/InStock",
+      },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+    },
+  ],
+};
+
 const WheelLoaders = () => {
   const handleQuoteClick = (loader) => {
     const message = `Hello, I would like to request a quotation for the ${loader.title} (${loader.tons}, Bucket Capacity: ${loader.bucket}). Please provide rental options and pricing.`;
@@ -51,6 +88,14 @@ const WheelLoaders = () => {
 
   return (
     <section className={styles.page}>
+      <SEO
+        title="Wheel Loaders for Rent in UAE | UAE Machinery Rentals"
+        description="Wheel loaders available for rent in UAE for construction, material handling, and infrastructure projects."
+        canonical="https://uaemachineryrentals.ae/equipment/wheel-loaders"
+      />
+
+      {/* ✅ SEO Structured Data */}
+      <StructuredData data={wheelLoaderSchema} />
       {/* Page Header */}
       <div className={styles.header}>
         <h1>Wheel Loaders for Rent</h1>

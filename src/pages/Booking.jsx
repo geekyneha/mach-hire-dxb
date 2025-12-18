@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Booking.module.css";
+import SEO from "../components/SEO/SEO";
 
 const Booking = () => {
   const today = new Date().toISOString().split("T")[0];
@@ -80,6 +81,12 @@ Thank you.
 
   return (
     <section className={styles.booking}>
+      <SEO
+        title="Book Heavy Equipment Rental in UAE | UAE Machinery Rentals"
+        description="Book construction equipment rental in UAE. Flexible daily, weekly, and monthly rental plans available."
+        canonical="https://uaemachineryrentals.ae/booking"
+      />
+
       <div className={styles.card}>
         <h2 className={styles.title}>Book Your Equipment</h2>
         <p className={styles.subtitle}>
