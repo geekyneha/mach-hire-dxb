@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo} onClick={() => navigate("/")}>
-        Heavy Rental
+        UAE MACHINER RENTALS
       </div>
 
       {/* Desktop Nav */}

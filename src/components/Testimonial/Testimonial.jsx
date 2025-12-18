@@ -6,19 +6,19 @@ const testimonials = [
     name: "Ahmed Khan",
     role: "Project Manager, BuildTech",
     feedback:
-      "The equipment was delivered on time and performed flawlessly on site. Reliable service and professional team.",
+      "UAE Machinery Rentals delivered the equipment on schedule, and it performed flawlessly on site. A dependable service backed by a highly professional team.",
   },
   {
     name: "Rahul Mehta",
     role: "Site Engineer, InfraWorks",
     feedback:
-      "Well-maintained machinery and quick support whenever required. Highly recommended for large projects.",
+      "The machinery was well maintained, and support was prompt whenever required. UAE Machinery Rentals is a reliable partner for large-scale construction projects.",
   },
   {
     name: "Mohammed Ali",
     role: "Operations Head, UrbanConstruct",
     feedback:
-      "Their wide fleet helped us complete multiple projects without delays. Great experience working with them.",
+      "Their extensive fleet allowed us to execute multiple projects without delays. Working with UAE Machinery Rentals has been a smooth and efficient experience.",
   },
 ];
 

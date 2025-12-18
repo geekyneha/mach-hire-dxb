@@ -4,23 +4,23 @@ import { FiTruck, FiTool, FiClock, FiShield } from "react-icons/fi";
 const reasons = [
   {
     icon: <FiTool />,
-    title: "Well-Maintained Equipment",
-    desc: "All machinery is regularly serviced and inspected to ensure maximum performance and safety on site.",
+    title: "Well-Maintained Construction Equipment",
+    desc: "At UAE Machinery Rentals, all machinery is regularly serviced and inspected to ensure optimal performance, durability, and on-site safety.",
   },
   {
     icon: <FiClock />,
-    title: "On-Time Delivery",
-    desc: "We value your timelines and guarantee prompt delivery and pickup for every rental.",
+    title: "Guaranteed On-Time Delivery",
+    desc: "We respect project timelines and ensure timely delivery and pickup of rental equipment across the UAE.",
   },
   {
     icon: <FiTruck />,
-    title: "Wide Fleet Availability",
-    desc: "From excavators to dump trucks, our diverse fleet meets projects of all sizes.",
+    title: "Extensive Fleet of Heavy Machinery",
+    desc: "Our wide fleet includes excavators, dump trucks, loaders, and cranes suitable for construction, infrastructure, and industrial projects.",
   },
   {
     icon: <FiShield />,
-    title: "Safety & Reliability",
-    desc: "Our equipment meets industry safety standards, giving you peace of mind on every job.",
+    title: "Safety, Compliance & Reliability",
+    desc: "All equipment meets UAE and international safety standards, providing reliable and secure operations on every job site.",
   },
 ];
 
@@ -28,14 +28,17 @@ const WhyChooseUs = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.label}>WHY CHOOSE US</span>
+        <span className={styles.label}>WHY CHOOSE UAE MACHINERY RENTALS</span>
+
         <h2>
-          Trusted Equipment Rental <br />
-          Partner for Your Projects
+          Trusted Heavy Equipment Rental <br />
+          Partner in the UAE
         </h2>
+
         <p className={styles.subtitle}>
-          We combine experience, quality equipment, and reliable service to help
-          you complete projects efficiently and safely.
+          UAE Machinery Rentals delivers reliable construction equipment rental
+          solutions with quality machinery, experienced support, and dependable
+          service to help you complete projects safely and efficiently.
         </p>
 
         <div className={styles.grid}>
