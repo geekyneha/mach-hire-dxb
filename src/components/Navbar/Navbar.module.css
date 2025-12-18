@@ -1,4 +1,56 @@
 /* ================= HEADER ================= */
+/* ================= LOGO ================= */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* Logo image */
+.logoImg {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* Text below logo */
+.logoText {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px; /* spacing between letters */
+  color: #e59b08;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .logoImg {
+    height: 38px;
+  }
+
+  .logoText {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logoImg {
+    height: 34px;
+  }
+
+  .logoText {
+    font-size: 8.5px;
+    letter-spacing: 1.8px;
+    color: #e59b08;
+  }
+}
+
 .header {
   height: 72px;
   padding: 0 40px;

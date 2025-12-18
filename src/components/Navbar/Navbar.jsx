@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./Navbar.module.css";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -26,7 +27,8 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo} onClick={() => navigate("/")}>
-        UAE MACHINER RENTALS
+        <img src={logo} alt="Logo" className={styles.logoImg} />
+        <span className={styles.logoText}>MACHINERY RENTALS</span>
       </div>
 
       {/* Desktop Nav */}
