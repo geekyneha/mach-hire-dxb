@@ -14,6 +14,12 @@ import Careers from "./pages/Careers.jsx";
 import WheelLoaders from "./components/Equipments/WheelLoaders.jsx";
 import DumpTrucks from "./components/Equipments/DumpTrucks.jsx";
 import SixWheelers from "./components/Equipments/SixWheelers.jsx";
+import BackhoeLoaders from "./components/Equipments/BackhoeLoaders.jsx";
+import MobileCranes from "./components/Equipments/MobileCranes.jsx";
+import MotorGraders from "./components/Equipments/MotorGraders.jsx";
+import Forklifts from "./components/Equipments/Forklifts.jsx";
+import Compactor from "./components/Equipments/Compactor.jsx";
+import Bobcats from "./components/Equipments/Bobcats.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +40,30 @@ function App() {
         {
           path: "/equipment/six-wheelers",
           element: <SixWheelers />,
+        },
+        {
+          path: "/equipment/backhoe-loaders",
+          element: <BackhoeLoaders />,
+        },
+        {
+          path: "/equipment/mobile-cranes",
+          element: <MobileCranes />,
+        },
+        {
+          path: "/equipment/motor-graders",
+          element: <MotorGraders />,
+        },
+        {
+          path: "/equipment/forklifts",
+          element: <Forklifts />,
+        },
+        {
+          path: "/equipment/bobcats/skid-steers",
+          element: <Bobcats />,
+        },
+        {
+          path: "/equipment/compactors",
+          element: <Compactor />,
         },
         {
           path: "/equipments",
