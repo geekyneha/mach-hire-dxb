@@ -52,7 +52,7 @@ Thank you.
             <span className={styles.emailLabel}>OR EMAIL US AT</span>
 
             <div className={styles.email}>
-              <span className={styles.emailText}>support@heavyrental.com</span>
+              <span className={styles.emailText}>info@machineryrentals.ae</span>
 
               <FiCopy
                 className={styles.copy}
@@ -114,7 +114,7 @@ Thank you.
       {/* Bottom */}
       <div className={styles.bottom}>
         <p className={styles.copyright}>
-          © HeavyRent 2025. All rights reserved.
+          © UAE Machinery Rentals 2025. All rights reserved.
         </p>
 
         <div className={styles.socials}>

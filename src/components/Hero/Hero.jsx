@@ -25,7 +25,7 @@ Thank you.
     <section className={styles.hero}>
       {/* CTA */}
       <div className={styles.verticalCta}>
-        <a className={styles.ctaIcon} href="mailto:support@heavyrent.com">
+        <a className={styles.ctaIcon} href="mailto:info@machineryrentals.ae">
           <FiMail />
         </a>
         <a className={styles.ctaIcon} href="tel:+971509734271">
