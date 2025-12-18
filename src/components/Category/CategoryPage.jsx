@@ -1,4 +1,6 @@
 import { useParams, useNavigate } from "react-router";
+import SEO from "../SEO/SEO";
+import StructuredData from "../SEO/StructuredData";
 
 const categoryData = {
   excavators: {
@@ -37,8 +39,8 @@ const categoryData = {
     title: "Forklifts",
     description: "Forklifts for warehouse and industrial material handling.",
   },
-  "skid-steers": {
-    title: "Skid Steers",
+  "bobcats/skid-steers": {
+    title: "Bobcats / Skid Steers",
     description: "Compact skid steers for confined construction sites.",
   },
   compactors: {
@@ -50,15 +52,44 @@ const categoryData = {
 const CategoryPage = () => {
   const { category } = useParams();
   const navigate = useNavigate();
-
   const data = categoryData[category];
 
-  if (!data) {
-    return <h2 style={{ padding: "80px" }}>Category not found</h2>;
-  }
+  if (!data) return <h2 style={{ padding: "80px" }}>Category not found</h2>;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${data.title} Rental Services in UAE`,
+    description: data.description,
+    itemListElement: [
+      {
+        "@type": "Product",
+        position: 1,
+        name: data.title,
+        description: data.description,
+        brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
+        offers: {
+          "@type": "Offer",
+          url: `https://uaemachineryrentals.ae/equipment/${category}`,
+          priceCurrency: "AED",
+          availability: "https://schema.org/InStock",
+        },
+        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+      },
+    ],
+  };
 
   return (
     <div style={{ padding: "80px 6%" }}>
+      {/* Dynamic SEO */}
+      <SEO
+        title={`${data.title} for Rent in UAE | UAE Machinery Rentals`}
+        description={data.description}
+        canonical={`https://uaemachineryrentals.ae/equipment/${category}`}
+      />
+
+      <StructuredData data={structuredData} />
+
       <button onClick={() => navigate(-1)}>← Back</button>
 
       <h1>{data.title}</h1>

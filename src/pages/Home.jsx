@@ -14,10 +14,9 @@ const Home = () => {
     <div className={styles.home}>
       <SEO
         title="UAE Machinery Rentals | Heavy Equipment Rental in UAE"
-        description="UAE Machinery Rentals provides excavators, dump trucks, cranes, forklifts, and heavy equipment for rent across UAE. Reliable machines, flexible rental plans."
+        description="UAE Machinery Rentals offers a wide range of heavy equipment for rent in UAE, including excavators, loaders, bulldozers, and more. Flexible rental plans available."
         canonical="https://uaemachineryrentals.ae/"
       />
-
       <OrganizationSchema />
       <main className={styles.main}>
         <div className={styles.heroSection}>
