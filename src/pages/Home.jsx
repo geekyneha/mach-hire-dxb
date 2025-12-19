@@ -15,7 +15,7 @@ const Home = () => {
       <SEO
         title="UAE Machinery Rentals | Heavy Equipment Rental in UAE"
         description="UAE Machinery Rentals offers a wide range of heavy equipment for rent in UAE, including excavators, loaders, bulldozers, and more. Flexible rental plans available."
-        canonical="https://uaemachineryrentals.ae/"
+        canonical="https://www.uaemachineryrentals.ae/"
       />
       <OrganizationSchema />
       <main className={styles.main}>

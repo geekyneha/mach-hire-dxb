@@ -37,7 +37,7 @@ const FAQ = () => {
       <SEO
         title="Equipment Rental FAQ | UAE Machinery Rentals"
         description="Frequently asked questions about heavy equipment rental in UAE including pricing, rental duration, and availability."
-        canonical="https://uaemachineryrentals.ae/faq"
+        canonical="https://www.uaemachineryrentals.ae/faq"
       />
 
       <div className={styles.header}>

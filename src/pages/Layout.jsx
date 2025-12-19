@@ -7,8 +7,8 @@ const businessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "UAE Machinery Rentals",
-  url: "https://uaemachineryrentals.ae",
-  logo: "https://uaemachineryrentals.ae/logo.png",
+  url: "https://www.uaemachineryrentals.ae",
+  logo: "https://www.uaemachineryrentals.ae/logo.png",
   description:
     "UAE Machinery Rentals provides construction equipment and heavy machinery on rent across UAE.",
   address: {

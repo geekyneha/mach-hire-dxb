@@ -8,7 +8,7 @@ const Contact = () => {
       <SEO
         title="Contact Us | UAE Machinery Rentals"
         description="Get in touch with UAE Machinery Rentals for heavy equipment rental services in Dubai, Sharjah, and Ajman."
-        canonical="https://uaemachineryrentals.ae/contact"
+        canonical="https://www.uaemachineryrentals.ae/contact"
       />
       <h1 className={styles.heading}>Get in touch</h1>
       <p className={styles.subheading}>

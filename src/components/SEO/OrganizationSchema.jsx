@@ -5,8 +5,8 @@ const OrganizationSchema = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "UAE Machinery Rentals",
-    url: "https://uaemachineryrentals.ae",
-    logo: "https://uaemachineryrentals.ae/logo.png",
+    url: "https://www.uaemachineryrentals.ae",
+    logo: "https://www.uaemachineryrentals.ae/logo.png",
 
     description:
       "UAE Machinery Rentals provides construction equipment rental services across UAE including excavators, dump trucks, cranes, and forklifts.",

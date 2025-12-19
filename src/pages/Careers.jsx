@@ -81,7 +81,7 @@ Thank you.
       <SEO
         title="Careers at UAE Machinery Rentals | Join Our Team"
         description="Explore career opportunities at UAE Machinery Rentals. Apply for equipment operators, technicians, and office roles."
-        canonical="https://uaemachineryrentals.ae/careers"
+        canonical="https://www.uaemachineryrentals.ae/careers"
       />
 
       {/* Hero */}

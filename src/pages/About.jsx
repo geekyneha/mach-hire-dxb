@@ -14,7 +14,7 @@ const About = () => {
       <SEO
         title="About UAE Machinery Rentals | Trusted Equipment Rental Company"
         description="Learn about UAE Machinery Rentals, a trusted provider of construction and industrial equipment rentals across the UAE."
-        canonical="https://uaemachineryrentals.ae/about"
+        canonical="https://www.uaemachineryrentals.ae/about"
       />
 
       <div className={styles.container}>

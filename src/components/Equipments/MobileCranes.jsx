@@ -42,7 +42,7 @@ const mobileCraneSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/mobile-cranes",
+        url: "https://www.uaemachineryrentals.ae/equipment/mobile-cranes",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -55,7 +55,7 @@ const mobileCraneSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/mobile-cranes",
+        url: "https://www.uaemachineryrentals.ae/equipment/mobile-cranes",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -70,7 +70,7 @@ const MobileCranes = () => {
       <SEO
         title="Mobile Cranes for Rent in UAE | UAE Machinery Rentals"
         description="Rent mobile cranes in UAE for lifting, construction, and industrial projects with certified operators."
-        canonical="https://uaemachineryrentals.ae/equipment/mobile-cranes"
+        canonical="https://www.uaemachineryrentals.ae/equipment/mobile-cranes"
       />
 
       {/* ✅ SEO Structured Data */}

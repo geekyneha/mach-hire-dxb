@@ -42,7 +42,7 @@ const compactorSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/compactors",
+        url: "https://www.uaemachineryrentals.ae/equipment/compactors",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -55,7 +55,7 @@ const compactorSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/compactors",
+        url: "https://www.uaemachineryrentals.ae/equipment/compactors",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -70,7 +70,7 @@ const Compactor = () => {
       <SEO
         title="Compactors for Rent in UAE | UAE Machinery Rentals"
         description="Soil and asphalt compactors available for rent in UAE for road and infrastructure projects."
-        canonical="https://uaemachineryrentals.ae/equipment/compactors"
+        canonical="https://www.uaemachineryrentals.ae/equipment/compactors"
       />
 
       {/* ✅ SEO Structured Data */}

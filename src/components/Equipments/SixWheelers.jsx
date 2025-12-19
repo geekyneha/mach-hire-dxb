@@ -56,7 +56,7 @@ const SixWheelers = () => {
         brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
         offers: {
           "@type": "Offer",
-          url: "https://uaemachineryrentals.ae/equipment/six-wheelers",
+          url: "https://www.uaemachineryrentals.ae/equipment/six-wheelers",
           priceCurrency: "AED",
           availability: "https://schema.org/InStock",
         },
@@ -69,7 +69,7 @@ const SixWheelers = () => {
         brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
         offers: {
           "@type": "Offer",
-          url: "https://uaemachineryrentals.ae/equipment/six-wheelers",
+          url: "https://www.uaemachineryrentals.ae/equipment/six-wheelers",
           priceCurrency: "AED",
           availability: "https://schema.org/InStock",
         },
@@ -83,7 +83,7 @@ const SixWheelers = () => {
       <SEO
         title="Six Wheeler Trucks for Rent in UAE | UAE Machinery Rentals"
         description="Rent six wheeler trucks in UAE for material transportation, construction, and site operations."
-        canonical="https://uaemachineryrentals.ae/equipment/six-wheelers"
+        canonical="https://www.uaemachineryrentals.ae/equipment/six-wheelers"
       />
 
       {/* ✅ SEO Structured Data */}

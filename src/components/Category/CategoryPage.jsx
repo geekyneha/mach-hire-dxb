@@ -2,6 +2,18 @@ import { useParams, useNavigate } from "react-router";
 import SEO from "../SEO/SEO";
 import StructuredData from "../SEO/StructuredData";
 
+// Specific equipment components (rendered for matching category slugs)
+import Excavators from "../Equipments/Excavators";
+import WheelLoaders from "../Equipments/WheelLoaders";
+import DumpTrucks from "../Equipments/DumpTrucks";
+import SixWheelers from "../Equipments/SixWheelers";
+import BackhoeLoaders from "../Equipments/BackhoeLoaders";
+import MobileCranes from "../Equipments/MobileCranes";
+import MotorGraders from "../Equipments/MotorGraders";
+import Forklifts from "../Equipments/Forklifts";
+import Bobcats from "../Equipments/Bobcats";
+import Compactor from "../Equipments/Compactor";
+
 const categoryData = {
   excavators: {
     title: "Excavators",
@@ -70,7 +82,7 @@ const CategoryPage = () => {
         brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
         offers: {
           "@type": "Offer",
-          url: `https://uaemachineryrentals.ae/equipment/${category}`,
+          url: `https://www.uaemachineryrentals.ae/equipment/${category}`,
           priceCurrency: "AED",
           availability: "https://schema.org/InStock",
         },
@@ -85,23 +97,45 @@ const CategoryPage = () => {
       <SEO
         title={`${data.title} for Rent in UAE | UAE Machinery Rentals`}
         description={data.description}
-        canonical={`https://uaemachineryrentals.ae/equipment/${category}`}
+        canonical={`https://www.uaemachineryrentals.ae/equipment/${category}`}
       />
 
       <StructuredData data={structuredData} />
-
       <button onClick={() => navigate(-1)}>← Back</button>
 
-      <h1>{data.title}</h1>
-      <p>{data.description}</p>
+      {/* If a specific equipment component exists for this category, render it; otherwise show generic content */}
+      {(() => {
+        const componentMap = {
+          excavators: Excavators,
+          "wheel-loaders": WheelLoaders,
+          "dump-trucks": DumpTrucks,
+          "six-wheelers": SixWheelers,
+          "backhoe-loaders": BackhoeLoaders,
+          "mobile-cranes": MobileCranes,
+          "motor-graders": MotorGraders,
+          forklifts: Forklifts,
+          "bobcats/skid-steers": Bobcats,
+          compactors: Compactor,
+        };
 
-      <ul>
-        <li>✔ Small / Medium / Large available</li>
-        <li>✔ Daily / Weekly / Monthly rental</li>
-        <li>✔ Operator available</li>
-      </ul>
+        const Specific = componentMap[category];
+        if (Specific) return <Specific />;
 
-      <button style={{ marginTop: "24px" }}>Enquire on WhatsApp</button>
+        return (
+          <>
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+
+            <ul>
+              <li>✔ Small / Medium / Large available</li>
+              <li>✔ Daily / Weekly / Monthly rental</li>
+              <li>✔ Operator available</li>
+            </ul>
+
+            <button style={{ marginTop: "24px" }}>Enquire on WhatsApp</button>
+          </>
+        );
+      })()}
     </div>
   );
 };

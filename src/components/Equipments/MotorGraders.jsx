@@ -42,7 +42,7 @@ const motorGraderSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/motor-graders",
+        url: "https://www.uaemachineryrentals.ae/equipment/motor-graders",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -55,7 +55,7 @@ const motorGraderSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/motor-graders",
+        url: "https://www.uaemachineryrentals.ae/equipment/motor-graders",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -70,7 +70,7 @@ const MotorGraders = () => {
       <SEO
         title="Motor Graders for Rent in UAE | UAE Machinery Rentals"
         description="Motor graders available for rent in UAE for road construction, leveling, and grading projects."
-        canonical="https://uaemachineryrentals.ae/equipment/motor-graders"
+        canonical="https://www.uaemachineryrentals.ae/equipment/motor-graders"
       />
 
       {/* ✅ SEO Structured Data */}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Equipments.module.css";
+import SEO from "../components/SEO/SEO";
 
 const EQUIPMENT_LIST = [
   {
@@ -40,6 +41,11 @@ const EQUIPMENT_LIST = [
 const Equipments = () => {
   return (
     <div className={styles.page}>
+      <SEO
+        title="Our Equipment Fleet | UAE Machinery Rentals"
+        description="Explore our fleet of excavators, wheel loaders, dump trucks and more. Flexible rental plans across the UAE."
+        canonical="https://www.uaemachineryrentals.ae/equipment"
+      />
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>

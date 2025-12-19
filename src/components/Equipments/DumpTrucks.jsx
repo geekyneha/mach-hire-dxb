@@ -52,7 +52,7 @@ const dumpTruckSchema = {
     },
     offers: {
       "@type": "Offer",
-      url: "https://uaemachineryrentals.ae/equipment/dump-trucks",
+      url: "https://www.uaemachineryrentals.ae/equipment/dump-trucks",
       priceCurrency: "AED",
       availability: "https://schema.org/InStock",
     },
@@ -81,7 +81,7 @@ const DumpTrucks = () => {
       <SEO
         title="Dump Trucks for Rent in UAE | UAE Machinery Rentals"
         description="Rent dump trucks in UAE including small, medium, and heavy dump trucks for construction, road work, and industrial projects. Flexible rental plans available."
-        canonical="https://uaemachineryrentals.ae/equipment/dump-trucks"
+        canonical="https://www.uaemachineryrentals.ae/equipment/dump-trucks"
       />
       {/* ✅ SEO Structured Data */}
       <StructuredData data={dumpTruckSchema} />

@@ -52,7 +52,7 @@ const excavatorSchema = {
     },
     offers: {
       "@type": "Offer",
-      url: "https://uaemachineryrentals.ae/equipment/excavators",
+      url: "https://www.uaemachineryrentals.ae/equipment/excavators",
       priceCurrency: "AED",
       availability: "https://schema.org/InStock",
     },
@@ -81,7 +81,7 @@ const Excavators = () => {
       <SEO
         title="Excavators for Rent in UAE | UAE Machinery Rentals"
         description="Rent excavators in UAE including small, medium, and heavy excavators for construction, road work, and infrastructure projects."
-        canonical="https://uaemachineryrentals.ae/equipment/excavators"
+        canonical="https://www.uaemachineryrentals.ae/equipment/excavators"
       />
 
       {/* ✅ SEO Structured Data */}

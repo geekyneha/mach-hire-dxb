@@ -43,7 +43,7 @@ const forkliftSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/forklifts",
+        url: "https://www.uaemachineryrentals.ae/equipment/forklifts",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -56,7 +56,7 @@ const forkliftSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/forklifts",
+        url: "https://www.uaemachineryrentals.ae/equipment/forklifts",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -71,7 +71,7 @@ const Forklifts = () => {
       <SEO
         title="Forklifts for Rent in UAE | UAE Machinery Rentals"
         description="Forklift rental services in UAE for warehouses, construction sites, and industrial operations."
-        canonical="https://uaemachineryrentals.ae/equipment/forklifts"
+        canonical="https://www.uaemachineryrentals.ae/equipment/forklifts"
       />
 
       {/* ✅ SEO Structured Data */}

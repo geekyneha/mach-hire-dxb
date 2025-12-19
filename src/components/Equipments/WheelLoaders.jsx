@@ -54,7 +54,7 @@ const wheelLoaderSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/wheel-loaders",
+        url: "https://www.uaemachineryrentals.ae/equipment/wheel-loaders",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -67,7 +67,7 @@ const wheelLoaderSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/wheel-loaders",
+        url: "https://www.uaemachineryrentals.ae/equipment/wheel-loaders",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -91,7 +91,7 @@ const WheelLoaders = () => {
       <SEO
         title="Wheel Loaders for Rent in UAE | UAE Machinery Rentals"
         description="Wheel loaders available for rent in UAE for construction, material handling, and infrastructure projects."
-        canonical="https://uaemachineryrentals.ae/equipment/wheel-loaders"
+        canonical="https://www.uaemachineryrentals.ae/equipment/wheel-loaders"
       />
 
       {/* ✅ SEO Structured Data */}

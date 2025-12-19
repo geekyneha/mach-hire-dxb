@@ -84,7 +84,7 @@ Thank you.
       <SEO
         title="Book Heavy Equipment Rental in UAE | UAE Machinery Rentals"
         description="Book construction equipment rental in UAE. Flexible daily, weekly, and monthly rental plans available."
-        canonical="https://uaemachineryrentals.ae/booking"
+        canonical="https://www.uaemachineryrentals.ae/booking"
       />
 
       <div className={styles.card}>

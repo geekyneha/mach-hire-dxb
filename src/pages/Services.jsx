@@ -16,7 +16,7 @@ const Services = () => {
       <SEO
         title="Construction Equipment Rental Services in UAE"
         description="Explore our construction equipment rental services in UAE including excavators, dump trucks, cranes, forklifts, and more."
-        canonical="https://uaemachineryrentals.ae/services"
+        canonical="https://www.uaemachineryrentals.ae/services"
       />
 
       {/* SECTION 1 */}

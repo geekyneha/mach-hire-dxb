@@ -44,7 +44,7 @@ const backhoeLoaderSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://uaemachineryrentals.ae/equipment/backhoe-loaders",
+        url: "https://www.uaemachineryrentals.ae/equipment/backhoe-loaders",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
