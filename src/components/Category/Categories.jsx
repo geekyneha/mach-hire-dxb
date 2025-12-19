@@ -57,8 +57,8 @@ const categories = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlhDo_v85vm0wS4x3oXkPe_qAGSv2Zbr5_og&s",
   },
   {
-    name: "Bobcats/Skid Steers",
-    slug: "bobcats/skid-steers",
+    name: "Bobcats",
+    slug: "bobcats",
     img: "https://www.jcb.com/globalassets/digizuite/68216-sv-155-thumbnail/Img_800x800",
   },
   {

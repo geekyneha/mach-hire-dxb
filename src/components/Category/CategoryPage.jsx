@@ -51,8 +51,8 @@ const categoryData = {
     title: "Forklifts",
     description: "Forklifts for warehouse and industrial material handling.",
   },
-  "bobcats/skid-steers": {
-    title: "Bobcats / Skid Steers",
+  bobcats: {
+    title: "Bobcats",
     description: "Compact skid steers for confined construction sites.",
   },
   compactors: {
@@ -114,7 +114,7 @@ const CategoryPage = () => {
           "mobile-cranes": MobileCranes,
           "motor-graders": MotorGraders,
           forklifts: Forklifts,
-          "bobcats/skid-steers": Bobcats,
+          bobcats: Bobcats,
           compactors: Compactor,
         };
 
