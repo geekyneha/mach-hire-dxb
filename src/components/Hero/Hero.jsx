@@ -23,21 +23,32 @@ Thank you.
 
   return (
     <section className={styles.hero}>
-      {/* CTA */}
       <div className={styles.verticalCta}>
-        <a className={styles.ctaIcon} href="mailto:info@machineryrentals.ae">
-          <FiMail />
-        </a>
-        <a className={styles.ctaIcon} href="tel:+971509734271">
-          <FiPhone />
-        </a>
         <a
+          href="mailto:info@machineryrentals.ae"
           className={styles.ctaIcon}
+          aria-label="Email UAE Machinery Rentals"
+        >
+          <FiMail aria-hidden="true" />
+          <span className={styles.srOnly}>Email UAE Machinery Rentals</span>
+        </a>
+
+        <a
+          href="tel:+971509734271"
+          className={styles.ctaIcon}
+          aria-label="Call UAE Machinery Rentals"
+        >
+          <FiPhone aria-hidden="true" />
+        </a>
+
+        <a
           href="https://wa.me/971509734271"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          className={styles.ctaIcon}
+          aria-label="WhatsApp UAE Machinery Rentals"
         >
-          <FaWhatsapp />
+          <FaWhatsapp aria-hidden="true" />
         </a>
       </div>
 

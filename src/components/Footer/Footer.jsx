@@ -30,16 +30,17 @@ Thank you.
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("support@heavyrental.com");
+    navigator.clipboard.writeText("info@machineryrentals.ae");
   };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* Left */}
+        {/* LEFT */}
         <div className={styles.left}>
           <span className={styles.label}>CONTACT US</span>
 
+          {/* h2 is correct here */}
           <h2 className={styles.heading}>
             Let’s Discuss Your <br /> Equipment Needs
           </h2>
@@ -58,41 +59,58 @@ Thank you.
                 className={styles.copy}
                 onClick={copyEmail}
                 title="Copy email"
+                aria-label="Copy email address"
+                role="button"
+                tabIndex={0}
               />
             </div>
           </div>
         </div>
 
-        {/* Right */}
+        {/* RIGHT */}
         <div className={styles.links}>
           <div className={styles.linkGroup}>
-            <h4 className={styles.linkTitle}>QUICK LINKS</h4>
+            {/* FIXED: h4 → h3 */}
+            <h3 className={styles.linkTitle}>Quick Links</h3>
+
             <ul className={styles.linkList}>
-              <li className={styles.linkItem} onClick={() => navigate("/")}>
+              <li
+                className={styles.linkItem}
+                onClick={() => navigate("/")}
+                role="link"
+                tabIndex={0}
+              >
                 Home
               </li>
-
               <li
                 className={styles.linkItem}
                 onClick={() => navigate("/about")}
+                role="link"
+                tabIndex={0}
               >
                 About Us
               </li>
               <li
                 className={styles.linkItem}
                 onClick={() => navigate("/booking")}
+                role="link"
+                tabIndex={0}
               >
                 Booking
               </li>
               <li
                 className={styles.linkItem}
                 onClick={() => navigate("/services")}
+                role="link"
+                tabIndex={0}
               >
                 Services
               </li>
               <li
                 className={styles.linkItem}
                 onClick={() => navigate("/careers")}
+                role="link"
+                tabIndex={0}
               >
                 Careers
               </li>
@@ -100,28 +118,41 @@ Thank you.
           </div>
 
           <div className={styles.linkGroup}>
-            <h4 className={styles.linkTitle}>INFORMATION</h4>
+            {/* FIXED: h4 → h3 */}
+            <h3 className={styles.linkTitle}>Information</h3>
+
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>Terms of Service</li>
               <li className={styles.linkItem}>Privacy Policy</li>
               <li className={styles.linkItem}>Safety Guidelines</li>
-              <li className={styles.linkItem}>Cookies Settings</li>
+              <li className={styles.linkItem}>Cookie Settings</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
+      {/* BOTTOM */}
       <div className={styles.bottom}>
         <p className={styles.copyright}>
           © UAE Machinery Rentals 2025. All rights reserved.
         </p>
 
         <div className={styles.socials}>
-          <FaFacebookF className={styles.socialIcon} />
-          <FaTwitter className={styles.socialIcon} />
-          <FaInstagram className={styles.socialIcon} />
-          <FaLinkedinIn className={styles.socialIcon} />
+          <a href="#" aria-label="Facebook" className={styles.socialIcon}>
+            <FaFacebookF />
+          </a>
+
+          <a href="#" aria-label="Twitter" className={styles.socialIcon}>
+            <FaTwitter />
+          </a>
+
+          <a href="#" aria-label="Instagram" className={styles.socialIcon}>
+            <FaInstagram />
+          </a>
+
+          <a href="#" aria-label="LinkedIn" className={styles.socialIcon}>
+            <FaLinkedinIn />
+          </a>
         </div>
       </div>
     </footer>

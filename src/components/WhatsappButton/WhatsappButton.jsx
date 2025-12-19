@@ -11,6 +11,7 @@ const WhatsappButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       className={styles.whatsappBtn}
+      aria-label="Chat on WhatsApp with UAE Machinery Rentals"
     >
       <FaWhatsapp className={styles.icon} />
     </a>

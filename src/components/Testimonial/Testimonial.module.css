@@ -1,3 +1,4 @@
+/* ================= TESTIMONIALS SECTION ================= */
 .section {
   background: #ffffff;
   padding: 100px 40px;
@@ -9,34 +10,37 @@
   margin: auto;
 }
 
-/* Headings */
+/* ===== HEADING ===== */
 .label {
   font-size: 12px;
   letter-spacing: 2px;
-  color: #9da0c7;
+  color: #6b7280; /* FIXED contrast */
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .container h2 {
   font-size: 42px;
   font-weight: 500;
   margin: 16px 0 10px;
+  color: #0b0d1f;
 }
 
 .subtitle {
   max-width: 520px;
-  color: #555;
+  color: #374151; /* FIXED */
   margin-bottom: 60px;
   line-height: 1.7;
 }
 
-/* Grid */
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* Card */
+/* ===== CARD ===== */
 .card {
   background: #f6f7fb;
   border-radius: 20px;
@@ -49,6 +53,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
+/* ===== STARS ===== */
 .stars {
   display: flex;
   gap: 4px;
@@ -56,24 +61,27 @@
   color: #0b0d1f;
 }
 
+/* ===== FEEDBACK TEXT ===== */
 .feedback {
   font-size: 15px;
   line-height: 1.7;
   margin-bottom: 24px;
-  color: #333;
+  color: #1f2937; /* FIXED */
 }
 
+/* ===== CLIENT INFO ===== */
 .client strong {
   display: block;
   font-size: 15px;
+  color: #0b0d1f;
 }
 
 .client span {
   font-size: 13px;
-  color: #777;
+  color: #4b5563; /* FIXED */
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

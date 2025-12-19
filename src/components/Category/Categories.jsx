@@ -1,5 +1,15 @@
 import { useNavigate } from "react-router";
 import styles from "./Categories.module.css";
+import category1 from "../../assets/category1.webp";
+import category2 from "../../assets/category2.webp";
+import category3 from "../../assets/category3.webp";
+import category4 from "../../assets/category4.webp";
+import category5 from "../../assets/category5.webp";
+import category6 from "../../assets/category6.webp";
+import category7 from "../../assets/category7.webp";
+import category8 from "../../assets/category8.webp";
+import category9 from "../../assets/category9.webp";
+import category10 from "../../assets/category10.webp";
 
 const brands = [
   "CAT",
@@ -19,52 +29,52 @@ const categories = [
   {
     name: "Excavators",
     slug: "excavators",
-    img: "https://s3.envato.com/files/275113768/02_preview2.jpg",
+    img: category1,
   },
   {
     name: "Wheel Loaders",
     slug: "wheel-loaders",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj3WD_XI9cUXOOak-t9uDHBJlvV0tZbvnWqA&s",
+    img: category2,
   },
   {
     name: "Dump Trucks",
     slug: "dump-trucks",
-    img: "https://medha.com/wp-content/uploads/2024/09/26c-40t-Dump-truck-scaled-e1726044880768.jpg",
+    img: category3,
   },
   {
     name: "Six Wheelers",
     slug: "six-wheelers",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx9ox3uXiXoapFYMeCQvJKnlxDFs36nxRfzg&s",
+    img: category4,
   },
   {
     name: "Backhoe Loaders",
     slug: "backhoe-loaders",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmOihISixlT_FM8LB66JJGUBD0SudAvpeyVw&s",
+    img: category5,
   },
   {
     name: "Mobile Cranes",
     slug: "mobile-cranes",
-    img: "https://constrofacilitator.com/wp-content/uploads/2022/07/mobile-crane-img.jpg.webp",
+    img: category6,
   },
   {
     name: "Motor Graders",
     slug: "motor-graders",
-    img: "https://www.my-equipment.com/blog/wp-content/uploads/2020/03/1b55103d279b6d5c633f6458157a54f3.jpg",
+    img: category7,
   },
   {
     name: "Forklifts",
     slug: "forklifts",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlhDo_v85vm0wS4x3oXkPe_qAGSv2Zbr5_og&s",
+    img: category8,
   },
   {
     name: "Bobcats",
     slug: "bobcats",
-    img: "https://www.jcb.com/globalassets/digizuite/68216-sv-155-thumbnail/Img_800x800",
+    img: category9,
   },
   {
     name: "Compactors",
     slug: "compactors",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Caterpillar_825G_Soil_Compactor.jpg/500px-Caterpillar_825G_Soil_Compactor.jpg",
+    img: category10,
   },
 ];
 

@@ -19,9 +19,9 @@
 /* Text below logo */
 .logoText {
   font-size: 10px;
-  font-weight: 600;
   letter-spacing: 2px; /* spacing between letters */
-  color: #e59b08;
+  color: #4b5563; /* soft off-white */
+  font-weight: 500;
   text-transform: uppercase;
   line-height: 1;
 }
