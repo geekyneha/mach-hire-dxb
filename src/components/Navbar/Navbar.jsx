@@ -1,22 +1,29 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router";
 import styles from "./Navbar.module.css";
-import logo from "/images/logo.png";
+import logo from "/images/logo.webp";
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
-  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const links = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-
     { name: "Booking", path: "/booking" },
     { name: "Our Services", path: "/services" },
     { name: "Careers", path: "/careers" },
     { name: "FAQs", path: "/faq" },
   ];
+
+  const [active, setActive] = useState("");
+  const [open, setOpen] = useState(false);
+
+  // Set active link based on current path
+  useEffect(() => {
+    const currentLink = links.find((link) => link.path === location.pathname);
+    setActive(currentLink ? currentLink.name : "");
+  }, [location.pathname]);
 
   const handleNavigation = (link) => {
     setActive(link.name);
@@ -26,8 +33,20 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo} onClick={() => navigate("/")}>
-        <img src={logo} alt="Logo" className={styles.logoImg} />
+      {/* LOGO */}
+      <div
+        className={styles.logo}
+        onClick={() => navigate("/")}
+        aria-label="UAE Machinery Rentals Home"
+      >
+        <img
+          src={logo}
+          alt="UAE Machinery Rentals logo"
+          className={styles.logoImg}
+          width="42"
+          height="42"
+          loading="eager"
+        />
         <span className={styles.logoText}>MACHINERY RENTALS</span>
       </div>
 
@@ -46,23 +65,36 @@ const Navbar = () => {
         ))}
       </nav>
 
+      {/* Actions */}
       <div className={styles.actions}>
-        <button className={styles.contactBtn} href="tel:+971509734271">
+        <a
+          href="tel:+971509734271"
+          className={styles.contactBtn}
+          aria-label="Call UAE Machinery Rentals"
+        >
           Contact Us
-        </button>
+        </a>
       </div>
 
       {/* Hamburger */}
-      <div className={styles.hamburger} onClick={() => setOpen(true)}>
+      <div
+        className={styles.hamburger}
+        onClick={() => setOpen(true)}
+        aria-label="Open menu"
+      >
         <span />
         <span />
         <span />
       </div>
 
-      {/* Mobile dropdown box */}
+      {/* Mobile dropdown */}
       {open && (
         <div className={styles.mobileBox}>
-          <button className={styles.closeBtn} onClick={() => setOpen(false)}>
+          <button
+            className={styles.closeBtn}
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+          >
             ✕
           </button>
 

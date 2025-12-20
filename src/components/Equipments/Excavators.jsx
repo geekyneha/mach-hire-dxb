@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
 import excavator1 from "../../assets/excavator1.png";
 import excavator2 from "../../assets/excavator2.png";
-import excavator3 from "../../assets/hero.png";
+import excavator3 from "../../assets/hero.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 

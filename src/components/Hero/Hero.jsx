@@ -1,6 +1,7 @@
 import styles from "./Hero.module.css";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import heroImage from "../../assets/hero.webp";
 
 const Hero = () => {
   const handleQuoteClick = () => {
@@ -74,7 +75,15 @@ Thank you.
 
       {/* Image */}
       <div className={styles.imageWrap}>
-        <div className={styles.imageShape} />
+        <img
+          src={heroImage}
+          alt="Heavy machinery rentals in UAE"
+          className={styles.heroImage}
+          width="1600"
+          height="900"
+          fetchpriority="high"
+          loading="eager"
+        />
       </div>
     </section>
   );
