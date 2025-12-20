@@ -1,6 +1,8 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "UAE Machinery Rentals",
+  "short_name": "UMR",
+  "description": "UAE Machinery Rentals offers high-quality construction and heavy machinery for hire across the UAE, ensuring reliable equipment for all your projects.",
+
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
