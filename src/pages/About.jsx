@@ -49,10 +49,10 @@ const About = () => {
           {showMore && (
             <div className={styles.moreContent}>
               <p>
-                <strong>Our Story:</strong> DAZ Equip started with the goal of
-                providing reliable machinery solutions to meet the needs of
-                construction projects of all sizes. Over the years, we have
-                grown into a trusted partner for contractors, builders, and
+                <strong>Our Story:</strong> UAE Machinery Rentals started with
+                the goal of providing reliable machinery solutions to meet the
+                needs of construction projects of all sizes. Over the years, we
+                have grown into a trusted partner for contractors, builders, and
                 industries.
               </p>
 
