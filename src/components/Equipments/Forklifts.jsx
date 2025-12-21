@@ -1,7 +1,8 @@
 import styles from "./Excavators.module.css";
-import forklift1 from "../../assets/forklift1.png";
-import forklift2 from "../../assets/forklift2.png";
-import forklift3 from "../../assets/forklift3.png";
+import forklift1 from "../../assets/forklift1.webp";
+import forklift2 from "../../assets/forklift2.webp";
+import forklift3 from "../../assets/forklift3.webp";
+import SEO from "../SEO/SEO";
 
 import StructuredData from "../SEO/StructuredData";
 

@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
-import dump1 from "../../assets/dump1.png";
-import dump2 from "../../assets/dump2.png";
-import dump3 from "../../assets/dump3.png";
+import dump1 from "../../assets/dump1.webp";
+import dump2 from "../../assets/dump2.webp";
+import dump3 from "../../assets/dump3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 

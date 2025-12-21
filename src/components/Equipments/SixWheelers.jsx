@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
-import six1 from "../../assets/six1.png";
-import six2 from "../../assets/six2.png";
-import six3 from "../../assets/six3.png";
+import six1 from "../../assets/six1.webp";
+import six2 from "../../assets/six2.webp";
+import six3 from "../../assets/six3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 

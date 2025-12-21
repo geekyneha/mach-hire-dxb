@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
-import compactor1 from "../../assets/compactor1.png";
-import compactor2 from "../../assets/compactor2.png";
-import compactor3 from "../../assets/compactor3.png";
+import compactor1 from "../../assets/compactor1.webp";
+import compactor2 from "../../assets/compactor2.webp";
+import compactor3 from "../../assets/compactor3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 

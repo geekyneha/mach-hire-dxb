@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
-import backhoe1 from "../../assets/backhoe1.png";
-import backhoe2 from "../../assets/backhoe2.png";
-import backhoe3 from "../../assets/backhoe3.png";
+import backhoe1 from "../../assets/backhoe1.webp";
+import backhoe2 from "../../assets/backhoe2.webp";
+import backhoe3 from "../../assets/backhoe3.webp";
 import StructuredData from "../SEO/StructuredData";
 
 const backhoeLoaders = [

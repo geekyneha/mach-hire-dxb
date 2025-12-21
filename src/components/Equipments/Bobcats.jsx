@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
-import bobcat1 from "../../assets/bobcat1.png";
-import bobcat2 from "../../assets/bobcat2.png";
-import bobcat3 from "../../assets/bobcat3.png";
+import bobcat1 from "../../assets/bobcat1.webp";
+import bobcat2 from "../../assets/bobcat2.webp";
+import bobcat3 from "../../assets/bobcat3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 

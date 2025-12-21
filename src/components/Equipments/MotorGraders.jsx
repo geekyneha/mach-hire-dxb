@@ -1,7 +1,7 @@
 import styles from "./Excavators.module.css";
-import grader1 from "../../assets/grader1.png";
-import grader2 from "../../assets/grader2.png";
-import grader3 from "../../assets/grader3.png";
+import grader1 from "../../assets/grader1.webp";
+import grader2 from "../../assets/grader2.webp";
+import grader3 from "../../assets/grader3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 
