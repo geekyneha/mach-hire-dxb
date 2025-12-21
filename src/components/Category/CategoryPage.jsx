@@ -101,7 +101,22 @@ const CategoryPage = () => {
       />
 
       <StructuredData data={structuredData} />
-      <button onClick={() => navigate(-1)}>← Back</button>
+      <button
+        style={{
+          background: "transparent",
+          border: "none",
+          color: "#0b0d1f",
+          fontSize: "16px",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          padding: "8px 0",
+        }}
+        onClick={() => navigate(-1)}
+      >
+        ← Back
+      </button>
 
       {/* If a specific equipment component exists for this category, render it; otherwise show generic content */}
       {(() => {
