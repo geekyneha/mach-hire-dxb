@@ -8,6 +8,15 @@ const WHATSAPP_NUMBER = "971509734271";
 ================================ */
 const careers = [
   {
+    id: "Excavator-operator",
+    title: "Excavator Operator",
+    experience: "2+ years in UAE/Dubai",
+    skills:
+      "Operating 1–14 ton excavators, digging, trenching, site preparation",
+    license: "UAE heavy machinery/operator license",
+    active: true,
+  },
+  {
     id: "six-wheeler-truck-driver",
     title: "Six-Wheeler Truck Driver",
     experience: "2+ years in UAE/Dubai",
