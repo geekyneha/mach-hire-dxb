@@ -83,23 +83,53 @@ const generateJobSchema = (job) => ({
     <p><strong>Experience:</strong> ${job.experience}</p>
     <p><strong>Skills:</strong> ${job.skills}</p>
     <p><strong>License:</strong> ${job.license}</p>
+    <p><strong>Salary:</strong> AED 2800-3000 per month + benefits</p>
+    <p><strong>Benefits:</strong> Accommodation, pick and drop off services, visa provided</p>
   `,
   datePosted: "2025-01-01",
-  validThrough: "2035-12-31", // 🔥 jobs always open
+  validThrough: "2035-12-31",
   employmentType: "FULL_TIME",
+
+  // ✅ Salary (IMPORTANT)
+  baseSalary: {
+    "@type": "MonetaryAmount",
+    currency: "AED",
+    value: {
+      "@type": "QuantitativeValue",
+      minValue: 2800,
+      maxValue: 3000,
+      unitText: "MONTH",
+    },
+  },
+
+  // ✅ Company
   hiringOrganization: {
     "@type": "Organization",
     name: "UAE Machinery Rentals",
     sameAs: "https://www.uaemachineryrentals.ae",
   },
+
+  // ✅ Location (Detailed)
   jobLocation: {
     "@type": "Place",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Al Warqa",
       addressLocality: "Dubai",
       addressCountry: "AE",
     },
   },
+
+  // ✅ Applicant location
+  applicantLocationRequirements: {
+    "@type": "Country",
+    name: "United Arab Emirates",
+  },
+
+  // ✅ Benefits
+  jobBenefits: "Accommodation, pick and drop off services, visa provided",
+
+  // ✅ Apply button in Google Jobs
   applyUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     `Hello,\n\nI am applying for the role of ${job.title}.`
   )}`,
