@@ -3,7 +3,6 @@ import styles from "./Home.module.css";
 import WhatsappButton from "../components/WhatsappButton/WhatsappButton";
 import Categories from "../components/Category/Categories";
 import WhyChooseUs from "../components/Why_Us/WhyChooseUs";
-import About from "./About";
 import Industries from "../components/Industry/Industries";
 import Testimonial from "../components/Testimonial/Testimonial";
 import OrganizationSchema from "../components/SEO/OrganizationSchema";

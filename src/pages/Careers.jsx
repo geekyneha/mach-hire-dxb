@@ -12,7 +12,7 @@ const careers = [
     title: "Excavator Operator",
     experience: "2+ years in UAE/Dubai",
     skills:
-      "Operating 1–14 ton excavators, digging, trenching, site preparation",
+      "Operating 6–20+ ton excavators, digging, trenching, site preparation",
     license: "UAE heavy machinery/operator license",
     active: true,
   },
@@ -125,6 +125,8 @@ const generateJobSchema = (job) => ({
       "@type": "PostalAddress",
       streetAddress: "Al Warqa",
       addressLocality: "Dubai",
+      addressRegion: "Dubai",
+
       addressCountry: "AE",
     },
   },
