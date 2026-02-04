@@ -1,6 +1,7 @@
 import styles from "./Projects.module.css";
 const videos = [
   "https://www.youtube.com/embed/whGjOec_udU",
+  "https://www.youtube.com/embed/fuJIuxpt7Hg",
   "https://www.youtube.com/embed/6WejoeugtAk",
   "https://www.youtube.com/embed/M_UpajT_kss",
   "https://www.youtube.com/embed/sCFyO6E9wOA",
@@ -139,19 +140,6 @@ export default function Projects() {
             </ul>
           </div>
         ))}
-      </section>
-
-      {/* CLIENTS */}
-      <section className={styles.clients}>
-        <h2>Trusted by Industry Leaders</h2>
-
-        <div className={styles.marquee}>
-          <div className={styles.track}>
-            {[...clients, ...clients].map((name, i) => (
-              <span key={i}>{name}</span>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* INDUSTRIES */}
