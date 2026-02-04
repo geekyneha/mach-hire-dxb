@@ -1,0 +1,294 @@
+.page {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #0f172a;
+}
+
+/* HERO */
+.hero {
+  padding: 6rem 1.5rem;
+  text-align: center;
+  background:
+    radial-gradient(800px at top, rgba(230, 181, 102, 0.12), transparent),
+    linear-gradient(180deg, #0b1220, #020617);
+  color: white;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+  color: #e6b566;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  opacity: 0.85;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+.videoSection {
+  padding: 5rem 1.5rem;
+  background: #020617;
+  color: white;
+  text-align: center;
+}
+
+.videoSection h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+.videoSection p {
+  max-width: 720px;
+  margin: 1rem auto 3rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Horizontal Scroll */
+.scrollWrapper {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.scrollWrapper::-webkit-scrollbar {
+  display: none;
+}
+.scrollWrapper {
+  scrollbar-width: none;
+}
+
+/* Video Card */
+.videoCard {
+  flex: 0 0 auto;
+  width: 280px;
+  aspect-ratio: 9 / 16;
+  background: black;
+  border-radius: 22px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Iframe */
+.videoCard iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.stats div {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.stats div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+.stats strong {
+  display: block;
+  font-size: 2.5rem;
+  color: #e6b566;
+}
+
+.stats span {
+  opacity: 0.75;
+}
+
+/* COVERAGE */
+.coverage {
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.coverage p {
+  max-width: 800px;
+  margin: auto;
+  color: #475569;
+}
+
+/* TIMELINE */
+.timeline {
+  padding: 4.5rem 1.5rem;
+  max-width: 950px;
+  margin: auto;
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timelineItem {
+  position: relative;
+  padding: 2.2rem 2rem 2.2rem 2.8rem;
+  border-left: 2px solid rgba(230, 181, 102, 0.4);
+  background: linear-gradient(to right, rgba(230, 181, 102, 0.06), transparent);
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+}
+
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 2.2rem;
+  width: 14px;
+  height: 14px;
+  background: #e6b566;
+  border-radius: 50%;
+}
+
+.timelineHeader span {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.timelineItem ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.timelineItem li {
+  margin-bottom: 0.5rem;
+}
+
+/* CLIENTS */
+.clients {
+  padding: 4.5rem 1.5rem;
+  background: #020617;
+  color: white;
+  text-align: center;
+}
+
+.marquee {
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+
+.track {
+  display: inline-flex;
+  gap: 3.5rem;
+  animation: scroll 28s linear infinite;
+}
+
+.track span {
+  padding: 0.6rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* INDUSTRIES */
+.industries {
+  padding: 4.5rem 1.5rem;
+}
+
+.industryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.industryCard {
+  background: white;
+  border-radius: 22px;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.industryCard:hover {
+  transform: translateY(-8px);
+}
+
+/* TRUST */
+.trust {
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  background: #f1f5f9;
+}
+
+.trust p {
+  max-width: 800px;
+  margin: auto;
+  color: #475569;
+}
+
+/* CTA */
+.cta {
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  background: #0b1220;
+  color: white;
+}
+
+.cta button {
+  margin-top: 1.6rem;
+  padding: 0.85rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #e6b566, #c99a3b);
+  color: #0b1220;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* Responsive sizes */
+@media (min-width: 768px) {
+  .videoCard {
+    width: 320px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .videoCard {
+    width: 360px;
+  }
+}

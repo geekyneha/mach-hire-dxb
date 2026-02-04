@@ -7,10 +7,12 @@ import Booking from "./pages/Booking.jsx";
 import Services from "./pages/Services.jsx";
 import Layout from "./pages/Layout.jsx";
 import FAQ from "./pages/FAQ.jsx";
+
 // equipment-specific components consolidated into dynamic CategoryPage
 import { createBrowserRouter, RouterProvider } from "react-router";
 import CategoryPage from "./components/Category/CategoryPage.jsx";
 import Careers from "./pages/Careers.jsx";
+import Projects from "./pages/Projects.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -25,6 +27,7 @@ function App() {
         { path: "/services", element: <Services /> },
         { path: "/booking", element: <Booking /> },
         { path: "/faq", element: <FAQ /> },
+        { path: "/projects", element: <Projects /> },
         { path: "/careers", element: <Careers /> },
         // specific equipment pages are handled by the dynamic route below
         {
