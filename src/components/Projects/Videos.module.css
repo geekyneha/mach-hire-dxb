@@ -1,0 +1,142 @@
+/* ===========================
+   VIDEO SECTION (DARK)
+=========================== */
+.section {
+  background: #0b0d1f;
+  padding: 110px 40px;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+/* ===== HEADING ===== */
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #9da0c7;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.container h2 {
+  font-size: 42px;
+  font-weight: 500;
+  margin: 16px 0 12px;
+}
+
+.subtitle {
+  max-width: 560px;
+  color: #c7c9e3;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+/* ===========================
+   CONTROLS – FIXED POSITION
+=========================== */
+.controls {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* allow scroll */
+}
+
+.controls button {
+  pointer-events: all; /* re-enable clicks */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* LEFT & RIGHT SPACING */
+.controls button:first-child {
+  margin-left: -22px;
+}
+
+.controls button:last-child {
+  margin-right: -22px;
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.08);
+}
+
+/* ===========================
+   SCROLL AREA
+=========================== */
+.scrollWrapper {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+/* Hide scrollbar */
+.scrollWrapper::-webkit-scrollbar {
+  display: none;
+}
+.scrollWrapper {
+  scrollbar-width: none;
+}
+
+/* ===========================
+   VIDEO CARD
+=========================== */
+.videoCard {
+  flex: 0 0 auto;
+  width: 280px;
+  aspect-ratio: 9 / 16;
+  background: #000000;
+  border-radius: 22px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+  transition: transform 0.35s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-8px);
+}
+
+.videoCard iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (min-width: 768px) {
+  .videoCard {
+    width: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container h2 {
+    font-size: 32px;
+  }
+
+  .controls {
+    justify-content: flex-end;
+  }
+}

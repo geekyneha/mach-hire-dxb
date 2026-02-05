@@ -47,17 +47,17 @@ const projects = [
   },
 ];
 
-const clients = [
-  "Arabtec Holding",
-  "ASGC Construction",
-  "Al Naboodah Group",
-  "Dutco Construction",
-  "Khansaheb",
-  "ACC – Arabian Construction",
-  "Shapoorji Pallonji",
-  "Larsen & Toubro (L&T)",
-  "UAE Government Contractors",
-];
+// const clients = [
+//   "Arabtec Holding",
+//   "ASGC Construction",
+//   "Al Naboodah Group",
+//   "Dutco Construction",
+//   "Khansaheb",
+//   "ACC – Arabian Construction",
+//   "Shapoorji Pallonji",
+//   "Larsen & Toubro (L&T)",
+//   "UAE Government Contractors",
+// ];
 
 const industries = [
   "Commercial Construction",

@@ -7,6 +7,8 @@ import Industries from "../components/Industry/Industries";
 import Testimonial from "../components/Testimonial/Testimonial";
 import OrganizationSchema from "../components/SEO/OrganizationSchema";
 import SEO from "../components/SEO/SEO";
+import Stats from "../components/Projects/Stats";
+import Videos from "../components/Projects/Videos";
 
 const Home = () => {
   return (
@@ -22,8 +24,10 @@ const Home = () => {
           <Hero />
           <Categories />
           <WhyChooseUs />
+          <Stats />
           <Industries />
           <Testimonial />
+          <Videos />
           <WhatsappButton />
         </div>
       </main>

@@ -1,0 +1,122 @@
+/* ===========================
+   HERO STATS SECTION (WHITE)
+=========================== */
+.heroStats {
+  background: #ffffff;
+  padding: 120px 40px;
+  text-align: center;
+  color: #0b0d1f;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== LABEL ===== */
+.tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+/* ===== HEADING ===== */
+.heading {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  color: #0b0d1f;
+}
+
+.heading span {
+  color: #b0893b; /* muted gold accent */
+}
+
+/* ===== DESCRIPTION ===== */
+.description {
+  max-width: 640px;
+  margin: 0 auto 64px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* ===========================
+   STATS GRID
+=========================== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ===== STAT CARD ===== */
+.statCard {
+  background: #f6f7fb;
+  border-radius: 20px;
+  padding: 36px 24px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== STAT VALUE ===== */
+.statCard strong {
+  display: block;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0b0d1f;
+}
+
+/* ===== STAT LABEL ===== */
+.statCard span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* ===== DIVIDER ===== */
+.line {
+  margin: 80px auto 0;
+  width: 120px;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1000px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .heroStats {
+    padding: 90px 24px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
