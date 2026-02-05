@@ -69,6 +69,21 @@ const industries = [
 ];
 
 export default function Projects() {
+  const whatsappNumber = "971509734271"; // UAE number without + or spaces
+
+  const whatsappMessage = encodeURIComponent(
+    `Hello,
+
+I’m interested in discussing excavation and machinery requirements for an upcoming project in the UAE.
+
+Could you please share your availability for a consultation?
+Looking forward to your response.
+
+Thank you.`,
+  );
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   return (
     <div className={styles.page}>
       {/* HERO */}
@@ -169,7 +184,9 @@ export default function Projects() {
       <section className={styles.cta}>
         <h2>Let’s Build Your Next Project Together</h2>
         <p>Get in touch to discuss your excavation requirements.</p>
-        <button>Request a Consultation</button>
+        <button onClick={() => window.open(whatsappLink, "_blank")}>
+          Request a Consultation
+        </button>
       </section>
     </div>
   );
