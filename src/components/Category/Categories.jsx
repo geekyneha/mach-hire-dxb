@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import styles from "./Categories.module.css";
-import category1 from "../../assets/category1.webp";
+import category1 from "../../assets/hero.webp";
 import category2 from "../../assets/category2.webp";
 import category3 from "../../assets/category3.webp";
 import category4 from "../../assets/category4.webp";
