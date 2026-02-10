@@ -93,10 +93,36 @@
   color: #9da0c7;
   margin-bottom: 20px;
 }
+.youtube {
+  color: #ff0000;
+}
+
+.tiktok {
+  color: #ffffff;
+}
+
+.instagram {
+  color: #e1306c;
+}
+
+.facebook {
+  color: #1877f2;
+}
 
 .linkList {
   list-style: none;
   padding: 0;
+}
+.socialIcon svg {
+  font-size: 22px;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.socialIcon:hover svg {
+  transform: translateY(-4px) scale(1.1);
+  filter: brightness(1.2);
 }
 
 .linkItem {
@@ -133,6 +159,7 @@
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s;
+  text-decoration-style: none;
 }
 
 .socialIcon:hover {

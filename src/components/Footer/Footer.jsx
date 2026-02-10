@@ -1,10 +1,5 @@
 import styles from "./Footer.module.css";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaTiktok, FaFacebook } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
 import { useNavigate } from "react-router";
 
@@ -25,7 +20,7 @@ Thank you.
 
     window.open(
       `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -138,20 +133,20 @@ Thank you.
         </p>
 
         <div className={styles.socials}>
-          <a href="#" aria-label="Facebook" className={styles.socialIcon}>
-            <FaFacebookF />
+          <a href="#" aria-label="YouTube" className={styles.socialIcon}>
+            <FaYoutube className={styles.youtube} />
           </a>
 
-          <a href="#" aria-label="Twitter" className={styles.socialIcon}>
-            <FaTwitter />
+          <a href="#" aria-label="TikTok" className={styles.socialIcon}>
+            <FaTiktok className={styles.tiktok} />
           </a>
 
           <a href="#" aria-label="Instagram" className={styles.socialIcon}>
-            <FaInstagram />
+            <FaInstagram className={styles.instagram} />
           </a>
 
-          <a href="#" aria-label="LinkedIn" className={styles.socialIcon}>
-            <FaLinkedinIn />
+          <a href="#" aria-label="Facebook" className={styles.socialIcon}>
+            <FaFacebook className={styles.facebook} />
           </a>
         </div>
       </div>
