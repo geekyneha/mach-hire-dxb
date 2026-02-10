@@ -133,7 +133,11 @@ Thank you.
         </p>
 
         <div className={styles.socials}>
-          <a href="#" aria-label="YouTube" className={styles.socialIcon}>
+          <a
+            href="https://www.youtube.com/@uaemachineryrentals"
+            aria-label="YouTube"
+            className={styles.socialIcon}
+          >
             <FaYoutube className={styles.youtube} />
           </a>
 
@@ -141,7 +145,11 @@ Thank you.
             <FaTiktok className={styles.tiktok} />
           </a>
 
-          <a href="#" aria-label="Instagram" className={styles.socialIcon}>
+          <a
+            href="https://www.instagram.com/uaemachineryrentals"
+            aria-label="Instagram"
+            className={styles.socialIcon}
+          >
             <FaInstagram className={styles.instagram} />
           </a>
 
