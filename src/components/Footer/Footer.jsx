@@ -141,7 +141,11 @@ Thank you.
             <FaYoutube className={styles.youtube} />
           </a>
 
-          <a href="#" aria-label="TikTok" className={styles.socialIcon}>
+          <a
+            href="https://www.tiktok.com/@uaemachineryrentals"
+            aria-label="TikTok"
+            className={styles.socialIcon}
+          >
             <FaTiktok className={styles.tiktok} />
           </a>
 
