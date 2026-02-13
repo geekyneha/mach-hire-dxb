@@ -157,7 +157,11 @@ Thank you.
             <FaInstagram className={styles.instagram} />
           </a>
 
-          <a href="#" aria-label="Facebook" className={styles.socialIcon}>
+          <a
+            href="https://www.facebook.com/uaemachineryrentals"
+            aria-label="Facebook"
+            className={styles.socialIcon}
+          >
             <FaFacebook className={styles.facebook} />
           </a>
         </div>
