@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-
+//SEO component to manage meta tags for better search engine optimization and social media sharing. It accepts title, description, and canonical URL as props to dynamically set the page's metadata.
 const SEO = ({ title, description, canonical }) => {
   return (
     <Helmet>
