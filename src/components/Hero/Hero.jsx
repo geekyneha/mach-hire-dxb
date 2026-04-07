@@ -18,7 +18,7 @@ Thank you.
 
     window.open(
       `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -58,12 +58,12 @@ Thank you.
         <span className={styles.tag}>UAE MACHINERY RENTALS</span>
 
         <h1 className={styles.heading}>
-          Reliable Heavy Machinery <br /> For Every Job Site
+          Need Heavy Machinery in UAE? Fast Delivery & Best Rates
         </h1>
 
         <p className={styles.description}>
-          From excavators to loaders, we provide well-maintained equipment to
-          keep your projects moving on time.
+          Rent excavators, loaders, cranes, and heavy equipment across UAE with
+          same day delivery, 24/7 support, and no hidden charges. Call Now!
         </p>
 
         <button className={styles.cta} onClick={handleQuoteClick}>
