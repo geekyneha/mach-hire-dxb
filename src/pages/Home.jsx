@@ -9,6 +9,7 @@ import OrganizationSchema from "../components/SEO/OrganizationSchema";
 import SEO from "../components/SEO/SEO";
 import Stats from "../components/Projects/Stats";
 import Videos from "../components/Projects/Videos";
+import CallButton from "../components/WhatsappButton/CallButton";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
           <Testimonial />
           <Videos />
           <WhatsappButton />
+          <CallButton />
         </div>
       </main>
     </div>

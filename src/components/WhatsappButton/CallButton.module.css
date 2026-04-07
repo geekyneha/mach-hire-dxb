@@ -1,9 +1,9 @@
-.whatsappBtn {
+.callBtn {
   position: fixed;
   margin-right: 20px;
-  bottom: 20px;
+  bottom: 90px;
   right: 20px;
-  background-color: #25d366;
+  background-color: #007bff;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -18,25 +18,27 @@
     box-shadow 0.2s ease;
 }
 
-.whatsappBtn:hover {
+.callBtn:hover {
   transform: scale(1.1);
   box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
 }
 
-.icon {
-  font-size: 28px;
+.callIcon {
+  font-size: 26px;
   color: white;
 }
+.callBtn {
+  animation: pulse 1.8s infinite;
+}
 
-/* Responsive for smaller mobiles */
-@media (max-width: 480px) {
-  .whatsappBtn {
-    width: 48px;
-    height: 48px;
-    bottom: 15px;
-    right: 15px;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.6);
   }
-  .icon {
-    font-size: 24px;
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 123, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
   }
 }
