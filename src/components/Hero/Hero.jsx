@@ -55,7 +55,10 @@ Thank you.
 
       {/* Content */}
       <div className={styles.content}>
-        <span className={styles.tag}>UAE MACHINERY RENTALS</span>
+        <span className={styles.tag}>
+          UAE MACHINERY RENTALS managed and operated by MOHD DANIYAL
+          CONSTRUCTION EQUIPMENT & MACHINERY RENTALS L.L.C
+        </span>
 
         <h1 className={styles.heading}>
           Need Heavy Machinery in UAE? Fast Delivery & Best Rates
