@@ -23,8 +23,8 @@
 
 /* Logo image (source is 120x120) */
 .logoImg {
-  height: 44px; /* ideal for 72px header */
-  width: 44px;
+  height: 66px; /* ideal for 72px header */
+  width: 66px;
   object-fit: contain;
   border-radius: 50%;
   image-rendering: -webkit-optimize-contrast;
