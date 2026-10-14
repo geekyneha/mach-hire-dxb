@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 import styles from "./Categories.module.css";
 import category1 from "../../assets/hero.webp";
 import category2 from "../../assets/category2.webp";
@@ -25,65 +26,65 @@ const brands = [
   "SANY",
 ];
 
-const categories = [
-  {
-    name: "Excavators",
-    slug: "excavators",
-    img: category1,
-  },
-  {
-    name: "Wheel Loaders",
-    slug: "wheel-loaders",
-    img: category2,
-  },
-  {
-    name: "Dump Trucks",
-    slug: "dump-trucks",
-    img: category3,
-  },
-  {
-    name: "Six Wheelers",
-    slug: "six-wheelers",
-    img: category4,
-  },
-  {
-    name: "Backhoe Loaders",
-    slug: "backhoe-loaders",
-    img: category5,
-  },
-  {
-    name: "Mobile Cranes",
-    slug: "mobile-cranes",
-    img: category6,
-  },
-  {
-    name: "Motor Graders",
-    slug: "motor-graders",
-    img: category7,
-  },
-  {
-    name: "Forklifts",
-    slug: "forklifts",
-    img: category8,
-  },
-  {
-    name: "Bobcats",
-    slug: "bobcats",
-    img: category9,
-  },
-  {
-    name: "Compactors",
-    slug: "compactors",
-    img: category10,
-  },
-];
-
 const Categories = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const categories = [
+    {
+      name: t("categories.excavators"),
+      slug: "excavators",
+      img: category1,
+    },
+    {
+      name: t("categories.wheelLoaders"),
+      slug: "wheel-loaders",
+      img: category2,
+    },
+    {
+      name: t("categories.dumpTrucks"),
+      slug: "dump-trucks",
+      img: category3,
+    },
+    {
+      name: t("categories.sixWheelers"),
+      slug: "six-wheelers",
+      img: category4,
+    },
+    {
+      name: t("categories.backhoeLoaders"),
+      slug: "backhoe-loaders",
+      img: category5,
+    },
+    {
+      name: t("categories.mobileCranes"),
+      slug: "mobile-cranes",
+      img: category6,
+    },
+    {
+      name: t("categories.motorGraders"),
+      slug: "motor-graders",
+      img: category7,
+    },
+    {
+      name: t("categories.forklifts"),
+      slug: "forklifts",
+      img: category8,
+    },
+    {
+      name: t("categories.bobcats"),
+      slug: "bobcats",
+      img: category9,
+    },
+    {
+      name: t("categories.compactors"),
+      slug: "compactors",
+      img: category10,
+    },
+  ];
 
   return (
     <section className={styles.section}>
-      {/* Brands */}
       <div className={styles.brands}>
         <div className={styles.track}>
           {[...brands, ...brands].map((brand, i) => (
@@ -94,14 +95,9 @@ const Categories = () => {
         </div>
       </div>
 
-      {/* Categories */}
       <div className={styles.content}>
-        <h2>Our Equipment Categories</h2>
-        <p>
-          At UAE Machinery Rentals, we offer a comprehensive range of heavy
-          machinery designed to support construction, infrastructure, and
-          large-scale industrial projects throughout the UAE.
-        </p>
+        <h2>{t("categories.heading")}</h2>
+        <p>{t("categories.subtitle")}</p>
 
         <div className={styles.grid}>
           {categories.map((item) => (

@@ -2,21 +2,14 @@ import styles from "./Footer.module.css";
 import { FaInstagram, FaYoutube, FaTiktok, FaFacebook } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
 import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleQuoteClick = () => {
-    const message = `
-UAE Machinery Rentals Inquiry
-
-Hello,
-I would like to request a quotation for heavy machinery rental in the UAE.
-
-Please provide the available equipment options along with rental rates and terms.
-
-Thank you.
-`;
+    const message = t("footer.quoteMessage");
 
     window.open(
       `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
@@ -31,21 +24,19 @@ Thank you.
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* LEFT */}
         <div className={styles.left}>
-          <span className={styles.label}>CONTACT US</span>
+          <span className={styles.label}>{t("footer.contactUs")}</span>
 
-          {/* h2 is correct here */}
           <h2 className={styles.heading}>
-            Let’s Discuss Your <br /> Equipment Needs
+            {t("footer.headingLine1")} <br /> {t("footer.headingLine2")}
           </h2>
 
           <button className={styles.cta} onClick={handleQuoteClick}>
-            Request a Quote →
+            {t("footer.cta")}
           </button>
 
           <div className={styles.emailBlock}>
-            <span className={styles.emailLabel}>OR EMAIL US AT</span>
+            <span className={styles.emailLabel}>{t("footer.emailLabel")}</span>
 
             <div className={styles.email}>
               <span className={styles.emailText}>info@machineryrentals.ae</span>
@@ -53,8 +44,8 @@ Thank you.
               <FiCopy
                 className={styles.copy}
                 onClick={copyEmail}
-                title="Copy email"
-                aria-label="Copy email address"
+                title={t("footer.copyEmail")}
+                aria-label={t("footer.copyEmail")}
                 role="button"
                 tabIndex={0}
               />
@@ -62,11 +53,9 @@ Thank you.
           </div>
         </div>
 
-        {/* RIGHT */}
         <div className={styles.links}>
           <div className={styles.linkGroup}>
-            {/* FIXED: h4 → h3 */}
-            <h3 className={styles.linkTitle}>Quick Links</h3>
+            <h3 className={styles.linkTitle}>{t("footer.quickLinks")}</h3>
 
             <ul className={styles.linkList}>
               <li
@@ -75,7 +64,7 @@ Thank you.
                 role="link"
                 tabIndex={0}
               >
-                Home
+                {t("footer.home")}
               </li>
               <li
                 className={styles.linkItem}
@@ -83,7 +72,7 @@ Thank you.
                 role="link"
                 tabIndex={0}
               >
-                About Us
+                {t("footer.aboutUs")}
               </li>
               <li
                 className={styles.linkItem}
@@ -91,7 +80,7 @@ Thank you.
                 role="link"
                 tabIndex={0}
               >
-                Booking
+                {t("footer.booking")}
               </li>
               <li
                 className={styles.linkItem}
@@ -99,7 +88,7 @@ Thank you.
                 role="link"
                 tabIndex={0}
               >
-                Services
+                {t("footer.services")}
               </li>
               <li
                 className={styles.linkItem}
@@ -107,35 +96,31 @@ Thank you.
                 role="link"
                 tabIndex={0}
               >
-                Careers
+                {t("footer.careers")}
               </li>
             </ul>
           </div>
 
           <div className={styles.linkGroup}>
-            {/* FIXED: h4 → h3 */}
-            <h3 className={styles.linkTitle}>Information</h3>
+            <h3 className={styles.linkTitle}>{t("footer.information")}</h3>
 
             <ul className={styles.linkList}>
-              <li className={styles.linkItem}>Terms of Service</li>
-              <li className={styles.linkItem}>Privacy Policy</li>
-              <li className={styles.linkItem}>Safety Guidelines</li>
-              <li className={styles.linkItem}>Cookie Settings</li>
+              <li className={styles.linkItem}>{t("footer.terms")}</li>
+              <li className={styles.linkItem}>{t("footer.privacy")}</li>
+              <li className={styles.linkItem}>{t("footer.safety")}</li>
+              <li className={styles.linkItem}>{t("footer.cookie")}</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* BOTTOM */}
       <div className={styles.bottom}>
-        <p className={styles.copyright}>
-          © UAE Machinery Rentals 2025. All rights reserved.
-        </p>
+        <p className={styles.copyright}>{t("footer.copyright")}</p>
 
         <div className={styles.socials}>
           <a
             href="https://www.youtube.com/@uaemachineryrentals"
-            aria-label="YouTube"
+            aria-label={t("footer.youtube") || "YouTube"}
             className={styles.socialIcon}
           >
             <FaYoutube className={styles.youtube} />
@@ -143,7 +128,7 @@ Thank you.
 
           <a
             href="https://www.tiktok.com/@uaemachineryrentals"
-            aria-label="TikTok"
+            aria-label={t("footer.tiktok") || "TikTok"}
             className={styles.socialIcon}
           >
             <FaTiktok className={styles.tiktok} />
@@ -151,7 +136,7 @@ Thank you.
 
           <a
             href="https://www.instagram.com/uaemachineryrentals"
-            aria-label="Instagram"
+            aria-label={t("footer.instagram") || "Instagram"}
             className={styles.socialIcon}
           >
             <FaInstagram className={styles.instagram} />
@@ -159,7 +144,7 @@ Thank you.
 
           <a
             href="https://www.facebook.com/uaemachineryrentals"
-            aria-label="Facebook"
+            aria-label={t("footer.facebook") || "Facebook"}
             className={styles.socialIcon}
           >
             <FaFacebook className={styles.facebook} />

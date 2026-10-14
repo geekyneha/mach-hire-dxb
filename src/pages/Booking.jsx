@@ -1,17 +1,33 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Booking.module.css";
 import SEO from "../components/SEO/SEO";
 
 const Booking = () => {
+  const { t } = useTranslation();
   const today = new Date().toISOString().split("T")[0];
+
+  const equipmentOptions = [
+    t("booking.equipment.excavator"),
+    t("booking.equipment.wheelLoader"),
+    t("booking.equipment.dumpTruck"),
+    t("booking.equipment.bulldozer"),
+    t("booking.equipment.backhoeLoader"),
+    t("booking.equipment.mobileCrane"),
+    t("booking.equipment.towerCrane"),
+    t("booking.equipment.forklift"),
+    t("booking.equipment.skidSteer"),
+    t("booking.equipment.motorGrader"),
+    t("booking.equipment.compactor"),
+  ];
 
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    equipment: "Excavator",
-    size: "Medium",
-    duration: "Daily",
-    operator: "With Operator",
+    equipment: equipmentOptions[0],
+    size: t("booking.size.medium"),
+    duration: t("booking.duration.daily"),
+    operator: t("booking.operator.with"),
     startDate: today,
     location: "",
   });
@@ -22,19 +38,19 @@ const Booking = () => {
     const newErrors = {};
 
     if (!/^[A-Za-z ]{3,}$/.test(form.name)) {
-      newErrors.name = "Enter a valid name";
+      newErrors.name = t("booking.validName");
     }
 
     if (!/^[0-9]{8,9}$/.test(form.phone)) {
-      newErrors.phone = "Enter a valid UAE number";
+      newErrors.phone = t("booking.validPhone");
     }
 
     if (!form.startDate) {
-      newErrors.startDate = "Select a start date";
+      newErrors.startDate = t("booking.selectDate");
     }
 
     if (form.location.trim().length < 3) {
-      newErrors.location = "Enter a valid location";
+      newErrors.location = t("booking.validLocation");
     }
 
     setErrors(newErrors);
@@ -49,33 +65,20 @@ const Booking = () => {
     e.preventDefault();
     if (!validate()) return;
 
-    const message = `
-Hello,
-
-I would like to request a quotation for heavy machinery rental in the UAE.
-
-👤 Customer Details
-Name: ${form.name}
-Phone: +971 ${form.phone}
-
-🛠 Equipment Details
-Equipment: ${form.equipment}
-Size: ${form.size}
-Rental Duration: ${form.duration}
-Operator: ${form.operator}
-Start Date: ${form.startDate}
-
-📍 Site Location
-${form.location}
-
-Please share availability, rental rates, and terms.
-
-Thank you.
-`;
+    const message = t("booking.message", {
+      name: form.name,
+      phone: form.phone,
+      equipment: form.equipment,
+      size: form.size,
+      duration: form.duration,
+      operator: form.operator,
+      startDate: form.startDate,
+      location: form.location,
+    });
 
     window.open(
       `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -88,32 +91,28 @@ Thank you.
       />
 
       <div className={styles.card}>
-        <h2 className={styles.title}>Book Your Equipment</h2>
-        <p className={styles.subtitle}>
-          Request a quotation quickly via WhatsApp
-        </p>
+        <h2 className={styles.title}>{t("booking.title")}</h2>
+        <p className={styles.subtitle}>{t("booking.subtitle")}</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
-          {/* Name */}
           <div className={styles.field}>
             <input
               className={styles.input}
               name="name"
-              placeholder="Your Name"
+              placeholder={t("booking.namePlaceholder")}
               value={form.name}
               onChange={handleChange}
             />
             {errors.name && <span className={styles.error}>{errors.name}</span>}
           </div>
 
-          {/* Phone */}
           <div className={styles.field}>
             <div className={styles.phoneWrap}>
               <span className={styles.code}>+971</span>
               <input
                 className={styles.phoneInput}
                 name="phone"
-                placeholder="5XXXXXXXX"
+                placeholder={t("booking.phonePlaceholder")}
                 value={form.phone}
                 onChange={handleChange}
               />
@@ -123,27 +122,17 @@ Thank you.
             )}
           </div>
 
-          {/* Equipment */}
           <select
             className={styles.select}
             name="equipment"
             value={form.equipment}
             onChange={handleChange}
           >
-            <option>Excavator</option>
-            <option>Wheel Loader</option>
-            <option>Dump Truck</option>
-            <option>Bulldozer</option>
-            <option>Backhoe Loader</option>
-            <option>Mobile Crane</option>
-            <option>Tower Crane</option>
-            <option>Forklift</option>
-            <option>Skid Steer Loader</option>
-            <option>Motor Grader</option>
-            <option>Compactor / Roller</option>
+            {equipmentOptions.map((option) => (
+              <option key={option}>{option}</option>
+            ))}
           </select>
 
-          {/* Size & Duration */}
           <div className={styles.row}>
             <select
               className={styles.select}
@@ -151,9 +140,9 @@ Thank you.
               value={form.size}
               onChange={handleChange}
             >
-              <option>Small</option>
-              <option>Medium</option>
-              <option>Large</option>
+              <option>{t("booking.size.small")}</option>
+              <option>{t("booking.size.medium")}</option>
+              <option>{t("booking.size.large")}</option>
             </select>
 
             <select
@@ -162,24 +151,22 @@ Thank you.
               value={form.duration}
               onChange={handleChange}
             >
-              <option>Daily</option>
-              <option>Weekly</option>
-              <option>Monthly</option>
+              <option>{t("booking.duration.daily")}</option>
+              <option>{t("booking.duration.weekly")}</option>
+              <option>{t("booking.duration.monthly")}</option>
             </select>
           </div>
 
-          {/* Operator */}
           <select
             className={styles.select}
             name="operator"
             value={form.operator}
             onChange={handleChange}
           >
-            <option>With Operator</option>
-            <option>Without Operator</option>
+            <option>{t("booking.operator.with")}</option>
+            <option>{t("booking.operator.without")}</option>
           </select>
 
-          {/* Start Date */}
           <div className={styles.field}>
             <input
               className={styles.input}
@@ -194,12 +181,11 @@ Thank you.
             )}
           </div>
 
-          {/* Location */}
           <div className={styles.field}>
             <input
               className={styles.input}
               name="location"
-              placeholder="Site Location"
+              placeholder={t("booking.locationPlaceholder")}
               value={form.location}
               onChange={handleChange}
             />
@@ -209,7 +195,7 @@ Thank you.
           </div>
 
           <button className={styles.button} type="submit">
-            Book via WhatsApp
+            {t("booking.button")}
           </button>
         </form>
       </div>

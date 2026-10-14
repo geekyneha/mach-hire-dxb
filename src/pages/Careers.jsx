@@ -1,15 +1,13 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Careers.module.css";
 import SEO from "../components/SEO/SEO";
 
 const WHATSAPP_NUMBER = "971509734271";
 
-/* ================================
-   JOB DATA (ALL ON SAME PAGE)
-================================ */
 const careers = [
   {
     id: "Excavator-operator",
-    title: "Excavator Operator",
+    titleKey: "careers.jobs.excavator",
     experience: "2+ years in UAE/Dubai",
     skills:
       "Operating 6–20+ ton excavators, digging, trenching, site preparation",
@@ -18,7 +16,7 @@ const careers = [
   },
   {
     id: "six-wheeler-truck-driver",
-    title: "Six-Wheeler Truck Driver",
+    titleKey: "careers.jobs.sixWheeler",
     experience: "2+ years in UAE/Dubai",
     skills:
       "Operating 6-wheeler trucks (light to heavy), transporting construction materials",
@@ -27,7 +25,7 @@ const careers = [
   },
   {
     id: "backhoe-loader-operator",
-    title: "Backhoe Loader Operator",
+    titleKey: "careers.jobs.backhoe",
     experience: "2+ years in UAE/Dubai",
     skills:
       "Excavation, trenching, site preparation using 6–11 ton backhoe loaders",
@@ -36,7 +34,7 @@ const careers = [
   },
   {
     id: "mobile-crane-operator",
-    title: "Mobile Crane Operator",
+    titleKey: "careers.jobs.crane",
     experience: "2+ years in UAE/Dubai",
     skills: "Operating 10–120 ton mobile cranes, lifting, rigging, site safety",
     license: "UAE crane operator certification required",
@@ -44,7 +42,7 @@ const careers = [
   },
   {
     id: "forklift-operator",
-    title: "Forklift Operator",
+    titleKey: "careers.jobs.forklift",
     experience: "1–2 years in UAE/Dubai",
     skills: "Operating 1–16 ton forklifts, loading/unloading materials",
     license: "UAE forklift operator license",
@@ -52,7 +50,7 @@ const careers = [
   },
   {
     id: "motor-grader-operator",
-    title: "Motor Grader Operator",
+    titleKey: "careers.jobs.grader",
     experience: "2+ years in UAE/Dubai",
     skills: "Road leveling, grading, soil compaction using 12–22 ton graders",
     license: "UAE heavy machinery/operator license",
@@ -60,7 +58,7 @@ const careers = [
   },
   {
     id: "bobcat-operator",
-    title: "Bobcat (Skid Steer Loader) Operator",
+    titleKey: "careers.jobs.bobcat",
     experience: "1–2 years in UAE/Dubai",
     skills: "Operating 2–5 ton Bobcats for landscaping and excavation",
     license: "UAE operator license preferred",
@@ -68,7 +66,7 @@ const careers = [
   },
   {
     id: "road-roller-operator",
-    title: "Compactor / Road Roller Operator",
+    titleKey: "careers.jobs.roller",
     experience: "2+ years in UAE/Dubai",
     skills: "Soil/asphalt compaction using 1–14 ton compactors",
     license: "UAE heavy machinery/operator license",
@@ -76,10 +74,7 @@ const careers = [
   },
 ];
 
-/* ================================
-   GOOGLE JOBS SCHEMA GENERATOR
-================================ */
-const generateJobSchema = (job) => ({
+const generateJobSchema = (job, t) => ({
   "@context": "https://schema.org",
   "@type": "JobPosting",
   identifier: {
@@ -87,19 +82,17 @@ const generateJobSchema = (job) => ({
     name: "UAE Machinery Rentals",
     value: job.id,
   },
-  title: job.title,
+  title: t(job.titleKey),
   description: `
-    <p><strong>Experience:</strong> ${job.experience}</p>
-    <p><strong>Skills:</strong> ${job.skills}</p>
-    <p><strong>License:</strong> ${job.license}</p>
+    <p><strong>${t("careers.experience")}:</strong> ${job.experience}</p>
+    <p><strong>${t("careers.skills")}:</strong> ${job.skills}</p>
+    <p><strong>${t("careers.license")}:</strong> ${job.license}</p>
     <p><strong>Salary:</strong> AED 2800-3000 per month + benefits</p>
     <p><strong>Benefits:</strong> Accommodation, pick and drop off services, visa provided</p>
   `,
   datePosted: "2025-01-01",
   validThrough: "2035-12-31",
   employmentType: "FULL_TIME",
-
-  // ✅ Salary (IMPORTANT)
   baseSalary: {
     "@type": "MonetaryAmount",
     currency: "AED",
@@ -110,15 +103,11 @@ const generateJobSchema = (job) => ({
       unitText: "MONTH",
     },
   },
-
-  // ✅ Company
   hiringOrganization: {
     "@type": "Organization",
     name: "UAE Machinery Rentals",
     sameAs: "https://www.uaemachineryrentals.ae",
   },
-
-  // ✅ Location (Detailed)
   jobLocation: {
     "@type": "Place",
     address: {
@@ -126,32 +115,27 @@ const generateJobSchema = (job) => ({
       streetAddress: "Al Warqa",
       addressLocality: "Dubai",
       addressRegion: "Dubai",
-
       addressCountry: "AE",
     },
   },
-
-  // ✅ Applicant location
   applicantLocationRequirements: {
     "@type": "Country",
     name: "United Arab Emirates",
   },
-
-  // ✅ Benefits
   jobBenefits: "Accommodation, pick and drop off services, visa provided",
-
-  // ✅ Apply button in Google Jobs
   applyUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hello,\n\nI am applying for the role of ${job.title}.`
+    `Hello,\n\nI am applying for the role of ${t(job.titleKey)}.`,
   )}`,
 });
 
 const Careers = () => {
+  const { t } = useTranslation();
+
   const handleApply = (job) => {
     const message = `
 Hello,
 
-I am applying for the role of *${job.title}*.
+I am applying for the role of *${t(job.titleKey)}*.
 
 Experience: ${job.experience}
 Skills: ${job.skills}
@@ -161,7 +145,7 @@ Thank you.
     `;
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
 
     window.open(url, "_blank");
@@ -177,45 +161,37 @@ Thank you.
         canonical="https://www.uaemachineryrentals.ae/careers"
       />
 
-      {/* ================================
-          GOOGLE JOBS STRUCTURED DATA
-      ================================ */}
       {activeJobs.map((job) => (
         <script
           key={job.id}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateJobSchema(job)),
+            __html: JSON.stringify(generateJobSchema(job, t)),
           }}
         />
       ))}
 
-      {/* Hero */}
       <div className={styles.hero}>
-        <h1>Careers</h1>
-        <p>
-          Build your career with a trusted construction equipment company in the
-          UAE. We value skill, safety, and professionalism.
-        </p>
+        <h1>{t("careers.heroTitle")}</h1>
+        <p>{t("careers.heroText")}</p>
       </div>
 
-      {/* Jobs */}
       <div className={styles.grid}>
         {activeJobs.map((job) => (
           <div key={job.id} className={styles.card}>
-            <h3>{job.title}</h3>
+            <h3>{t(job.titleKey)}</h3>
 
             <div className={styles.info}>
               <p>
-                <span>Experience</span>
+                <span>{t("careers.experience")}</span>
                 {job.experience}
               </p>
               <p>
-                <span>Skills</span>
+                <span>{t("careers.skills")}</span>
                 {job.skills}
               </p>
               <p>
-                <span>License</span>
+                <span>{t("careers.license")}</span>
                 {job.license}
               </p>
             </div>
@@ -224,7 +200,7 @@ Thank you.
               className={styles.applyBtn}
               onClick={() => handleApply(job)}
             >
-              Apply Now
+              {t("careers.applyNow")}
             </button>
           </div>
         ))}

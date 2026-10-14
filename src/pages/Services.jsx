@@ -8,9 +8,56 @@ import {
   FaPhoneAlt,
   FaCheckCircle,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import SEO from "../components/SEO/SEO";
 
 const Services = () => {
+  const { t } = useTranslation();
+
+  const serviceCards = [
+    {
+      icon: <FaTruckMoving />,
+      title: t("services.heavyEquipmentRentalTitle"),
+      text: t("services.heavyEquipmentRentalText"),
+    },
+    {
+      icon: <FaUserCog />,
+      title: t("services.operatorRentalTitle"),
+      text: t("services.operatorRentalText"),
+    },
+    {
+      icon: <FaTools />,
+      title: t("services.maintenanceTitle"),
+      text: t("services.maintenanceText"),
+    },
+    {
+      icon: <FaClock />,
+      title: t("services.plansTitle"),
+      text: t("services.plansText"),
+    },
+  ];
+
+  const processSteps = [
+    {
+      number: "01",
+      icon: <FaClipboardList />,
+      title: t("services.assessment"),
+      text: t("services.assessmentText"),
+    },
+    {
+      number: "02",
+      icon: <FaTruckMoving />,
+      title: t("services.delivery"),
+      text: t("services.deliveryText"),
+    },
+    {
+      number: "03",
+      icon: <FaPhoneAlt />,
+      title: t("services.supportStep"),
+      text: t("services.supportStepText"),
+    },
+  ];
+
   return (
     <div className={styles.wrapper}>
       <SEO
@@ -19,115 +66,81 @@ const Services = () => {
         canonical="https://www.uaemachineryrentals.ae/services"
       />
 
-      {/* SECTION 1 */}
       <section className={styles.sectionIntro}>
         <div className={styles.introContent}>
-          <span className={styles.kicker}>WHAT WE DO</span>
+          <span className={styles.kicker}>{t("services.whatWeDo")}</span>
           <h2 className={styles.heading}>
-            Complete Equipment Rental{" "}
-            <span className={styles.accent}>Services</span>
+            {t("services.headingLine1")}{" "}
+            <span className={styles.accent}>{t("services.headingLine2")}</span>
           </h2>
-          <p className={styles.text}>
-            We support construction and infrastructure projects with reliable
-            machinery, expert guidance, and responsive operational support.
-          </p>
+          <p className={styles.text}>{t("services.description")}</p>
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <strong>UAE Wide</strong>
-              <span>Service Coverage</span>
+              <strong>{t("services.coverage")}</strong>
+              <span>{t("services.coverageLabel")}</span>
             </div>
             <div className={styles.stat}>
-              <strong>Flexible</strong>
-              <span>Rental Plans</span>
+              <strong>{t("services.plans")}</strong>
+              <span>{t("services.plansLabel")}</span>
             </div>
             <div className={styles.stat}>
-              <strong>24/7</strong>
-              <span>Support Available</span>
+              <strong>{t("services.support")}</strong>
+              <span>{t("services.supportLabel")}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 */}
       <section className={styles.sectionCards}>
         <div className={styles.cardsWrapper}>
-          <span className={styles.kicker}>CORE OFFERINGS</span>
-          <h3 className={styles.subHeading}>Our Key Services</h3>
+          <span className={styles.kicker}>{t("services.coreOfferings")}</span>
+          <h3 className={styles.subHeading}>{t("services.ourKeyServices")}</h3>
 
           <div className={styles.cardsGrid}>
-            <ServiceCard
-              icon={<FaTruckMoving />}
-              title="Heavy Equipment Rental"
-              text="A wide fleet of excavators, loaders, and trucks maintained to industry standards."
-            />
-            <ServiceCard
-              icon={<FaUserCog />}
-              title="Operator-Included Rentals"
-              text="Certified operators ensuring safe and efficient equipment handling."
-            />
-            <ServiceCard
-              icon={<FaTools />}
-              title="Maintenance & Support"
-              text="Preventive maintenance and rapid technical assistance."
-            />
-            <ServiceCard
-              icon={<FaClock />}
-              title="Flexible Rental Plans"
-              text="Daily, weekly, and monthly options tailored to project needs."
-            />
+            {serviceCards.map((service) => (
+              <ServiceCard
+                key={service.title}
+                icon={service.icon}
+                title={service.title}
+                text={service.text}
+              />
+            ))}
           </div>
 
-          <p className={styles.helperText}>
-            Not sure which equipment fits your project? Our team will guide you.
-          </p>
+          <p className={styles.helperText}>{t("services.helperText")}</p>
         </div>
       </section>
 
-      {/* SECTION 3 */}
       <section className={styles.sectionProcess}>
         <div className={styles.processWrapper}>
-          <span className={styles.kicker}>OUR PROCESS</span>
-          <h3 className={styles.subHeading}>How It Works</h3>
+          <span className={styles.kicker}>{t("services.ourProcess")}</span>
+          <h3 className={styles.subHeading}>{t("services.howItWorks")}</h3>
 
           <div className={styles.processGrid}>
-            <ProcessStep
-              number="01"
-              icon={<FaClipboardList />}
-              title="Requirement Assessment"
-              text="Understanding site conditions and project scope."
-            />
-            <ProcessStep
-              number="02"
-              icon={<FaTruckMoving />}
-              title="Delivery & Setup"
-              text="Timely delivery and ready-to-operate machinery."
-            />
-            <ProcessStep
-              number="03"
-              icon={<FaPhoneAlt />}
-              title="Ongoing Support"
-              text="Dedicated assistance throughout your rental period."
-            />
+            {processSteps.map((step) => (
+              <ProcessStep
+                key={step.number}
+                number={step.number}
+                icon={step.icon}
+                title={step.title}
+                text={step.text}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 4 */}
       <section className={styles.sectionTrust}>
         <div className={styles.trustContent}>
-          <span className={styles.kicker}>WHY PARTNER WITH US</span>
-          <h3 className={styles.trustTitle}>Built on Reliability & Trust</h3>
-          <p className={styles.trustText}>
-            We focus on long-term partnerships by delivering dependable
-            equipment, transparent communication, and consistent service
-            quality.
-          </p>
+          <span className={styles.kicker}>{t("services.whyPartner")}</span>
+          <h3 className={styles.trustTitle}>{t("services.trustTitle")}</h3>
+          <p className={styles.trustText}>{t("services.trustText")}</p>
 
           <div className={styles.values}>
-            <Value text="Well-maintained modern fleet" />
-            <Value text="Experienced operational support" />
-            <Value text="Responsive customer service" />
+            <Value text={t("services.value1")} />
+            <Value text={t("services.value2")} />
+            <Value text={t("services.value3")} />
           </div>
         </div>
       </section>

@@ -1,36 +1,19 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./FAQ.module.css";
 import SEO from "../components/SEO/SEO";
 
-const faqs = [
-  {
-    question: "What types of equipment do you provide?",
-    answer:
-      "We provide excavators, wheel loaders, dump trucks, backhoe loaders, and other heavy machinery for construction and industrial use.",
-  },
-  {
-    question: "Do you offer daily, weekly, and monthly rentals?",
-    answer:
-      "Yes, all our equipment is available for flexible rental durations including daily, weekly, and monthly plans.",
-  },
-  {
-    question: "Is an operator included with the equipment?",
-    answer:
-      "Operators can be provided on request. Please mention this during your booking for accurate pricing.",
-  },
-  {
-    question: "Which areas do you serve in the UAE?",
-    answer: "We operate across Dubai, Sharjah, and Ajman.",
-  },
-  {
-    question: "How can I book equipment?",
-    answer:
-      "You can book instantly via WhatsApp using our booking form. Our team will confirm availability shortly.",
-  },
-];
-
 const FAQ = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(0);
+
+  const faqs = [
+    { question: t("faq.q1"), answer: t("faq.a1") },
+    { question: t("faq.q2"), answer: t("faq.a2") },
+    { question: t("faq.q3"), answer: t("faq.a3") },
+    { question: t("faq.q4"), answer: t("faq.a4") },
+    { question: t("faq.q5"), answer: t("faq.a5") },
+  ];
 
   return (
     <section className={styles.wrapper}>
@@ -41,8 +24,8 @@ const FAQ = () => {
       />
 
       <div className={styles.header}>
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know before renting equipment</p>
+        <h2>{t("faq.heading")}</h2>
+        <p>{t("faq.subheading")}</p>
       </div>
 
       <div className={styles.list}>

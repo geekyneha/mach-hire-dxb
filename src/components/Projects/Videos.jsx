@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Videos.module.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -11,6 +12,7 @@ const videos = [
 ];
 
 const Videos = () => {
+  const { t } = useTranslation();
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -26,14 +28,10 @@ const Videos = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.label}>ON SITE</span>
-        <h2>Work in Progress</h2>
-        <p className={styles.subtitle}>
-          Real excavation and machinery operations captured directly from active
-          sites across the UAE.
-        </p>
+        <span className={styles.label}>{t("projects.onSite")}</span>
+        <h2>{t("projects.videosTitle")}</h2>
+        <p className={styles.subtitle}>{t("projects.videosText")}</p>
 
-        {/* Controls */}
         <div className={styles.controls}>
           <button onClick={() => scroll("left")}>
             <FiChevronLeft />
@@ -43,7 +41,6 @@ const Videos = () => {
           </button>
         </div>
 
-        {/* Videos */}
         <div className={styles.scrollWrapper} ref={scrollRef}>
           {videos.map((video, index) => (
             <div className={styles.videoCard} key={index}>

@@ -1,20 +1,14 @@
 import styles from "./Hero.module.css";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import heroImage from "../../assets/hero.webp";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   const handleQuoteClick = () => {
-    const message = `
-UAE Machinery Rentals Inquiry
-
-Hello,
-I’m interested in renting heavy machinery.
-
-Please share available equipment, rental rates, and terms.
-
-Thank you.
-`;
+    const message = t("hero.quoteMessage");
 
     window.open(
       `https://wa.me/971509734271?text=${encodeURIComponent(message)}`,
@@ -28,16 +22,16 @@ Thank you.
         <a
           href="mailto:info@machineryrentals.ae"
           className={styles.ctaIcon}
-          aria-label="Email UAE Machinery Rentals"
+          aria-label={t("hero.emailAria")}
         >
           <FiMail aria-hidden="true" />
-          <span className={styles.srOnly}>Email UAE Machinery Rentals</span>
+          <span className={styles.srOnly}>{t("hero.emailAria")}</span>
         </a>
 
         <a
           href="tel:+971509734271"
           className={styles.ctaIcon}
-          aria-label="Call UAE Machinery Rentals"
+          aria-label={t("hero.callAria")}
         >
           <FiPhone aria-hidden="true" />
         </a>
@@ -47,40 +41,30 @@ Thank you.
           target="_blank"
           rel="noopener noreferrer"
           className={styles.ctaIcon}
-          aria-label="WhatsApp UAE Machinery Rentals"
+          aria-label={t("hero.whatsappAria")}
         >
           <FaWhatsapp aria-hidden="true" />
         </a>
       </div>
 
-      {/* Content */}
       <div className={styles.content}>
-        <span className={styles.tag}>
-          UAE MACHINERY RENTALS managed and operated by MOHD DANIYAL
-          CONSTRUCTION EQUIPMENT & MACHINERY RENTALS L.L.C
-        </span>
+        <span className={styles.tag}>{t("hero.tag")}</span>
 
-        <h1 className={styles.heading}>
-          Need Heavy Machinery in UAE? Fast Delivery & Best Rates
-        </h1>
+        <h1 className={styles.heading}>{t("hero.heading")}</h1>
 
-        <p className={styles.description}>
-          Rent excavators, loaders, cranes, and heavy equipment across UAE with
-          same day delivery, 24/7 support, and no hidden charges. Call Now!
-        </p>
+        <p className={styles.description}>{t("hero.description")}</p>
 
         <button className={styles.cta} onClick={handleQuoteClick}>
-          Request a Quote
+          {t("hero.cta")}
         </button>
 
         <div className={styles.line} />
       </div>
 
-      {/* Image */}
       <div className={styles.imageWrap}>
         <img
           src={heroImage}
-          alt="Heavy machinery rentals in UAE"
+          alt={t("hero.imageAlt")}
           className={styles.heroImage}
           width="1600"
           height="900"

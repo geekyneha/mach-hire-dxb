@@ -1,28 +1,27 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Stats.module.css";
 
-const stats = [
-  { value: "20+", label: "Years of Industry Experience" },
-  { value: "3000+", label: "Projects Successfully Delivered" },
-  { value: "200+", label: "Trusted Clients Across UAE" },
-  { value: "All Emirates", label: "UAE Coverage" },
-];
-
 export default function Stats() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: "20+", label: t("projects.statsYears") },
+    { value: "3000+", label: t("projects.statsProjects") },
+    { value: "200+", label: t("projects.statsClients") },
+    { value: t("projects.allEmirates"), label: t("projects.statsCoverage") },
+  ];
+
   return (
     <section className={styles.heroStats}>
       <div className={styles.content}>
-        <span className={styles.tag}>EXPERIENCE & SCALE</span>
+        <span className={styles.tag}>{t("projects.experienceScale")}</span>
 
         <h1 className={styles.heading}>
-          Trusted Machinery <br />
-          <span>Execution Across the UAE</span>
+          {t("projects.heroTitle1")} <br />
+          <span>{t("projects.heroTitle2")}</span>
         </h1>
 
-        <p className={styles.description}>
-          Supporting large-scale construction, infrastructure, and industrial
-          developments with reliable machinery, certified operators, and on-time
-          project execution.
-        </p>
+        <p className={styles.description}>{t("projects.heroText")}</p>
 
         <div className={styles.statsGrid}>
           {stats.map((item, i) => (

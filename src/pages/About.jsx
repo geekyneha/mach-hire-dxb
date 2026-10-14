@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./About.module.css";
 import SEO from "../components/SEO/SEO";
 
 const About = () => {
+  const { t } = useTranslation();
   const [showMore, setShowMore] = useState(false);
 
   const handleLearnMore = () => {
@@ -18,72 +20,45 @@ const About = () => {
       />
 
       <div className={styles.container}>
-        {/* Image */}
         <div className={styles.imageWrap}>
           <div className={styles.image}></div>
         </div>
 
-        {/* Content */}
         <div className={styles.content}>
-          <span className={styles.label}>ABOUT US</span>
+          <span className={styles.label}>{t("about.label")}</span>
           <h2>
-            Building Trust Through <br />
-            Reliable Equipment Rental
+            {t("about.headingLine1")} <br />
+            {t("about.headingLine2")}
           </h2>
 
-          <p>
-            We are a heavy machinery rental company committed to supporting
-            construction, infrastructure, and industrial projects with
-            dependable equipment and professional service.
-          </p>
-
-          <p>
-            Our focus is on quality, safety, and long-term partnerships —
-            ensuring every machine delivered is ready to perform on site.
-          </p>
+          <p>{t("about.intro1")}</p>
+          <p>{t("about.intro2")}</p>
 
           <button className={styles.cta} onClick={handleLearnMore}>
-            {showMore ? "Show Less" : "Learn More"}
+            {showMore ? t("about.showLess") : t("about.learnMore")}
           </button>
 
           {showMore && (
             <div className={styles.moreContent}>
               <p>
-                <strong>Our Story:</strong> UAE Machinery Rentals started with
-                the goal of providing reliable machinery solutions to meet the
-                needs of construction projects of all sizes. Over the years, we
-                have grown into a trusted partner for contractors, builders, and
-                industries.
+                <strong>{t("about.storyTitle")}</strong> {t("about.story")}
               </p>
 
               <p>
-                <strong>Mission & Vision:</strong> Our mission is to deliver
-                high-quality equipment and services that ensure projects are
-                completed safely, on time, and efficiently. Our vision is to be
-                recognized as a leading machinery rental company known for
-                reliability, professionalism, and innovation.
+                <strong>{t("about.missionTitle")}</strong> {t("about.mission")}
               </p>
 
               <p>
-                <strong>Fleet & Services:</strong> Our fleet includes
-                excavators, dump trucks, wheel loaders, six-wheelers, and more,
-                all regularly maintained and available with skilled operators.
-                Flexible rental plans are designed to suit the needs of every
-                project.
+                <strong>{t("about.fleetTitle")}</strong> {t("about.fleet")}
               </p>
 
               <p>
-                <strong>Safety & Maintenance:</strong> Safety is our top
-                priority. Every machine undergoes regular inspections and
-                maintenance to ensure optimal performance. Operators are trained
-                to follow the best industry practices, keeping every project
-                safe and efficient.
+                <strong>{t("about.safetyTitle")}</strong> {t("about.safety")}
               </p>
 
               <p>
-                <strong>Our Approach to Customers:</strong> We value long-term
-                partnerships and work closely with our clients to provide the
-                right equipment and ongoing support for their projects.
+                <strong>{t("about.approachTitle")}</strong>{" "}
+                {t("about.approach")}
               </p>
             </div>
           )}

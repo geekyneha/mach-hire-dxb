@@ -1,8 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Contact.module.css";
 import SEO from "../components/SEO/SEO";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.contactPage}>
       <SEO
@@ -10,10 +13,8 @@ const Contact = () => {
         description="Get in touch with UAE Machinery Rentals for heavy equipment rental services in Dubai, Sharjah, and Ajman."
         canonical="https://www.uaemachineryrentals.ae/contact"
       />
-      <h1 className={styles.heading}>Get in touch</h1>
-      <p className={styles.subheading}>
-        Have a question? Send us a message — we’ll reply shortly.
-      </p>
+      <h1 className={styles.heading}>{t("contact.heading")}</h1>
+      <p className={styles.subheading}>{t("contact.subheading")}</p>
 
       <div className={styles.card}>
         <form
@@ -23,23 +24,23 @@ const Contact = () => {
           encType="text/plain"
         >
           <div className={styles.field}>
-            <label htmlFor="email">Your email</label>
+            <label htmlFor="email">{t("contact.emailLabel")}</label>
             <input id="email" name="email" type="email" required />
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{t("contact.messageLabel")}</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
 
           <button type="submit" className={styles.btn}>
-            Send message
+            {t("contact.send")}
           </button>
         </form>
       </div>
 
-      <div className={styles.mapSection} aria-label="Our location">
-        <h2 className={styles.mapTitle}>Our location</h2>
+      <div className={styles.mapSection} aria-label={t("contact.mapTitle")}>
+        <h2 className={styles.mapTitle}>{t("contact.mapTitle")}</h2>
         <div className={styles.mapWrapper}>
           <iframe
             title="Google Maps Location"

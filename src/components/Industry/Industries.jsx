@@ -7,26 +7,26 @@ import {
   FiMap,
   FiActivity,
 } from "react-icons/fi";
-
-const industries = [
-  { icon: <FiHome />, title: "Construction" },
-  { icon: <FiLayers />, title: "Infrastructure" },
-  { icon: <FiTruck />, title: "Logistics & Transport" },
-  { icon: <FiSettings />, title: "Industrial Projects" },
-  { icon: <FiMap />, title: "Mining & Earthworks" },
-  { icon: <FiActivity />, title: "Oil & Gas" },
-];
+import { useTranslation } from "react-i18next";
 
 const Industries = () => {
+  const { t } = useTranslation();
+
+  const industries = [
+    { icon: <FiHome />, title: t("industries.construction") },
+    { icon: <FiLayers />, title: t("industries.infrastructure") },
+    { icon: <FiTruck />, title: t("industries.logistics") },
+    { icon: <FiSettings />, title: t("industries.industrial") },
+    { icon: <FiMap />, title: t("industries.mining") },
+    { icon: <FiActivity />, title: t("industries.oilGas") },
+  ];
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.label}>INDUSTRIES</span>
-        <h2>Industries We Serve</h2>
-        <p>
-          Our equipment supports a wide range of industries, delivering
-          performance, safety, and reliability on every site.
-        </p>
+        <span className={styles.label}>{t("industries.label")}</span>
+        <h2>{t("industries.heading")}</h2>
+        <p>{t("industries.subtitle")}</p>
 
         <div className={styles.grid}>
           {industries.map((item) => (

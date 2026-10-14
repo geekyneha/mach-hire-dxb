@@ -1,37 +1,34 @@
 import styles from "./Testimonial.module.css";
+import { useTranslation } from "react-i18next";
 import { FiStar } from "react-icons/fi";
 
-const testimonials = [
-  {
-    name: "Ahmed Khan",
-    role: "Project Manager, BuildTech",
-    feedback:
-      "UAE Machinery Rentals delivered the equipment on schedule, and it performed flawlessly on site. A dependable service backed by a highly professional team.",
-  },
-  {
-    name: "Rahul Mehta",
-    role: "Site Engineer, InfraWorks",
-    feedback:
-      "The machinery was well maintained, and support was prompt whenever required. UAE Machinery Rentals is a reliable partner for large-scale construction projects.",
-  },
-  {
-    name: "Mohammed Ali",
-    role: "Operations Head, UrbanConstruct",
-    feedback:
-      "Their extensive fleet allowed us to execute multiple projects without delays. Working with UAE Machinery Rentals has been a smooth and efficient experience.",
-  },
-];
-
 const Testimonial = () => {
+  const { t } = useTranslation();
+
+  const testimonials = [
+    {
+      name: "Ahmed Khan",
+      role: t("testimonial.roles.projectManager"),
+      feedback: t("testimonial.feedback1"),
+    },
+    {
+      name: "Rahul Mehta",
+      role: t("testimonial.roles.siteEngineer"),
+      feedback: t("testimonial.feedback2"),
+    },
+    {
+      name: "Mohammed Ali",
+      role: t("testimonial.roles.operationsHead"),
+      feedback: t("testimonial.feedback3"),
+    },
+  ];
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.label}>TESTIMONIALS</span>
-        <h2>What Our Clients Say</h2>
-        <p className={styles.subtitle}>
-          Trusted by contractors, engineers, and project managers across
-          industries.
-        </p>
+        <span className={styles.label}>{t("testimonial.label")}</span>
+        <h2>{t("testimonial.heading")}</h2>
+        <p className={styles.subtitle}>{t("testimonial.subtitle")}</p>
 
         <div className={styles.grid}>
           {testimonials.map((item) => (

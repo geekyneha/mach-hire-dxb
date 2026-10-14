@@ -1,4 +1,6 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Projects.module.css";
+
 const videos = [
   "https://www.youtube.com/embed/whGjOec_udU",
   "https://www.youtube.com/embed/fuJIuxpt7Hg",
@@ -7,94 +9,70 @@ const videos = [
   "https://www.youtube.com/embed/sCFyO6E9wOA",
 ];
 
-const stats = [
-  { label: "Years of Experience", value: "20+" },
-  { label: "Projects Delivered", value: "3000+" },
-  { label: "Trusted Clients", value: "200+" },
-  { label: "UAE Coverage", value: "All Emirates" },
-];
-
-const projects = [
-  {
-    title: "High-Rise Foundation Excavation",
-    location: "Business Bay, Dubai",
-    year: "2024",
-    details: [
-      "Bulk excavation & soil removal",
-      "Basement foundation preparation",
-      "Rock breaking & disposal",
-    ],
-  },
-  {
-    title: "Road & Infrastructure Development",
-    location: "Abu Dhabi",
-    year: "2023",
-    details: [
-      "Trenching for utilities",
-      "Drainage & pipeline excavation",
-      "Backfilling & compaction",
-    ],
-  },
-  {
-    title: "Industrial Logistics Facility",
-    location: "Jebel Ali, Dubai",
-    year: "2022",
-    details: [
-      "Site clearance",
-      "Warehouse foundation excavation",
-      "Heavy-duty leveling works",
-    ],
-  },
-];
-
-// const clients = [
-//   "Arabtec Holding",
-//   "ASGC Construction",
-//   "Al Naboodah Group",
-//   "Dutco Construction",
-//   "Khansaheb",
-//   "ACC – Arabian Construction",
-//   "Shapoorji Pallonji",
-//   "Larsen & Toubro (L&T)",
-//   "UAE Government Contractors",
-// ];
-
-const industries = [
-  "Commercial Construction",
-  "Residential Developments",
-  "Infrastructure & Roads",
-  "Oil & Gas Projects",
-  "Industrial Warehousing",
-  "Government & Municipal Works",
-];
-
 export default function Projects() {
-  const whatsappNumber = "971509734271"; // UAE number without + or spaces
+  const { t } = useTranslation();
+  const whatsappNumber = "971509734271";
 
-  const whatsappMessage = encodeURIComponent(
-    `Hello,
+  const stats = [
+    { label: t("projects.statsYears"), value: "20+" },
+    { label: t("projects.statsProjects"), value: "3000+" },
+    { label: t("projects.statsClients"), value: "200+" },
+    { label: t("projects.statsCoverage"), value: t("projects.allEmirates") },
+  ];
 
-I’m interested in discussing excavation and machinery requirements for an upcoming project in the UAE.
+  const projects = [
+    {
+      title: t("projects.project1Title"),
+      location: t("projects.project1Location"),
+      year: "2024",
+      details: [
+        t("projects.project1Detail1"),
+        t("projects.project1Detail2"),
+        t("projects.project1Detail3"),
+      ],
+    },
+    {
+      title: t("projects.project2Title"),
+      location: t("projects.project2Location"),
+      year: "2023",
+      details: [
+        t("projects.project2Detail1"),
+        t("projects.project2Detail2"),
+        t("projects.project2Detail3"),
+      ],
+    },
+    {
+      title: t("projects.project3Title"),
+      location: t("projects.project3Location"),
+      year: "2022",
+      details: [
+        t("projects.project3Detail1"),
+        t("projects.project3Detail2"),
+        t("projects.project3Detail3"),
+      ],
+    },
+  ];
 
-Could you please share your availability for a consultation?
-Looking forward to your response.
+  const industries = [
+    t("projects.industry1"),
+    t("projects.industry2"),
+    t("projects.industry3"),
+    t("projects.industry4"),
+    t("projects.industry5"),
+    t("projects.industry6"),
+  ];
 
-Thank you.`,
-  );
+  const whatsappMessage = encodeURIComponent(t("projects.consultMessage"));
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <div className={styles.page}>
-      {/* HERO */}
       <section className={styles.hero}>
         <h1>
-          Trusted Machinery Excellence <span>Across the UAE</span>
+          {t("projects.heroTitle1")} <span>{t("projects.heroTitle2")}</span>
         </h1>
-        <p>
-          Delivering high-performance excavation solutions for landmark
-          construction and infrastructure projects nationwide.
-        </p>
+        <p>{t("projects.heroText")}</p>
 
         <div className={styles.stats}>
           {stats.map((item, i) => (
@@ -106,21 +84,14 @@ Thank you.`,
         </div>
       </section>
 
-      {/* COVERAGE */}
       <section className={styles.coverage}>
-        <h2>Nationwide Project Execution</h2>
-        <p>
-          We support projects across Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah,
-          Ras Al Khaimah, and Umm Al Quwain with consistent quality, compliance,
-          and reliability.
-        </p>
+        <h2>{t("projects.coverageTitle")}</h2>
+        <p>{t("projects.coverageText")}</p>
       </section>
+
       <section className={styles.videoSection}>
-        <h2>Work in Progress</h2>
-        <p>
-          Real excavation work across UAE — captured in short, vertical on-site
-          videos.
-        </p>
+        <h2>{t("projects.videosTitle")}</h2>
+        <p>{t("projects.videosText")}</p>
 
         <div className={styles.scrollWrapper}>
           {videos.map((video, index) => (
@@ -135,9 +106,9 @@ Thank you.`,
           ))}
         </div>
       </section>
-      {/* PROJECTS */}
+
       <section className={styles.timeline}>
-        <h2>Selected Project Experience</h2>
+        <h2>{t("projects.selectedProjectsTitle")}</h2>
 
         {projects.map((project, i) => (
           <div key={i} className={styles.timelineItem}>
@@ -157,9 +128,8 @@ Thank you.`,
         ))}
       </section>
 
-      {/* INDUSTRIES */}
       <section className={styles.industries}>
-        <h2>Industries We Serve</h2>
+        <h2>{t("projects.industriesTitle")}</h2>
 
         <div className={styles.industryGrid}>
           {industries.map((industry, i) => (
@@ -170,22 +140,16 @@ Thank you.`,
         </div>
       </section>
 
-      {/* TRUST */}
       <section className={styles.trust}>
-        <h2>Compliance, Safety & Reliability</h2>
-        <p>
-          All projects are executed using certified machinery, licensed
-          operators, and safety-first procedures aligned with UAE construction
-          and municipality regulations.
-        </p>
+        <h2>{t("projects.trustTitle")}</h2>
+        <p>{t("projects.trustText")}</p>
       </section>
 
-      {/* CTA */}
       <section className={styles.cta}>
-        <h2>Let’s Build Your Next Project Together</h2>
-        <p>Get in touch to discuss your excavation requirements.</p>
+        <h2>{t("projects.ctaTitle")}</h2>
+        <p>{t("projects.ctaText")}</p>
         <button onClick={() => window.open(whatsappLink, "_blank")}>
-          Request a Consultation
+          {t("projects.ctaButton")}
         </button>
       </section>
     </div>

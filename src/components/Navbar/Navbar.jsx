@@ -1,100 +1,152 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 import styles from "./Navbar.module.css";
 import logo from "/images/logo.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const links = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    {
-      name: "Projects",
-      path: "/projects",
-    },
-    { name: "Booking", path: "/booking" },
-    { name: "Our Services", path: "/services" },
-    { name: "Careers", path: "/careers" },
-    { name: "FAQs", path: "/faq" },
-  ];
+  const { t } = useTranslation();
 
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
 
-  // Set active link based on current path
+  const isArabic = i18n.language.startsWith("ar");
+
+  const links = [
+    { key: "home", path: "/" },
+    { key: "about", path: "/about" },
+    { key: "projects", path: "/projects" },
+    { key: "booking", path: "/booking" },
+    { key: "services", path: "/services" },
+    { key: "careers", path: "/careers" },
+    { key: "faqs", path: "/faq" },
+  ];
+
+  // Update document language and direction
   useEffect(() => {
-    const currentLink = links.find((link) => link.path === location.pathname);
-    setActive(currentLink ? currentLink.name : "");
+    const language = i18n.language.startsWith("ar") ? "ar" : "en";
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+    localStorage.setItem("site-language", language);
+  }, [i18n.language]);
+
+  // Set active navigation link from the current URL
+  useEffect(() => {
+    setActive(location.pathname);
+    setOpen(false);
   }, [location.pathname]);
 
+  // Switch between English and Arabic
+  const toggleLanguage = () => {
+    i18n.changeLanguage(isArabic ? "en" : "ar");
+  };
+
+  // Navigate to the selected page
   const handleNavigation = (link) => {
-    setActive(link.name);
     navigate(link.path);
+    setActive(link.path);
     setOpen(false);
   };
 
+  // Render navigation links using the same component in both languages
+  const renderLinks = (mobile = false) =>
+    links.map((link) => (
+      <button
+        key={link.path}
+        type="button"
+        className={[
+          mobile ? styles.mobileItem : styles.navItem,
+          active === link.path
+            ? mobile
+              ? styles.activeMobile
+              : styles.active
+            : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        onClick={() => handleNavigation(link)}
+      >
+        {t(`nav.${link.key}`)}
+      </button>
+    ));
+
   return (
     <header className={styles.header}>
-      {/* LOGO */}
+      {/* Logo */}
       <div
         className={styles.logo}
         onClick={() => navigate("/")}
-        aria-label="UAE Machinery Rentals Home"
+        role="button"
+        tabIndex={0}
+        aria-label={t("nav.home")}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            navigate("/");
+          }
+        }}
       >
         <img
           src={logo}
-          alt="UAE Machinery Rentals logo"
+          alt="UAE Machinery Rentals"
           className={styles.logoImg}
           width="42"
           height="42"
           loading="eager"
         />
+
         <span className={styles.logoText}>MACHINERY RENTALS</span>
       </div>
 
-      {/* Desktop Nav */}
-      <nav className={styles.nav}>
-        {links.map((link) => (
-          <button
-            key={link.name}
-            className={`${styles.navItem} ${
-              active === link.name ? styles.active : ""
-            }`}
-            onClick={() => handleNavigation(link)}
-          >
-            {link.name}
-          </button>
-        ))}
+      {/* Desktop navigation */}
+      <nav className={styles.nav} aria-label="Main navigation">
+        {renderLinks()}
       </nav>
 
-      {/* Actions */}
+      {/* Desktop actions */}
       <div className={styles.actions}>
+        <button
+          type="button"
+          className={styles.languageBtn}
+          onClick={toggleLanguage}
+          aria-label={isArabic ? "Switch to English" : "Switch to Arabic"}
+        >
+          {isArabic ? "English" : "العربية"}
+        </button>
+
         <a
           href="tel:+971509734271"
           className={styles.contactBtn}
-          aria-label="Call UAE Machinery Rentals"
+          aria-label={t("nav.contact")}
         >
-          Contact Us
+          {t("nav.contact")}
         </a>
       </div>
 
-      {/* Hamburger */}
-      <div
+      {/* Mobile hamburger */}
+      <button
+        type="button"
         className={styles.hamburger}
-        onClick={() => setOpen(true)}
-        aria-label="Open menu"
+        onClick={() => setOpen((current) => !current)}
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        aria-controls="mobile-navigation"
       >
         <span />
         <span />
         <span />
-      </div>
+      </button>
 
       {/* Mobile dropdown */}
       {open && (
-        <div className={styles.mobileBox}>
+        <div className={styles.mobileBox} id="mobile-navigation">
           <button
+            type="button"
             className={styles.closeBtn}
             onClick={() => setOpen(false)}
             aria-label="Close menu"
@@ -102,17 +154,19 @@ const Navbar = () => {
             ✕
           </button>
 
-          {links.map((link) => (
-            <button
-              key={link.name}
-              className={`${styles.mobileItem} ${
-                active === link.name ? styles.activeMobile : ""
-              }`}
-              onClick={() => handleNavigation(link)}
-            >
-              {link.name}
-            </button>
-          ))}
+          <nav aria-label="Mobile navigation">{renderLinks(true)}</nav>
+
+          <button
+            type="button"
+            className={styles.languageBtn}
+            onClick={toggleLanguage}
+          >
+            {isArabic ? "English" : "العربية"}
+          </button>
+
+          <a href="tel:+971509734271" className={styles.contactBtn}>
+            {t("nav.contact")}
+          </a>
         </div>
       )}
     </header>
