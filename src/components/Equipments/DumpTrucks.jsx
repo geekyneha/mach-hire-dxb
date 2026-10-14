@@ -74,7 +74,7 @@ const DumpTrucks = () => {
     const message = `Hello, I would like to request a quotation for ${truck.title} (${truck.capacity}). Please share rental availability and pricing.`;
     const phoneNumber = "971509734271";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(whatsappURL, "_blank");
   };
@@ -109,7 +109,9 @@ const DumpTrucks = () => {
 
           <div className={styles.content}>
             <h2>{copy.items[index].title}</h2>
-            <span className={styles.capacity}>{copy.items[index].capacity}</span>
+            <span className={styles.capacity}>
+              {copy.items[index].capacity}
+            </span>
 
             <p>{copy.items[index].description}</p>
 

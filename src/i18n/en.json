@@ -318,24 +318,60 @@
       "rentalItems": ["Daily Rental", "Weekly Rental", "Monthly Rental"],
       "quote": "Request Quote",
       "items": [
-        { "title": "Small Excavators", "capacity": "1 – 6 Tons", "description": "Compact excavators ideal for tight spaces, residential projects, landscaping, and utility work." },
-        { "title": "Medium Excavators", "capacity": "7 – 20 Tons", "description": "Versatile excavators suitable for urban construction, road work, and medium-scale infrastructure projects." },
-        { "title": "Large Excavators", "capacity": "21+ Tons", "description": "Heavy-duty machines built for mining, large construction sites, and high-load excavation work." }
+        {
+          "title": "Small Excavators",
+          "capacity": "1 – 6 Tons",
+          "description": "Compact excavators ideal for tight spaces, residential projects, landscaping, and utility work."
+        },
+        {
+          "title": "Medium Excavators",
+          "capacity": "7 – 20 Tons",
+          "description": "Versatile excavators suitable for urban construction, road work, and medium-scale infrastructure projects."
+        },
+        {
+          "title": "Large Excavators",
+          "capacity": "21+ Tons",
+          "description": "Heavy-duty machines built for mining, large construction sites, and high-load excavation work."
+        }
       ]
     },
     "wheelLoaders": {
       "heading": "Wheel Loaders for Rent",
       "intro": "Reliable wheel loaders available in multiple sizes and bucket capacities to handle different material loading requirements.",
       "rentalHeading": "Rental Options:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Available with Skilled Operator", "Well-maintained & Job-site Ready"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Available with Skilled Operator",
+        "Well-maintained & Job-site Ready"
+      ],
       "quote": "Request Quote",
       "tonsLabel": "Tons:",
       "bucketLabel": "Bucket Capacity:",
       "items": [
-        { "title": "Compact Wheel Loaders", "capacity": "3 – 6 Tons", "bucket": "0.8 – 1.2 m³", "description": "Compact wheel loaders ideal for light-duty material handling, landscaping, warehouses, and small construction sites with limited space." },
-        { "title": "Standard Wheel Loaders", "capacity": "7 – 10 Tons", "bucket": "1.3 – 1.8 m³", "description": "Efficient loaders suitable for general construction, road works, stockyards, and medium-scale loading operations." },
-        { "title": "Heavy Wheel Loaders", "capacity": "11 – 18 Tons", "bucket": "2.0 – 3.0 m³", "description": "Powerful machines designed for demanding construction sites, industrial yards, and continuous material handling tasks." },
-        { "title": "Extra Heavy Wheel Loaders", "capacity": "19 – 30+ Tons", "bucket": "3.2 – 5.5 m³", "description": "High-capacity wheel loaders built for large infrastructure projects, quarries, ports, and bulk material operations." }
+        {
+          "title": "Compact Wheel Loaders",
+          "capacity": "3 – 6 Tons",
+          "bucket": "0.8 – 1.2 m³",
+          "description": "Compact wheel loaders ideal for light-duty material handling, landscaping, warehouses, and small construction sites with limited space."
+        },
+        {
+          "title": "Standard Wheel Loaders",
+          "capacity": "7 – 10 Tons",
+          "bucket": "1.3 – 1.8 m³",
+          "description": "Efficient loaders suitable for general construction, road works, stockyards, and medium-scale loading operations."
+        },
+        {
+          "title": "Heavy Wheel Loaders",
+          "capacity": "11 – 18 Tons",
+          "bucket": "2.0 – 3.0 m³",
+          "description": "Powerful machines designed for demanding construction sites, industrial yards, and continuous material handling tasks."
+        },
+        {
+          "title": "Extra Heavy Wheel Loaders",
+          "capacity": "19 – 30+ Tons",
+          "bucket": "3.2 – 5.5 m³",
+          "description": "High-capacity wheel loaders built for large infrastructure projects, quarries, ports, and bulk material operations."
+        }
       ]
     },
     "dumpTrucks": {
@@ -345,95 +381,225 @@
       "rentalItems": ["Daily Rental", "Weekly Rental", "Monthly Rental"],
       "quote": "Request Quote",
       "items": [
-        { "title": "Small Dump Trucks", "capacity": "Up to 10 Tons", "description": "Small dump trucks ideal for narrow access areas, residential projects, and light material transportation." },
-        { "title": "Medium Dump Trucks", "capacity": "10 – 20 Tons", "description": "Medium dump trucks suitable for construction sites, road work, and bulk material handling." },
-        { "title": "Heavy Dump Trucks", "capacity": "20+ Tons", "description": "Heavy-duty dump trucks designed for mining, large infrastructure projects, and high-volume hauling." }
+        {
+          "title": "Small Dump Trucks",
+          "capacity": "Up to 10 Tons",
+          "description": "Small dump trucks ideal for narrow access areas, residential projects, and light material transportation."
+        },
+        {
+          "title": "Medium Dump Trucks",
+          "capacity": "10 – 20 Tons",
+          "description": "Medium dump trucks suitable for construction sites, road work, and bulk material handling."
+        },
+        {
+          "title": "Heavy Dump Trucks",
+          "capacity": "20+ Tons",
+          "description": "Heavy-duty dump trucks designed for mining, large infrastructure projects, and high-volume hauling."
+        }
       ]
     },
     "sixWheelers": {
       "heading": "Six Wheeler Trucks for Rent",
       "intro": "Reliable six wheeler trucks available in multiple payload capacities for efficient and safe material transportation.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Experienced & Licensed Driver", "Ideal for Sand, Soil & Construction Debris"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Experienced & Licensed Driver",
+        "Ideal for Sand, Soil & Construction Debris"
+      ],
       "quote": "Request Quote",
       "payloadLabel": "Payload Capacity:",
       "items": [
-        { "title": "Light Six Wheeler Trucks", "capacity": "10 – 12 Ton Trucks", "payload": "Up to 7 Tons", "description": "Light six wheeler trucks suitable for small construction sites, short-distance material transport, and urban delivery work." },
-        { "title": "Standard Six Wheeler Trucks", "capacity": "13 – 18 Ton Trucks", "payload": "Up to 10 Tons", "description": "Standard six wheelers ideal for sand, soil, and aggregate transport across medium construction and infrastructure projects." },
-        { "title": "Heavy Six Wheeler Trucks", "capacity": "19 – 25 Ton Trucks", "payload": "Up to 14 Tons", "description": "Heavy-duty six wheelers designed for demanding construction environments and continuous material transportation tasks." }
+        {
+          "title": "Light Six Wheeler Trucks",
+          "capacity": "10 – 12 Ton Trucks",
+          "payload": "Up to 7 Tons",
+          "description": "Light six wheeler trucks suitable for small construction sites, short-distance material transport, and urban delivery work."
+        },
+        {
+          "title": "Standard Six Wheeler Trucks",
+          "capacity": "13 – 18 Ton Trucks",
+          "payload": "Up to 10 Tons",
+          "description": "Standard six wheelers ideal for sand, soil, and aggregate transport across medium construction and infrastructure projects."
+        },
+        {
+          "title": "Heavy Six Wheeler Trucks",
+          "capacity": "19 – 25 Ton Trucks",
+          "payload": "Up to 14 Tons",
+          "description": "Heavy-duty six wheelers designed for demanding construction environments and continuous material transportation tasks."
+        }
       ]
     },
     "backhoeLoaders": {
       "heading": "Backhoe Loaders for Rent",
       "intro": "Multi-purpose backhoe loaders combine excavation and loading capabilities for a wide range of construction applications.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Skilled Operator Available", "Suitable for Excavation & Loading Work"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Skilled Operator Available",
+        "Suitable for Excavation & Loading Work"
+      ],
       "quote": "Request Quote",
       "bucketLabel": "Front Bucket Capacity:",
       "items": [
-        { "title": "Compact Backhoe Loaders", "capacity": "6 – 8 Tons", "bucket": "0.8 – 1.0 m³", "description": "Compact backhoe loaders ideal for urban construction, trenching, utility works, and projects with limited working space." },
-        { "title": "Standard Backhoe Loaders", "capacity": "8 – 10 Tons", "bucket": "1.0 – 1.3 m³", "description": "Versatile backhoe loaders suitable for general construction, road works, excavation, and material handling tasks." },
-        { "title": "Heavy Duty Backhoe Loaders", "capacity": "10 – 12+ Tons", "bucket": "1.3 – 1.6 m³", "description": "Heavy-duty backhoe loaders built for demanding construction environments requiring greater digging depth and lifting capacity." }
+        {
+          "title": "Compact Backhoe Loaders",
+          "capacity": "6 – 8 Tons",
+          "bucket": "0.8 – 1.0 m³",
+          "description": "Compact backhoe loaders ideal for urban construction, trenching, utility works, and projects with limited working space."
+        },
+        {
+          "title": "Standard Backhoe Loaders",
+          "capacity": "8 – 10 Tons",
+          "bucket": "1.0 – 1.3 m³",
+          "description": "Versatile backhoe loaders suitable for general construction, road works, excavation, and material handling tasks."
+        },
+        {
+          "title": "Heavy Duty Backhoe Loaders",
+          "capacity": "10 – 12+ Tons",
+          "bucket": "1.3 – 1.6 m³",
+          "description": "Heavy-duty backhoe loaders built for demanding construction environments requiring greater digging depth and lifting capacity."
+        }
       ]
     },
     "mobileCranes": {
       "heading": "Mobile Cranes for Rent",
       "intro": "High-capacity mobile cranes available for safe and efficient lifting across construction, industrial, and infrastructure projects.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Certified Crane Operator & Rigger", "Suitable for Heavy & Precision Lifting"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Certified Crane Operator & Rigger",
+        "Suitable for Heavy & Precision Lifting"
+      ],
       "quote": "Request Quote",
       "items": [
-        { "title": "Compact Mobile Cranes", "capacity": "10 – 25 Ton Capacity", "description": "Compact mobile cranes suitable for confined job sites, indoor lifting, equipment installation, and urban construction projects." },
-        { "title": "Standard Mobile Cranes", "capacity": "30 – 70 Ton Capacity", "description": "Standard mobile cranes ideal for general construction, steel erection, precast installation, and infrastructure projects." },
-        { "title": "Heavy Duty Mobile Cranes", "capacity": "80 – 200+ Ton Capacity", "description": "Heavy-duty mobile cranes designed for major infrastructure, industrial projects, power plants, and heavy lifting operations." }
+        {
+          "title": "Compact Mobile Cranes",
+          "capacity": "10 – 25 Ton Capacity",
+          "description": "Compact mobile cranes suitable for confined job sites, indoor lifting, equipment installation, and urban construction projects."
+        },
+        {
+          "title": "Standard Mobile Cranes",
+          "capacity": "30 – 70 Ton Capacity",
+          "description": "Standard mobile cranes ideal for general construction, steel erection, precast installation, and infrastructure projects."
+        },
+        {
+          "title": "Heavy Duty Mobile Cranes",
+          "capacity": "80 – 200+ Ton Capacity",
+          "description": "Heavy-duty mobile cranes designed for major infrastructure, industrial projects, power plants, and heavy lifting operations."
+        }
       ]
     },
     "motorGraders": {
       "heading": "Motor Graders for Rent",
       "intro": "High-performance motor graders available for precise leveling, road construction, and surface finishing across projects of every scale.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Experienced Grader Operator", "Ideal for Road & Infrastructure Projects"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Experienced Grader Operator",
+        "Ideal for Road & Infrastructure Projects"
+      ],
       "quote": "Request Quote",
       "items": [
-        { "title": "Compact Motor Graders", "capacity": "10 – 13 Tons", "description": "Compact motor graders suitable for light road maintenance, site leveling, finishing, and projects with limited maneuvering space." },
-        { "title": "Standard Motor Graders", "capacity": "14 – 18 Tons", "description": "Standard graders ideal for road construction, grading, slope shaping, and medium-scale infrastructure development." },
-        { "title": "Heavy Duty Motor Graders", "capacity": "19 – 25+ Tons", "description": "Heavy-duty motor graders designed for highways, large infrastructure, mining access roads, and continuous grading operations." }
+        {
+          "title": "Compact Motor Graders",
+          "capacity": "10 – 13 Tons",
+          "description": "Compact motor graders suitable for light road maintenance, site leveling, finishing, and projects with limited maneuvering space."
+        },
+        {
+          "title": "Standard Motor Graders",
+          "capacity": "14 – 18 Tons",
+          "description": "Standard graders ideal for road construction, grading, slope shaping, and medium-scale infrastructure development."
+        },
+        {
+          "title": "Heavy Duty Motor Graders",
+          "capacity": "19 – 25+ Tons",
+          "description": "Heavy-duty motor graders designed for highways, large infrastructure, mining access roads, and continuous grading operations."
+        }
       ]
     },
     "forklifts": {
       "heading": "Forklifts for Rent",
       "intro": "Reliable forklifts available in multiple lifting capacities for warehouse, industrial, and construction applications.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Available with Trained Operator", "Indoor & Outdoor Operation Options"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Available with Trained Operator",
+        "Indoor & Outdoor Operation Options"
+      ],
       "quote": "Request Quote",
       "items": [
-        { "title": "Light Duty Forklifts", "capacity": "2 – 3 Ton Capacity", "description": "Light-duty forklifts suitable for warehouses, indoor facilities, loading docks, and light material handling." },
-        { "title": "Standard Forklifts", "capacity": "3 – 5 Ton Capacity", "description": "Standard forklifts ideal for construction sites, logistics yards, and general lifting and stacking tasks." },
-        { "title": "Heavy Duty Forklifts", "capacity": "6 – 10+ Ton Capacity", "description": "Heavy-duty forklifts designed for ports, industrial plants, steel yards, and heavy material handling." }
+        {
+          "title": "Light Duty Forklifts",
+          "capacity": "2 – 3 Ton Capacity",
+          "description": "Light-duty forklifts suitable for warehouses, indoor facilities, loading docks, and light material handling."
+        },
+        {
+          "title": "Standard Forklifts",
+          "capacity": "3 – 5 Ton Capacity",
+          "description": "Standard forklifts ideal for construction sites, logistics yards, and general lifting and stacking tasks."
+        },
+        {
+          "title": "Heavy Duty Forklifts",
+          "capacity": "6 – 10+ Ton Capacity",
+          "description": "Heavy-duty forklifts designed for ports, industrial plants, steel yards, and heavy material handling."
+        }
       ]
     },
     "bobcats": {
       "heading": "Bobcats / Skid Steer Loaders for Rent",
       "intro": "Versatile skid steer loaders available for material handling, excavation support, landscaping, and site preparation.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Multiple Attachments Available", "Ideal for Confined & Urban Sites"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Multiple Attachments Available",
+        "Ideal for Confined & Urban Sites"
+      ],
       "quote": "Request Quote",
       "items": [
-        { "title": "Compact Bobcats", "capacity": "Small Frame Skid Steers", "description": "Compact bobcats suitable for tight spaces, indoor work, landscaping, trench backfilling, and small construction tasks." },
-        { "title": "Standard Bobcats", "capacity": "Medium Frame Skid Steers", "description": "Standard bobcats ideal for general construction, material loading, site cleanup, and utility work." },
-        { "title": "Heavy Duty Bobcats", "capacity": "Large Frame Skid Steers", "description": "Heavy-duty bobcats designed for demanding construction, bulk material handling, and continuous operation." }
+        {
+          "title": "Compact Bobcats",
+          "capacity": "Small Frame Skid Steers",
+          "description": "Compact bobcats suitable for tight spaces, indoor work, landscaping, trench backfilling, and small construction tasks."
+        },
+        {
+          "title": "Standard Bobcats",
+          "capacity": "Medium Frame Skid Steers",
+          "description": "Standard bobcats ideal for general construction, material loading, site cleanup, and utility work."
+        },
+        {
+          "title": "Heavy Duty Bobcats",
+          "capacity": "Large Frame Skid Steers",
+          "description": "Heavy-duty bobcats designed for demanding construction, bulk material handling, and continuous operation."
+        }
       ]
     },
     "compactors": {
       "heading": "Compactors for Rent",
       "intro": "Reliable compaction equipment for soil, asphalt, and surface preparation across construction projects.",
       "rentalHeading": "Rental Includes:",
-      "rentalItems": ["Daily / Weekly / Monthly Rental", "Available with Skilled Operator", "Suitable for Soil & Asphalt Compaction"],
+      "rentalItems": [
+        "Daily / Weekly / Monthly Rental",
+        "Available with Skilled Operator",
+        "Suitable for Soil & Asphalt Compaction"
+      ],
       "quote": "Request Quote",
       "items": [
-        { "title": "Light Compactors", "capacity": "Walk-Behind / Small Ride-On", "description": "Light compactors suitable for sidewalks, trenches, landscaping, and small patchwork requiring precise compaction." },
-        { "title": "Medium Compactors", "capacity": "Single Drum / Tandem Rollers", "description": "Medium compactors ideal for road maintenance, parking areas, and construction requiring uniform surface compaction." },
-        { "title": "Heavy Duty Compactors", "capacity": "Vibratory Rollers", "description": "Heavy-duty compactors designed for highways, large infrastructure, and soil compaction over extensive work areas." }
+        {
+          "title": "Light Compactors",
+          "capacity": "Walk-Behind / Small Ride-On",
+          "description": "Light compactors suitable for sidewalks, trenches, landscaping, and small patchwork requiring precise compaction."
+        },
+        {
+          "title": "Medium Compactors",
+          "capacity": "Single Drum / Tandem Rollers",
+          "description": "Medium compactors ideal for road maintenance, parking areas, and construction requiring uniform surface compaction."
+        },
+        {
+          "title": "Heavy Duty Compactors",
+          "capacity": "Vibratory Rollers",
+          "description": "Heavy-duty compactors designed for highways, large infrastructure, and soil compaction over extensive work areas."
+        }
       ]
     }
   }

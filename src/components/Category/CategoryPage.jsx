@@ -69,7 +69,9 @@ const CategoryPage = () => {
   const data = categoryData[category];
 
   if (!data) {
-    return <h2 style={{ padding: "80px" }}>{t("equipmentDetails.notFound")}</h2>;
+    return (
+      <h2 style={{ padding: "80px" }}>{t("equipmentDetails.notFound")}</h2>
+    );
   }
 
   const structuredData = {

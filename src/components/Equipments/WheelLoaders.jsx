@@ -84,7 +84,7 @@ const WheelLoaders = () => {
     const message = `Hello, I would like to request a quotation for the ${loader.title} (${loader.tons}, Bucket Capacity: ${loader.bucket}). Please provide rental options and pricing.`;
     const phoneNumber = "971509734271"; //
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(whatsappURL, "_blank");
   };
