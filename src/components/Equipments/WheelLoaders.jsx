@@ -5,6 +5,7 @@ import loaders3 from "../../assets/loaders3.webp";
 import loaders4 from "../../assets/loaders4.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 const wheelLoaders = [
   {
     title: "Compact Wheel Loaders",
@@ -77,6 +78,8 @@ const wheelLoaderSchema = {
 };
 
 const WheelLoaders = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.wheelLoaders", { returnObjects: true });
   const handleQuoteClick = (loader) => {
     const message = `Hello, I would like to request a quotation for the ${loader.title} (${loader.tons}, Bucket Capacity: ${loader.bucket}). Please provide rental options and pricing.`;
     const phoneNumber = "971509734271"; //
@@ -98,12 +101,8 @@ const WheelLoaders = () => {
       <StructuredData data={wheelLoaderSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Wheel Loaders for Rent</h1>
-        <p>
-          Reliable wheel loaders available in multiple sizes with different
-          bucket capacities to handle all types of material loading
-          requirements.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Wheel Loader Sections */}
@@ -115,26 +114,26 @@ const WheelLoaders = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
               <span className={styles.tons}>
-                {"Tons: " + item.tons + ", Bucket Capacity: " + item.bucket}
+                {`${copy.tonsLabel} ${copy.items[index].capacity}, ${copy.bucketLabel} ${copy.items[index].bucket}`}
               </span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Options:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Available with Skilled Operator</li>
-                <li>Well-maintained & Job-site Ready</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
@@ -142,7 +141,7 @@ const WheelLoaders = () => {
               className={styles.cta}
               onClick={() => handleQuoteClick(item)}
             >
-              Request Quote
+              {copy.quote}
             </button>
           </div>
         </div>

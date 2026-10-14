@@ -4,6 +4,7 @@ import excavator2 from "../../assets/excavator2.webp";
 import excavator3 from "../../assets/hero.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 
 /* ================================
    EXCAVATOR DATA
@@ -67,6 +68,8 @@ const excavatorSchema = {
    COMPONENT
 ================================ */
 const Excavators = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.excavators", { returnObjects: true });
   const handleQuoteClick = (excavator) => {
     const message = `Hello, I would like to request a quotation for ${excavator.title} (${excavator.tons}). Please share availability and rental pricing.`;
     const phoneNumber = "971509734271";
@@ -89,11 +92,8 @@ const Excavators = () => {
 
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Excavators for Rent in UAE</h1>
-        <p>
-          Reliable excavators available in multiple sizes with flexible daily,
-          weekly, and monthly rental plans.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Excavator Sections */}
@@ -105,21 +105,21 @@ const Excavators = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={`${item.title} for rent in UAE`} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
-            <span className={styles.tons}>{item.tons}</span>
+            <h2>{copy.items[index].title}</h2>
+            <span className={styles.tons}>{copy.items[index].capacity}</span>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Options:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily Rental</li>
-                <li>Weekly Rental</li>
-                <li>Monthly Rental</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
@@ -127,7 +127,7 @@ const Excavators = () => {
               className={styles.cta}
               onClick={() => handleQuoteClick(item)}
             >
-              Request Quote
+              {copy.quote}
             </button>
           </div>
         </div>

@@ -4,6 +4,7 @@ import grader2 from "../../assets/grader2.webp";
 import grader3 from "../../assets/grader3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 
 const motorGraders = [
   {
@@ -65,6 +66,8 @@ const motorGraderSchema = {
 };
 
 const MotorGraders = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.motorGraders", { returnObjects: true });
   return (
     <section className={styles.page}>
       <SEO
@@ -77,11 +80,8 @@ const MotorGraders = () => {
       <StructuredData data={motorGraderSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Motor Graders for Rent</h1>
-        <p>
-          High-performance motor graders available for precise leveling, road
-          construction, and surface finishing across all project scales.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Motor Grader Sections */}
@@ -93,28 +93,28 @@ const MotorGraders = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
+              <span className={styles.tons}>{copy.items[index].capacity}</span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Includes:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Experienced Grader Operator</li>
-                <li>Ideal for Road & Infrastructure Projects</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
-            <button className={styles.cta}>Request Quote</button>
+            <button className={styles.cta}>{copy.quote}</button>
           </div>
         </div>
       ))}

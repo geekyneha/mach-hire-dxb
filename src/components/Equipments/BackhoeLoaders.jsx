@@ -3,6 +3,7 @@ import backhoe1 from "../../assets/backhoe1.webp";
 import backhoe2 from "../../assets/backhoe2.webp";
 import backhoe3 from "../../assets/backhoe3.webp";
 import StructuredData from "../SEO/StructuredData";
+import { useTranslation } from "react-i18next";
 
 const backhoeLoaders = [
   {
@@ -54,17 +55,16 @@ const backhoeLoaderSchema = {
 };
 
 const BackhoeLoaders = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.backhoeLoaders", { returnObjects: true });
   return (
     <section className={styles.page}>
       {/* ✅ SEO Structured Data */}
       <StructuredData data={backhoeLoaderSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Backhoe Loaders for Rent</h1>
-        <p>
-          Multi-purpose backhoe loaders combining excavation and loading
-          capabilities, ideal for a wide range of construction applications.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Backhoe Loader Sections */}
@@ -76,31 +76,31 @@ const BackhoeLoaders = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
+              <span className={styles.tons}>{copy.items[index].capacity}</span>
               <span className={styles.bucket}>
-                Front Bucket Capacity: {item.bucket}
+                {copy.bucketLabel} {copy.items[index].bucket}
               </span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Includes:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Skilled Operator Available</li>
-                <li>Suitable for Excavation & Loading Work</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
-            <button className={styles.cta}>Request Quote</button>
+            <button className={styles.cta}>{copy.quote}</button>
           </div>
         </div>
       ))}

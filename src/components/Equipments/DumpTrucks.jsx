@@ -4,6 +4,7 @@ import dump2 from "../../assets/dump2.webp";
 import dump3 from "../../assets/dump3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 
 /* ================================
    DUMP TRUCK DATA
@@ -67,6 +68,8 @@ const dumpTruckSchema = {
    COMPONENT
 ================================ */
 const DumpTrucks = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.dumpTrucks", { returnObjects: true });
   const handleQuoteClick = (truck) => {
     const message = `Hello, I would like to request a quotation for ${truck.title} (${truck.capacity}). Please share rental availability and pricing.`;
     const phoneNumber = "971509734271";
@@ -88,11 +91,8 @@ const DumpTrucks = () => {
 
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Dump Trucks for Rent in UAE</h1>
-        <p>
-          Reliable dump trucks available for rent across UAE with flexible
-          daily, weekly, and monthly rental options.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Dump Truck Sections */}
@@ -104,21 +104,21 @@ const DumpTrucks = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={`${item.title} for rent in UAE`} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
-            <span className={styles.capacity}>{item.capacity}</span>
+            <h2>{copy.items[index].title}</h2>
+            <span className={styles.capacity}>{copy.items[index].capacity}</span>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Options:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily Rental</li>
-                <li>Weekly Rental</li>
-                <li>Monthly Rental</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
@@ -126,7 +126,7 @@ const DumpTrucks = () => {
               className={styles.cta}
               onClick={() => handleQuoteClick(item)}
             >
-              Request Quote
+              {copy.quote}
             </button>
           </div>
         </div>

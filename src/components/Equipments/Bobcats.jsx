@@ -4,6 +4,7 @@ import bobcat2 from "../../assets/bobcat2.webp";
 import bobcat3 from "../../assets/bobcat3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 
 const bobcats = [
   {
@@ -52,6 +53,8 @@ const bobcatSchema = {
 };
 
 const Bobcats = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.bobcats", { returnObjects: true });
   return (
     <section className={styles.page}>
       <SEO
@@ -64,11 +67,8 @@ const Bobcats = () => {
       <StructuredData data={bobcatSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Bobcats / Skid Steer Loaders for Rent</h1>
-        <p>
-          Versatile skid steer loaders available for material handling,
-          excavation support, landscaping, and site preparation tasks.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Bobcat Sections */}
@@ -80,28 +80,28 @@ const Bobcats = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
+              <span className={styles.tons}>{copy.items[index].capacity}</span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Includes:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Multiple Attachments Available</li>
-                <li>Ideal for Confined & Urban Sites</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
-            <button className={styles.cta}>Request Quote</button>
+            <button className={styles.cta}>{copy.quote}</button>
           </div>
         </div>
       ))}

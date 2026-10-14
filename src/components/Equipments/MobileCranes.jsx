@@ -4,6 +4,7 @@ import crane2 from "../../assets/crane2.webp";
 import crane3 from "../../assets/crane3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 const mobileCranes = [
   {
     title: "Compact Mobile Cranes",
@@ -65,6 +66,8 @@ const mobileCraneSchema = {
 };
 
 const MobileCranes = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.mobileCranes", { returnObjects: true });
   return (
     <section className={styles.page}>
       <SEO
@@ -77,12 +80,8 @@ const MobileCranes = () => {
       <StructuredData data={mobileCraneSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Mobile Cranes for Rent</h1>
-        <p>
-          High-capacity mobile cranes available for safe and efficient lifting
-          operations across construction, industrial, and infrastructure
-          projects.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Mobile Crane Sections */}
@@ -94,28 +93,28 @@ const MobileCranes = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
+              <span className={styles.tons}>{copy.items[index].capacity}</span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Includes:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Certified Crane Operator & Rigger</li>
-                <li>Suitable for Heavy & Precision Lifting</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
-            <button className={styles.cta}>Request Quote</button>
+            <button className={styles.cta}>{copy.quote}</button>
           </div>
         </div>
       ))}

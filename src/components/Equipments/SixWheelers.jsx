@@ -4,6 +4,7 @@ import six2 from "../../assets/six2.webp";
 import six3 from "../../assets/six3.webp";
 import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
+import { useTranslation } from "react-i18next";
 
 const sixWheelers = [
   {
@@ -33,6 +34,8 @@ const sixWheelers = [
 ];
 
 const SixWheelers = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.sixWheelers", { returnObjects: true });
   const handleQuoteClick = (truck) => {
     const message = `Hello, I would like to request a quotation for the ${truck.title} (${truck.tons}, Payload: ${truck.payload}). Please provide rental options and pricing.`;
     const phoneNumber = "971509734271"; //
@@ -90,11 +93,8 @@ const SixWheelers = () => {
       <StructuredData data={sixWheelerSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Six Wheeler Trucks for Rent</h1>
-        <p>
-          Reliable six wheeler trucks available in multiple payload capacities
-          for efficient and safe material transportation.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Six Wheeler Sections */}
@@ -106,26 +106,26 @@ const SixWheelers = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
               <span className={styles.tons}>
-                {item.tons + "Payload Capacity: " + item.payload}
+                {`${copy.items[index].capacity} ${copy.payloadLabel} ${copy.items[index].payload}`}
               </span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Includes:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Experienced & Licensed Driver</li>
-                <li>Ideal for Sand, Soil & Construction Debris</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
@@ -133,7 +133,7 @@ const SixWheelers = () => {
               className={styles.cta}
               onClick={() => handleQuoteClick(item)}
             >
-              Request Quote
+              {copy.quote}
             </button>
           </div>
         </div>

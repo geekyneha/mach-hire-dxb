@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 import SEO from "../SEO/SEO";
 import StructuredData from "../SEO/StructuredData";
 
@@ -64,9 +65,12 @@ const categoryData = {
 const CategoryPage = () => {
   const { category } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const data = categoryData[category];
 
-  if (!data) return <h2 style={{ padding: "80px" }}>Category not found</h2>;
+  if (!data) {
+    return <h2 style={{ padding: "80px" }}>{t("equipmentDetails.notFound")}</h2>;
+  }
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -115,7 +119,7 @@ const CategoryPage = () => {
         }}
         onClick={() => navigate(-1)}
       >
-        ← Back
+        ← {t("equipmentDetails.back")}
       </button>
 
       {/* If a specific equipment component exists for this category, render it; otherwise show generic content */}

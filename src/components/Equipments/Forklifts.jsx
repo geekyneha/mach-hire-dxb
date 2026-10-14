@@ -5,6 +5,7 @@ import forklift3 from "../../assets/forklift3.webp";
 import SEO from "../SEO/SEO";
 
 import StructuredData from "../SEO/StructuredData";
+import { useTranslation } from "react-i18next";
 
 const forklifts = [
   {
@@ -67,6 +68,8 @@ const forkliftSchema = {
 };
 
 const Forklifts = () => {
+  const { t } = useTranslation();
+  const copy = t("equipmentDetails.forklifts", { returnObjects: true });
   return (
     <section className={styles.page}>
       <SEO
@@ -79,11 +82,8 @@ const Forklifts = () => {
       <StructuredData data={forkliftSchema} />
       {/* Page Header */}
       <div className={styles.header}>
-        <h1>Forklifts for Rent</h1>
-        <p>
-          Reliable forklifts available in multiple lifting capacities for
-          warehouse, industrial, and construction applications.
-        </p>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
       </div>
 
       {/* Forklift Sections */}
@@ -95,28 +95,28 @@ const Forklifts = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={copy.items[index].title} />
           </div>
 
           <div className={styles.content}>
-            <h2>{item.title}</h2>
+            <h2>{copy.items[index].title}</h2>
 
             <div className={styles.specs}>
-              <span className={styles.tons}>{item.tons}</span>
+              <span className={styles.tons}>{copy.items[index].capacity}</span>
             </div>
 
-            <p>{item.description}</p>
+            <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
-              <span>Rental Includes:</span>
+              <span>{copy.rentalHeading}</span>
               <ul>
-                <li>Daily / Weekly / Monthly Rental</li>
-                <li>Available with Trained Operator</li>
-                <li>Indoor & Outdoor Operation Options</li>
+                {copy.rentalItems.map((rentalItem) => (
+                  <li key={rentalItem}>{rentalItem}</li>
+                ))}
               </ul>
             </div>
 
-            <button className={styles.cta}>Request Quote</button>
+            <button className={styles.cta}>{copy.quote}</button>
           </div>
         </div>
       ))}
