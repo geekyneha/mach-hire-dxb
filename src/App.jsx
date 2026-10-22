@@ -7,6 +7,7 @@ import Booking from "./pages/Booking.jsx";
 import Services from "./pages/Services.jsx";
 import Layout from "./pages/Layout.jsx";
 import FAQ from "./pages/FAQ.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 
 // equipment-specific components consolidated into dynamic CategoryPage
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -33,6 +34,10 @@ function App() {
         {
           path: "/equipment/:category",
           element: <CategoryPage />,
+        },
+        {
+          path: "/privacy-policy",
+          element: <PrivacyPolicy />,
         },
       ],
     },
