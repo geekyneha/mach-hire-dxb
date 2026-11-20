@@ -1,4 +1,5 @@
 /* ================= PAGE ================= */
+
 .page {
   width: 100%;
   background: #ffffff;
@@ -6,6 +7,7 @@
 }
 
 /* ================= HEADER ================= */
+
 .header {
   padding: 120px 40px 80px;
   max-width: 1200px;
@@ -25,6 +27,7 @@
 }
 
 /* ================= SECTION ================= */
+
 .section {
   max-width: 1200px;
   margin: auto;
@@ -44,6 +47,7 @@
 }
 
 /* ================= IMAGE ================= */
+
 .imageWrapper {
   border-radius: 24px;
   overflow: hidden;
@@ -53,9 +57,11 @@
   width: 100%;
   height: 420px;
   object-fit: cover;
+  display: block;
 }
 
 /* ================= CONTENT ================= */
+
 .content h2 {
   font-size: 42px;
   margin-bottom: 8px;
@@ -74,7 +80,52 @@
   margin-bottom: 24px;
 }
 
+/* ================= PRICING ================= */
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 8px 0 24px;
+}
+
+.priceItem {
+  background: #f6f7fb;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border: 1px solid #e9eaf1;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.priceItem:hover {
+  transform: translateY(-3px);
+  border-color: #9da0c7;
+}
+
+.priceItem span {
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+.priceItem strong {
+  font-size: 25px;
+  font-weight: 600;
+  color: #0b0d1f;
+}
+
+.priceItem small {
+  font-size: 12px;
+  color: #888;
+}
+
 /* ================= RENT BOX ================= */
+
 .rentBox {
   background: #f6f7fb;
   padding: 20px;
@@ -98,6 +149,7 @@
 }
 
 /* ================= CTA ================= */
+
 .cta {
   padding: 12px 26px;
   border-radius: 999px;
@@ -106,18 +158,23 @@
   color: #fff;
   font-size: 14px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .cta:hover {
   transform: translateY(-2px);
+  background: #1a1d3b;
 }
 
 /* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
   .section {
     grid-template-columns: 1fr;
     padding: 80px 20px;
+    gap: 35px;
   }
 
   .imageWrapper img {
@@ -130,5 +187,50 @@
 
   .content h2 {
     font-size: 32px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 500px) {
+  .header {
+    padding: 90px 20px 50px;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .section {
+    padding: 55px 20px;
+  }
+
+  .imageWrapper img {
+    height: 260px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+  }
+
+  .pricing {
+    gap: 10px;
+  }
+
+  .priceItem {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .priceItem strong {
+    font-size: 19px;
+  }
+
+  .priceItem span {
+    font-size: 12px;
+  }
+
+  .priceItem small {
+    font-size: 11px;
   }
 }

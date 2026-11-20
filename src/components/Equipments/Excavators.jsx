@@ -6,12 +6,13 @@ import StructuredData from "../SEO/StructuredData";
 import SEO from "../SEO/SEO";
 import { useTranslation } from "react-i18next";
 
-/* ================================
-   EXCAVATOR DATA
-================================ */
+// ================================
+// EXCAVATOR DATA
+// ================================
+
 const excavators = [
   {
-    title: "Small Excavators",
+    title: "Mini Excavators",
     tons: "1 – 6 Tons",
     description:
       "Compact excavators ideal for tight spaces, residential projects, landscaping, and utility work.",
@@ -23,6 +24,8 @@ const excavators = [
     description:
       "Versatile excavators suitable for urban construction, road work, and medium-scale infrastructure projects.",
     image: excavator2,
+    dailyPrice: "AED 1,000",
+    monthlyPrice: "AED 16,000",
   },
   {
     title: "Large Excavators",
@@ -33,30 +36,35 @@ const excavators = [
   },
 ];
 
-/* ================================
-   STRUCTURED DATA (SEO)
-================================ */
+// ================================
+// STRUCTURED DATA (SEO)
+// ================================
+
 const excavatorSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Excavator Rental Services in UAE",
   description:
     "Rent small, medium, and large excavators in UAE for construction, infrastructure, and industrial projects.",
+
   itemListElement: excavators.map((item, index) => ({
     "@type": "Product",
     position: index + 1,
     name: `${item.title} (${item.tons})`,
     description: item.description,
+
     brand: {
       "@type": "Brand",
       name: "UAE Machinery Rentals",
     },
+
     offers: {
       "@type": "Offer",
       url: "https://www.uaemachineryrentals.ae/equipment/excavators",
       priceCurrency: "AED",
       availability: "https://schema.org/InStock",
     },
+
     areaServed: {
       "@type": "Country",
       name: "United Arab Emirates",
@@ -64,19 +72,27 @@ const excavatorSchema = {
   })),
 };
 
-/* ================================
-   COMPONENT
-================================ */
+// ================================
+// COMPONENT
+// ================================
+
 const Excavators = () => {
   const { t } = useTranslation();
-  const copy = t("equipmentDetails.excavators", { returnObjects: true });
+
+  const copy = t("equipmentDetails.excavators", {
+    returnObjects: true,
+  });
+
   const handleQuoteClick = (excavator) => {
     const message = `Hello, I would like to request a quotation for ${excavator.title} (${excavator.tons}). Please share availability and rental pricing.`;
+
     const phoneNumber = "971509734271";
+
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`;
-    window.open(whatsappURL, "_blank");
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -87,7 +103,7 @@ const Excavators = () => {
         canonical="https://www.uaemachineryrentals.ae/equipment/excavators"
       />
 
-      {/* ✅ SEO Structured Data */}
+      {/* SEO Structured Data */}
       <StructuredData data={excavatorSchema} />
 
       {/* Page Header */}
@@ -105,17 +121,40 @@ const Excavators = () => {
           }`}
         >
           <div className={styles.imageWrapper}>
-            <img src={item.image} alt={copy.items[index].title} />
+            <img
+              src={item.image}
+              alt={copy.items[index].title}
+              loading="lazy"
+            />
           </div>
 
           <div className={styles.content}>
             <h2>{copy.items[index].title}</h2>
+
             <span className={styles.tons}>{copy.items[index].capacity}</span>
+
+            {/* Pricing - Medium Excavators Only */}
+            {item.dailyPrice && (
+              <div className={styles.pricing}>
+                <div className={styles.priceItem}>
+                  <span>Daily Rental</span>
+                  <strong>{item.dailyPrice}</strong>
+                  <small>Per day</small>
+                </div>
+
+                <div className={styles.priceItem}>
+                  <span>Monthly Rental</span>
+                  <strong>{item.monthlyPrice}</strong>
+                  <small>Per month</small>
+                </div>
+              </div>
+            )}
 
             <p>{copy.items[index].description}</p>
 
             <div className={styles.rentBox}>
               <span>{copy.rentalHeading}</span>
+
               <ul>
                 {copy.rentalItems.map((rentalItem) => (
                   <li key={rentalItem}>{rentalItem}</li>
