@@ -43,7 +43,7 @@ const bobcatSchema = {
       brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
       offers: {
         "@type": "Offer",
-        url: "https://www.uaemachineryrentals.ae/equipment/bobcats/skid-steers",
+        url: "https://www.uaemachineryrentals.ae/equipment/bobcats",
         priceCurrency: "AED",
         availability: "https://schema.org/InStock",
       },
@@ -60,7 +60,7 @@ const Bobcats = () => {
       <SEO
         title="Bobcats & Skid Steer Loaders for Rent in UAE"
         description="Rent bobcats and skid steer loaders in UAE for compact construction, landscaping, and site work."
-        canonical="https://www.uaemachineryrentals.ae/equipment/bobcats/skid-steers"
+        canonical="https://www.uaemachineryrentals.ae/equipment/bobcats"
       />
 
       {/* ✅ SEO Structured Data */}
