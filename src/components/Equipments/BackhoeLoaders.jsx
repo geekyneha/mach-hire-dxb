@@ -31,25 +31,63 @@ const backhoeLoaders = [
     image: backhoe3,
   },
 ];
+
 const backhoeLoaderSchema = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Backhoe Loaders for Rent in UAE",
-  description:
-    "Backhoe loader rental services in UAE suitable for excavation, loading, and utility work.",
-  itemListElement: [
+  "@graph": [
     {
-      "@type": "Product",
-      position: 1,
-      name: "Standard Backhoe Loaders",
-      brand: { "@type": "Brand", name: "UAE Machinery Rentals" },
-      offers: {
-        "@type": "Offer",
-        url: "https://www.uaemachineryrentals.ae/equipment/backhoe-loaders",
-        priceCurrency: "AED",
-        availability: "https://schema.org/InStock",
+      "@type": "Service",
+      "@id":
+        "https://www.uaemachineryrentals.ae/equipment/backhoe-loaders#service",
+      name: "Backhoe Loader Rental in UAE",
+      description:
+        "Backhoe loader rental services across the UAE for excavation, construction, road works, trenching, loading, and material handling.",
+      url: "https://www.uaemachineryrentals.ae/equipment/backhoe-loaders",
+      provider: {
+        "@type": "Organization",
+        name: "UAE Machinery Rentals",
+        url: "https://www.uaemachineryrentals.ae/",
       },
-      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+      areaServed: {
+        "@type": "Country",
+        name: "United Arab Emirates",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Backhoe Loader Rental Equipment",
+        itemListElement: [
+          {
+            "@type": "OfferCatalog",
+            name: "Compact Backhoe Loaders",
+            itemListElement: {
+              "@type": "Service",
+              name: "Compact Backhoe Loader Rental",
+              description:
+                "6–8 ton compact backhoe loaders for urban construction, trenching, and utility works.",
+            },
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Standard Backhoe Loaders",
+            itemListElement: {
+              "@type": "Service",
+              name: "Standard Backhoe Loader Rental",
+              description:
+                "8–10 ton backhoe loaders for general construction, road works, excavation, and material handling.",
+            },
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Heavy Duty Backhoe Loaders",
+            itemListElement: {
+              "@type": "Service",
+              name: "Heavy Duty Backhoe Loader Rental",
+              description:
+                "10–12+ ton heavy-duty backhoe loaders for demanding construction and excavation projects.",
+            },
+          },
+        ],
+      },
     },
   ],
 };
